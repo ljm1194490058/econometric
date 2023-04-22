@@ -7,4 +7,4 @@ Django经济预测平台
 
 3.主程序主要是app文件夹和forecast文件夹，其中预测功能在forecast。
 
-4.详细修改操作见博客https://blog.csdn.net/xiaomingming99
+4.详细修改操作见博客[https://blog.csdn.net/xiaomingming99](https://blog.csdn.net/xiaomingming99/article/details/130310339)
