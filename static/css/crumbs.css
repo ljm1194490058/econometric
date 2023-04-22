@@ -1,0 +1,36 @@
+
+.crumbs {
+    position:relative;
+    padding-top: 100px;
+    height: 55px;
+    line-height: 55px;
+    background: #eaeeff repeat-x center bottom;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.crumbs .title {
+    position:relative;
+    float: left;
+    color: #333333;
+    font-size: 20px;
+    font-family: 微软雅黑;
+}
+
+.container {
+    position: relative;
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.crumbs .childs {
+    font-size: 14px;
+}
+.crumbs .childs {
+    float: right;
+    color: #666;
+    font-size: 14px;
+    font-family: "Hiragino Sans GB";
+}
+.crumbs .childs a {
+    color: #666;
+}

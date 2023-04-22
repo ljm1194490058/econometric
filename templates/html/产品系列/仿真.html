@@ -1,0 +1,146 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;研究报告            </div>
+    </div>
+</div>
+<div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+
+    <div class="container" style="overflow: hidden">
+        <div class="mainHead" style="line-height:40px;color:#333333;font-size:28px;">
+            <p class="title">全球CGE模型在线培训视频免费开放</p>
+        </div>
+        <!-- mainContent -->
+        <div class="mainContent">
+
+            <p class="MsoNormal" align="center" style="text-align:center;">
+                <b></b>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">为了促进中国经济建模技术的发展，为广大学员进一步降低</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">CGE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">模型学习门槛，自</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">2019</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">年</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">4</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">月</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">28</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">号起，量化经济平台（</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">www.econmod.cn</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">）将会为所有免费注册会员开通全球</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">CGE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">模型的在线培训视频。</span>
+            </p>
+            <p class="MsoNormal">
+                <br />
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;"><strong>（1）在线视频课程内容：量化经济平台》资源中心》全球模型</strong></span><span></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">由英飞咨询特聘讲师蔡松锋主讲，蔡老师具有多年</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">CGE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">建模经验，参与国家</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">973</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">计划、国家社会科学基金、国家发改委、商务部、交通部等委托项目和地方政府委托项目二十余项，在</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">SCI</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">、国内核心期刊等发表文章</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">30</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">余篇。</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">1</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">GTAPISM</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">模型框架及数据库结构</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">2</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：产品流向及变量平衡关系</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">3</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：各部门的优化决策行为</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">4</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：全球银行、区域投资以及模型闭合</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">5</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：数量关系以及价格链接</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">6</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：利用</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">AnalysGE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">分析结果</span><span></span>
+            </p>
+            <p class="MsoNormal">
+                <br />
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;"><strong>（2）更多在线免费课：量化经济平台》资源中心》公共资源</strong></span><span></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">由英飞咨询肖敬亮博士主讲，肖老师毕业于澳洲政策研究中心（</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">CoPS</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">），主持和参与世界银行、欧盟委员会、加拿大外交部、以及中国大陆等多个国家与国际机构经济政策咨询项目。发表了</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">30</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">多篇英文学术性文章，参与撰写</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">2</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">本专业书籍。</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">1</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">CGE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">模型的应用及分类</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">2</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">MINIMAL</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">简介、操作、运行和数据库</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">3</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：方程、理论、线性化与求解方法</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">4</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：编程语言</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">TABLO</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">、生产结构、生产函数、进出口替代简介</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">5</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：生产函数特点、进出口方程推导、资本与劳动、产出</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">6</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：居民消费、出口、市场出清、其它总结性方程</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">7</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：模型闭合</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">8</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：模拟实例、</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">BOTE</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">、宏观结果分析</span><span></span>
+            </p>
+            <p class="MsoNormal" style="margin-left:21.0pt;">
+                <span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">第</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">9</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">集：行业结果分析、</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">MINIMAL</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">与</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">ORANI, MONASH</span><span style="font-size:14px;font-family:NSimSun;color:#000000;background-color:#FFFFFF;">模型的比较</span><span></span>
+            </p>
+            <p class="MsoNormal">
+                <br />
+            </p>            </div>
+    </div>
+</div>
+{% endblock %}

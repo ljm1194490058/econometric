@@ -1,0 +1,186 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;资料库            </div>
+    </div>
+</div>
+
+<div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+
+    <div class="container" style="overflow: hidden;padding-top: 0;">
+
+        <div class="mainContent">
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{database_img1.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{% static 'images/img-23.jpg' %}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:ziliao' %}">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:ziliao' %}">
+                    <p class="childTitle">TERM模型简介</p>
+                </a>
+                <p class="childTime">2018-08-08</p>
+                <a href="{% url 'app:ziliao' %}">
+                    <p class="childInfo">TERM（The Enormous Regional Model）是单国多区域并将每个区域作为单独经济的“自下而上”的CGE模型。自下而上的模型可以模拟冲击特定区域价格的政...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{database_img2.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{database_img2.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:ziliao' %}186&amp;id=146">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:ziliao' %}186&amp;id=146">
+                    <p class="childTitle">ORANI-G模型简介</p>
+                </a>
+                <p class="childTime">2018-08-04</p>
+                <a href="{% url 'app:ziliao' %}186&amp;id=146">
+                    <p class="childInfo">ORANI可计算一般均衡（CGE）模型开发于上世纪70年代澳大利亚政府资助的IMPACT项目。此模型在澳大利亚被学术界、政府部分以及业界广泛用于实践政策分...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{database_img3.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{database_img3.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:ziliao' %}186&amp;id=105">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:ziliao' %}186&amp;id=105">
+                    <p class="childTitle">GTAP模型简介</p>
+                </a>
+                <p class="childTime">2017-09-14</p>
+                <a href="{% url 'app:ziliao' %}186&amp;id=105">
+                    <p class="childInfo">GTAP是美国普渡大学主持开发的可计算一般均衡分析工具，GTAP模型除了能考虑传统CGE模型研究的问题外，最突出的特点是分析国际贸易带来的各种可能影响...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{database_img4.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{database_img4.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:ziliao' %}186&amp;id=98">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:ziliao' %}186&amp;id=98">
+                    <p class="childTitle">CGE模型简介-均衡局部-贸易-动态-未来</p>
+                </a>
+                <p class="childTime">2017-05-29</p>
+                <a href="{% url 'app:ziliao' %}186&amp;id=98">
+                    <p class="childInfo">英飞咨询合伙人Badri讲解的关于CGE模型简介、一般均衡与局部均衡模型、CGE模型细节、动态模拟、贸易政策模拟、以及未来发展方向的视频。需要一定英文基础...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{database_img5.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{database_img5.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:ziliao' %}186&amp;id=70">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:ziliao' %}186&amp;id=70">
+                    <p class="childTitle">可计算一般均衡CGE模型入门之MINIMAL</p>
+                </a>
+                <p class="childTime">2016-11-19</p>
+                <a href="{% url 'app:ziliao' %}186&amp;id=70">
+                    <p class="childInfo">这些视频将介绍一个小型、简化的CGE模型，MINIMAL，内容涉及模型的数据库、模型的基本理论和求解方法，以及对模拟结果的解释。MINIMAL虽然是一个教...</p>
+                </a>
+            </div>
+            <div style="clear:both"></div>
+            <div class="page_info">共<span>1</span>页<span>5</span>条记录</div>            </div>
+
+    </div>
+</div>
+
+{% endblock %}

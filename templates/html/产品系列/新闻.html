@@ -1,0 +1,231 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container--.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;研究报告            </div>
+    </div>
+</div>
+
+<div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1 active" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+    <div class="container" style="overflow: hidden;">
+        <div class="mainHead">
+            <p class="title">千禧年回合的农产品和非农产品贸易自由化</p>
+        </div>
+        <div style="margin-top:30px;"></div>
+        <!-- mainContent -->
+        <div class="mainContent">
+
+            <p style="text-align:justify;">
+                <span style="font-family:宋体;"><span></span></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-size: 16px; "><strong>Thomas Hertel, Kym Anderson, Joseph Francois and Will Martin </strong></span>
+            </p>
+            <span style="color:#000000;font-size:16px;"></span>
+            <p>
+                <br>
+            </p>
+            <p style="text-align:justify;">
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+            </p>
+            <p align="justify" style="text-align:justify;">
+                <span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">为了使农产品在世界贸易舞台上达到和制造业产品一样的自由化程度，我们还有许多需要做。农产品贸易不仅仅被农业贸易</span><span style="color:#000000;font-size:16px;">政策所扭曲。尤其在发展中国家，农业种植不仅被发达国家的农产品贸易保护政策所打击，而且也被这些国家本身的制造业和服务业政策所影响。本文研究了农产品和非农产品多边贸易自由化程度对农产品市场的影响。研究预测了</span></span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年乌拉圭回合（</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">UR</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">）完全执行后的世界经济情况，并且假设农业、矿业、制造业和服务业的贸易保护下降</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">，通过修正版的全球贸易</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">GTAP</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">模型分析了乌拉圭回合谈</span><span style="color:#000000;font-size:16px;">判后进一步自由化带来的影响。研究预测</span></span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">年农业和制造业贸易自由化给全球经济带来的收益是一样的，但是这些收益在发达和发展中国家的分布却有很大差异。本文也分析了非农业贸易</span><span style="color:#000000;font-size:16px;">政策改革和食品贸易余额之间的联动作用。对于一些地区来说，尤其是中国，非农业贸易政策改革作用非常大以致于能在贸易自由化后改变食品贸易余额变化的方向。这个结果表明，针对食品和农业贸易的政策制定者们应该多关注非农业贸易政策的改革。</span></span></span>
+            </p>
+            <p style="text-align:justify;">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><br>
+     </span></span>
+            </p>
+            <p style="text-align:justify;">
+                <span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"></span></span>
+            </p>
+            <p align="left" style="text-align:left;text-indent:-18pt;">
+                <span><span><b><span><span style="color:#000000;font-size:16px;">1</span><strong><span style="color:#000000;font-size:16px;">.</span></strong></span></b><span><strong><span style="color:#000000;font-size:16px;">&nbsp; </span></strong><span style="color:#000000;font-size:16px;"><strong>1. </strong></span></span></span></span><span style="font-family:宋体;"><span><span style="color:#000000;font-size:16px;"><strong>背景</strong></span><strong><span style="color:#000000;font-size:16px;">介绍</span></strong></span></span>
+            </p>
+            <p align="left" style="text-align:left;text-indent:-18pt;">
+                <br>
+            </p>
+            <p align="justify">
+                <span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1980</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年前关贸总协定（</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">GATT</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">）并未对农业贸易进行有效谈判，而乌拉圭回合一项最有大的成就便是将农业贸易政策搬上了多边谈判桌上。乌拉圭回合协议涉及将非关税农产品贸易壁垒转化为关税约束。协议规定这些关税约束以及对农产品生产和出口的补贴，将于</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1995</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">至</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2000</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年间（对发展中国家则是至</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2004</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年）实现逐年减免。自</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1950</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年以来发达国家对农产品实行大规模贸易保护，乌拉圭回合扭转了这个趋势。不仅如此，乌拉圭回合还改变了发达和发展中国家农业政策制定的方向。尽管乌拉圭回合承诺不会对农产品贸易保护进行大幅度削弱，各国政府政策制定的态度得到了根本改变，并为未来更深入的贸易政策变革打下了基础，包括下一次的</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">WTO</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">谈判回合。</span></span>
+            </p>
+            <p>
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+            </p>
+            <p>
+                <span style="font-family:宋体;"><span></span></span>
+            </p>
+            <p align="left" style="text-align:left;text-indent:-18pt;">
+                <span><span><b><span style="color:#000000;font-size:16px;">1.</span></b><span style="color:#000000;font-size:16px;"><strong>&nbsp; 2. </strong></span></span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>对</strong></span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>2005</strong></span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>年的展望</strong></span></span>
+            </p>
+            <p align="left" style="text-align:left;text-indent:-18pt;">
+                <br>
+            </p>
+            <p align="justify" style="text-align:justify;">
+                <span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">根据世界银行（</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">World
+Bank</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">）的历史和预测数据，本文预测了</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1995-2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年各地区驱动经济增长的主要因素数据，如人口，劳动力，资本和技术。同时本文也对</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年关税做出了预测。对于关税的预测是根据</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1995</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">GTAP</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">第四版数据库的关税税率，考虑到乌拉圭回合与中国加入</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">WTO</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">的冲击更新计算的。基于预测的经济增长和关税数据，我们能模拟出直至</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年各地区经济发展情况。模拟结果发现以下几方面的经济结构变化：由于乌拉圭回合未能在减少农产品补贴方面做出进一步进展，</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年发展中国家农产品占出口总值比例将更低（见图</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1</span></span><span style="font-family:宋体;"><span><span style="color:#000000;font-size:16px;">）；其次，乌拉圭回合对制造业产品</span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">的关税进行进一步减免，这凸显了制造业的重要性。其中，纺织品和成衣的关税被完全消除。这种不对称的关税减免将促进发展中国家制造业的对外开放，而对农产品则不其然。</span></span></span></span>
+            </p>
+            <p style="text-align:justify;">
+	<span style="font-family:宋体;"><span><span style="font-family:宋体;"><span><br>
+     </span></span></span></span>
+            </p>
+            <span style="font-family:宋体;"><span><span>
+<p>
+	<br>
+</p>
+<p>
+	<br>
+</p>
+<p align="left" style="text-align:left;text-indent:-18pt;">
+	<span><span><b><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">1</span><span style="color:#000000;font-size:16px;">.</span></span></b><span><span style="color:#000000;font-size:16px;">&nbsp;</span><strong><span style="color:#000000;font-size:16px;">3. </span></strong></span></span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>对</strong></span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>WTO2000</strong></span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>的分析</strong></span></span> <span style="font-size:16px;"></span>
+</p>
+<p align="left" style="text-align:left;text-indent:-18pt;">
+	<span style="font-size:16px;"><br>
+    </span>
+</p>
+<p align="justify">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">本节中我们根据上节预测数据分析乌拉圭回合后进一步自由化对全球经济的影响，包括农作物和食品的贸易变化。本文将所预测</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年贸易保护程度再下降</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">，主要包括农业，服务业，矿业和制造业的关税。此下降幅度比乌拉圭回合协议的幅度要更大，这也是与现实一致的。模拟结果主要比较农业和非农业改革产生的不同影响，尤其是对食品贸易影响。</span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span></span></span>
+</p>
+<p style="text-indent:-18pt;">
+	<b><span><span><span style="color:#000000;font-size:16px;">1&nbsp; 3.1.</span><span> </span></span></span></b><b><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">&nbsp;</span></span></b><b><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">农产品贸易自由化</span></span></b>
+</p>
+<p align="justify" style="text-align:justify;">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">我们首先来看乌拉圭回合后农产品贸易自由化的影响。当农产品边境价格减少</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">（</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">AgrMkt40</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">）时，将产生以下相反的两方面影响：首先，贸易保护的降低使得进口地区对食品的需求，因此促进了食品贸易；然而，出口补贴的减少可能减少主要出口地区生产商的供给，所以对世界食品贸易总量的影响是不确定的，正如表</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">6</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">所示。对乳制品来说，主要来源于欧盟的出口补贴的下降导致其世界贸易量减少。贸易总量增加最大的是烟酒类和其他加工食品，因为它们的初始保护程度很高，出口补贴的减少并未起到达到作用。</span></span>
+</p>
+<p align="justify" style="text-align:justify;">
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+</p>
+
+<span></span><br>
+     </span></span>
+<p>
+	<br>
+</p>
+<span></span>
+<p align="justify">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">由于农产品边境价格减少</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">导致的区域贸易量变化主要以贸易余额的形式呈现。为了简化分析以及强调跨行业竞争的重要性，我们假设每个地区的贸易余额总量是固定的。因此一个地区所有产品的贸易余额变化量总额为</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">0</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">。表</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">7</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">（原文中未给出）展示了由于农产品贸易保护下降</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">而导致的区域贸易余额变化。其中欧洲西部受到的影响最大，其食品进口总值相对于食品出口总值增加了</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">230</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">亿美元。其次是日本，中国，中东，北非和印度。北美，南美和澳洲不出意外地在贸易余额上得到了最大的增长，因为这些地区是主要的食品出口国。不过令人惊讶的是，台湾和其他新兴工业国家食品出口增加的幅度大于进口。这主要是由于农产品进出口结构变化引起的，例如台湾增加了谷物和油籽的进口但出口了更多的畜产品。对于其他新兴工业国家，贸易余额的增加主要是由加工食品和烟酒品的出口增加所驱动的。</span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span></span></span>
+</p>
+<p style="text-indent:-18pt;">
+	<b><span><span><span style="color:#000000;font-size:16px;">1. 3.2.</span><span> </span></span></span></b><b><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">非农产品贸易自由化</span></span></b>
+</p>
+<p align="justify" style="text-align:justify;">
+	<span style="font-family:宋体;"><span style="color:#000000;font-size:16px;">我们现在来分析</span><a name="undefined"></a><span style="color:#000000;font-size:16px;">非农产品贸易自由化</span><span style="color:#000000;font-size:16px;">对食品贸易的影响。本文主要关注的是区域食品贸易余额的变化，主要通过以下四个可能的传导机制而受到影响。第一，降低了农产品和食品的生产成本而促进了食品生产。制造业产品和服务是农产品和加工食品的重要生产投入，尤其是发达国家。第二，通过要素市场影响食品生产。非农产品贸易自由化促进了制造业的生产，于是农业劳动力成本也会相应上升。这可能产生两种截然不同的结果：农产品和食品生产成本上升而使得食品产量下降，或者农业的高要素回报吸引了制造业的劳动力和资本而导致其外流。第三，通过消费者的消费预算约束。如果非农产品贸易自由化降低了制造业产品和服务的价格，消费者将由于替代效应减少对食品的消费。最后，由于产品总贸易余额固定的假设产生的约束。当一个国家减少了非农产品关税而导致进口增加，为了满足这个假设，包括食品在内的其他产品的净出口需相应增加。</span></span>
+</p>
+<p>
+	<span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">&nbsp;</span></span>
+</p>
+<p align="justify">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">根据表</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">7</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">，采掘业和制造业的贸易自由化以及服务业贸易壁垒减少</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">对各区域食品贸易余额的影响呈现在最后两列。对于发达国家来说，非农产品贸易自由化对食品贸易的影响相比农产品贸易自由化的影响较小，所以我们将更关注亚洲和非洲的发展中国家。尽管农产品贸易自由化增加了亚洲新兴工业国家的食品贸易余额并起了主要作用，非农产品贸易自由化却带来了相反的结果。这是由于制造业产品关税降低</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">促进了其出口需求，而将生产资源从食品生产转移导致的结果。与此相反，对于印度尼西亚和其他东南亚国家，非农产品贸易自由化带来的影响超过农产品贸易自由化，所以食品贸易余额下降。</span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><br>
+     </span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span></span></span>
+</p>
+<p align="left" style="text-align:left;text-indent:-18pt;">
+	<span><span><b><span style="color:#000000;font-size:16px;">1.</span></b><span style="color:#000000;font-size:16px;"><strong>&nbsp;4. </strong></span></span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><strong>结论</strong></span></span>
+</p>
+<p align="left" style="text-align:left;text-indent:-18pt;">
+	<br>
+</p>
+<p align="justify">
+	<span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">本文预测了</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年乌拉圭回合（</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">UR</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">）完全执行后的世界经济情况，并且假设农业、矿业、制造业和服务业的贸易保护下降</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">40%</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">，通过修正版的全球贸易</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">GTAP</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">模型分析了乌拉圭回合谈判后进一步自由化带来的影响。研究预测</span></span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">2005</span></span><span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;">年农产品和非农产品贸易自由化给全球经济带来的收益是一样的，但是这些收益在发达和发展中国家的分布却有很大差异。本文也分析了非农产品贸易自由化和食品贸易余额之间的联动作用。对于一些地区来说，尤其是中国，非农产品贸易自由化作用远超农产品贸易自由化，以致于改变食品贸易余额变化的方向。这个结果表明，针对食品和农业贸易的政策制定者们应该多关注非农业贸易政策的改革。</span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><br>
+    </span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><br>
+    </span></span>
+</p>
+<p>
+	<span style="font-family:宋体;"><span><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;">原文：</span><span style="color: rgb(0, 0, 0); font-size: 16px;" font-size:16px;font-style:normal;font-weight:400;background-color:#ffffff;"="">Hertel, T.W., Anderson, K., Francois, J. and Martin, W., 2000. Agriculture and non-agricultural liberalization in the millennium round.</span></span></span></span>
+            </p>
+            <p>
+                <span style="color:#000000;font-family:宋体;font-size:16px;"><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-size:16px;"><span style="color:#000000;font-family:Arial,sans-serif;font-size:16px;font-style:normal;font-weight:400;background-color:#FFFFFF;"><span style="color:#000000;font-family:SimSun;font-size:16px;font-style:normal;font-weight:400;background-color:#FFFFFF;">摘要翻译：欧阳梦春</span></span></span></span></span>
+            </p>
+            <p>
+	<span style="font-family:宋体;"><span><span style="color:#000000;font-size:16px;"><span style="color:#222222;font-family:Arial,sans-serif;font-size:16px;font-style:normal;font-weight:400;background-color:#FFFFFF;"><br>
+     </span></span></span></span>
+            </p>
+            <p>
+                <br>
+            </p>
+            </span><span></span><br>            </div>
+        <!-- mainContent over -->
+    </div>
+</div>
+{% endblock %}

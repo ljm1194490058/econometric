@@ -1,0 +1,67 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}预测记录{% endblock title %}
+{% block main %}
+    <div class="row mb-4">
+        <div class="col-12 col-xl-8">
+            <h3 class="font-weight-bold">欢迎进入经济预测平台</h3>
+            <h6 class="font-weight-normal mb-0">返回 <a href="{% url 'app:myWorkbench' 1 %}"><span class="text-primary">我的预测</span></a></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 class="font-weight-bold">历史预测记录</h4>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="justify-content-end d-flex">
+                                <a class="btn btn-danger btn-icon-text btn-sm" onclick="dels()">删除所选实例</a>
+                                <a href="{% url 'app:createForecast'  %}" class="btn btn-success btn-icon-text btn-sm ml-1">新增实例</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="table-responsive">
+                       <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center; width: 3rem;"><input type="checkbox" id="checkAll"></th>
+                                <th>ID</th>
+                                <th>预测实例</th>
+                                <th>算法</th>
+                                <th>用户类型</th>
+                                <th>用户ID</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <form action="{% url 'app:forecast_del' %}" method="post" id="delsform">{% csrf_token %}
+                                {% for order in forecasts %}
+                                    <tr>
+                                    <td class="inbox-small-cells">
+                                        <input type="checkbox" class="mail-checkbox" name="delslist" value="{{ order.id }}">
+                                    </td>
+                                        <td>{{ order.id }}</td>
+                                        <td><a href="{% url 'app:myForecast' order.id %}">{{ order.name }}</a></td>
+                                        <td>{{ order.algorithmid }}</td>
+                                        <td>{{ order.usertype }}</td>
+                                        <td>{{ order.userid }}</td>
+                                    </tr>
+                                {% empty %}
+                                <tr class="odd text-center">
+                                    <td valign="top" colspan="6" class="dataTables_empty">暂无实例</td>
+                                </tr>
+                                {% endfor %}
+                            </form>
+                            </tbody>
+                        </table>
+                  </div>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+    <script src="{% static 'js/dels.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,140 @@
+{% extends '用户端/workbench.html' %}
+{% load static %}
+{% block title %}权限管理{% endblock title %}
+{% block main %}
+    <div class="row mb-4">
+        <div class="col-12 col-xl-8">
+            <h3 class="font-weight-bold">欢迎进入经济预测平台</h3>
+            <h6 class="font-weight-normal mb-0">返回 <a href="{% url 'app:myWorkbench' 1 %}"><span class="text-primary">我的预测</span></a></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <h4 class="card-title">权限管理</h4>
+                   {% if not has_team %}
+                    <div style="text-align: center;">
+                        <h4 style="text-align: center; margin-top: 30px;">您还没有团队哦</h4>
+                    </div>
+                    {% else %}
+                    <form class="form-horizontal" style="margin-top: 30px; margin-left: 30px; margin-right: 30px; font-size: 20px;" role="form" name="permissions">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="forecast_permissions" class="col-sm-2 control-label">预测：</label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="add_forecast" name="app.add_forecast"
+                                   {% if app_add_forecast %}
+                                   checked
+                                   {% endif %}
+                                >创建预测
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="view_forecast" name="app.view_forecast"
+                                   {% if app_view_forecast %}
+                                   checked
+                                   {% endif %}
+                                >查看预测
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="change_forecast" name="app.change_forecast"
+                                   {% if app_change_forecast %}
+                                   checked
+                                   {% endif %}
+                                >修改预测
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="delete_forecast" name="app.delete_forecast"
+                                   {% if app_delete_forecast %}
+                                   checked
+                                   {% endif %}
+                                >删除预测
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="order_permissions" class="col-sm-2 control-label">订单：</label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="add_order" name="app.add_order"
+                                    {% if app_add_order %}
+                                    checked
+                                    {% endif %}
+                                >创建订单
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="view_order" name="app.view_order"
+                                    {% if app_view_order %}
+                                    checked
+                                    {% endif %}
+                                >查看订单
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="change_order" name="app.change_order"
+                                    {% if app_change_order %}
+                                    checked
+                                    {% endif %}
+                                >修改订单
+                            </label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="delete_order" name="app.delete_order"
+                                   {% if app_delete_order %}
+                                   checked
+                                   {% endif %}
+                                >删除订单
+                            </label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="order_permissions" class="col-sm-2 form-control-label">算法：</label>
+                            <label class="checkbox col-sm-2">
+                                <input type="checkbox" value="run_algorithm" name="app.run_algorithm"
+                                   {% if app_run_algorithm %}
+                                   checked
+                                   {% endif %}
+                                >运行算法
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <div style="text-align: center; font-size: 14px;">
+                                <p>这些修改将作用于您管辖的团队</p>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col" style="text-align: center;">
+                                <button type="button" class="btn btn-primary" style="text-align: center;" onclick="saveUserPermissions()">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        function saveUserPermissions() {
+            let checkedList = $('input:checkbox:checked')
+            let permissions = []
+            checkedList.each((i, e) => {
+                permissions.push($(e).attr('name'))
+            })
+            $.ajax({
+                type: "POST",
+                url: "/app/userPermissions/",
+                headers: { 'X-CSRFToken': csrftoken },
+                dataType: "json",
+                data: {
+                    permissions: JSON.stringify(permissions),
+                },
+                success: (data) => {
+                    if (data.code === 0) {
+                        console.log(data.msg)
+                    } else {
+                        alert('修改失败，请稍后重试')
+                    }
+                    location.reload()
+                }
+            })
+        }
+    </script>
+{% endblock js %}

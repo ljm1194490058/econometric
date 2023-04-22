@@ -1,0 +1,197 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container-solution.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">解决方案</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:solution' %}">解决方案</a>&nbsp;&gt;&nbsp;贫困
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">解决方案</span>
+                    <small class="en"> / SOLUTION</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1 " data-type="181">
+                        <a href="{% url 'app:trade' %}">
+                            贸易 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:env' %}">
+                            环境能源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:source' %}">
+                            资源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:agri' %}">
+                            农业 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:finance' %}">
+                            财政金融 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="11">
+                        <a href="{% url 'app:poverty' %}">
+                            贫困 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1" data-type="11">
+                        <a href="{% url 'app:labor' %}">
+                            劳动力 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:disaster' %}">
+                            灾害评估 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        <div class="container" style="overflow: hidden;padding-top: 0">
+            <div class="mainHead">
+                <p class="title">贫困</p>
+            </div>
+            <div style="margin-top:30px;"></div>
+            <!-- mainContent -->
+            <div class="mainContent">
+
+                <p>
+                    <span style="font-size:16px;color:#666666;line-height:2;">CGE模型不断被用于研究全球贸易、环境政策、宏观经济政策、气候变化以及相关政策等对目标国家贫困的影响。</span>
+                </p>
+                <p>
+                    <span style="font-size:16px;color:#666666;line-height:2;">CGE模型在研究贫困问题中，外来冲击对贫困的影响路径主要包括以下几点：消费者价格和商品可获得性；要素价格及租用量；政府税收和转移支付；贸易条件及其它相关冲击。</span>
+                </p>
+                <p>
+	<span style="font-size:16px;color:#666666;line-height:2;"><br/>
+ </span>
+                </p>
+                <p>
+                    <span style="font-size:16px;color:#666666;line-height:2;"><span background-color:#ffffff;"="" microsoft="" yahei",="" "helvetica="" neue",="" tahoma,="" arial,="" 微软雅黑,="" 宋体,="" 黑体;="" white-space:="" normal;="" background-color:="" rgb(255,="" 255,="" 255);"="" style="transition-property: all; margin: 0px; padding: 1px 0px; color: rgb(102, 102, 102); font-size: 16px; line-height: 24px; font-family: "><strong>更多应用案例，请参考公司</strong></span><span
+                        background-color:#ffffff;"="" microsoft="" yahei",="" "helvetica="" neue",="" tahoma,=""
+                    arial,="" 微软雅黑,="" 宋体,="" 黑体;="" white-space:="" normal;="" background-color:="" rgb(255,="" 255,=""
+                    255);"="" style="transition-property: all; margin: 0px; padding: 1px 0px; color: rgb(102, 102, 102);
+                    font-size: 16px; line-height: 24px; font-family: "><a href="{% url 'app:research_report' %}"
+                                                                          target="_blank"><strong><span
+                        style="color:#337FE5;line-height:24px;font-size:16px;">研究报告</span></strong></a><strong><span
+                        style="line-height:24px;font-size:16px;">。</span></strong></span><span
+                        style="font-size:16px;"></span><br/>
+                    </span>
+                </p></div>
+            <!-- mainContent over -->
+            <!-- mainFoot -->
+            <div class="mainFoot">
+                <a href="http://v.t.sina.com.cn/share/share.php?title=贫困 /solutionshow.php">
+                    <div class="child">
+                        <div class="childIcon">
+                            <img src="{% static 'images/weibo.png' %}"/>
+                        </div>
+                        <div class="childInfo">
+                            <p>分享到</p>
+                            <p>新浪微博</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="child">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    </div>
+                    <script>
+                        window._bd_share_config = {
+                            "common": {
+                                "bdSnsKey": {},
+                                "bdText": "",
+                                "bdMini": "2",
+                                "bdMiniList": false,
+                                "bdPic": "",
+                                "bdStyle": "0",
+                                "bdSize": "32"
+                            },
+                            "share": {}
+                        };
+                        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                    </script>
+                    <div class="childIcon">
+                        <img src="{% static 'images/wechat.png' %}"/>
+                    </div>
+                    <div class="childInfo">
+                        <p>分享到</p>
+                        <p>朋友圈</p>
+                    </div>
+                </div>
+                <a onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href));return false;">
+                    <div class="child">
+                        <div class="childIcon">
+                            <img src="{% static 'images/qqzone.png' %} "/>
+                        </div>
+                        <div class="childInfo">
+                            <p>分享到</p>
+                            <p>QQ空间</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="mailto:?subject=贫困&body=/solutionshow.php">
+                    <div class="child">
+                        <div class="childIcon">
+                            <img src="{% static 'images/email.png' %}"/>
+                        </div>
+                        <div class="childInfo">
+                            <p>通过邮件</p>
+                            <p>分享给朋友</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- mainFoot over -->
+            <!-- about -->
+            <div class="about">
+                <div class="aboutTitle">
+                    <span class="title">相关文章</span>
+                    <div class="sub"></div>
+                </div>
+                <div class="container">
+                    <div class="child">
+                        <div class="childImg">
+                            <img src="{% static 'images/img-1.png' %}"/>
+                        </div>
+                        <div class="childTitle">
+                            <p>贫困</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- about over -->
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <meta charset="UTF-8">
+    <link href="{% static 'css_manage/head.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css_manage/menu.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+{% endblock %}
+
+{% block header %}
+    <div class="head">
+        <div class="head01"></div>
+        <div class="head02">平台管理系统</div>
+        <div class="head03"></div>
+    </div>
+
+    <div class="menu">
+        <ul class="sonarmenu">
+            <li><a href="{% url 'app:registerinfo' %}1.1个人注册信息.html">注册信息</a></li>
+            <li><a href="{% url 'app:zhangmu' %}2.1总账目查询.html">账目查询</a></li>
+            <li><a href="{% url 'app:algorithm' %}3.算法管理.html">算法管理</a></li>
+            <li><a href="{% url 'app:userinfo' %}4.1个人信息管理.html">用户详细信息</a></li>
+            <li><a href="{% url 'app:algorithmusage' %}5.1使用概况.html">查询记录</a></li>
+            <li><a href="{% url 'app:price' %}6.价格管理.html">价格管理</a></li>
+        </ul>
+    </div>
+{% endblock %}
+

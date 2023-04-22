@@ -1,0 +1,96 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">联系我们</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:contactus' %}">联系我们</a></div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-left-menu" style="margin-top: 0px;">
+        <div class="page-left-title">
+            <h1>
+                <span class="zh">联系我们</span>
+                <small class="en"> / ABOUT</small>
+            </h1>
+        </div>
+
+        <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+    </div>
+    <div class="container" style="overflow: hidden;padding-top: 0">
+        <!-- <div class="maxTitle">
+            <span class="title">联系我们</span>
+            <div class="sub"></div>
+        </div> -->
+        <div class="content-line"></div>
+        <div class="content">
+            <p>
+                <br>
+            </p>
+            <p class="MsoNormal">
+	<span style="font-size:16px;color:#000000;line-height:2;"><br>
+                 </span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;color:#666666;line-height:2;"><strong>中国大陆联系方法：</strong></span>
+            </p>
+            <p class="MsoNormal">
+	<span style="font-size:16px;color:#666666;line-height:2;"><strong><br>
+ </strong></span>
+            </p>
+            <p class="MsoNormal">
+                <span><span style="font-size:16px;"><span style="font-size:16px;color:#666666;"><strong>软件数据请咨询</strong></span><span style="font-size:16px;color:#666666;"><strong></strong></span><span style="font-size:16px;color:#666666;"><strong>：</strong></span></span></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;color:#666666;"><span style="font-size:16px;color:#666666;">邮箱：<span style="color:#337FE5;">stevenz1999@163.com</span></span></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;color:#666666;line-height:2;">电话：<span style="color:#337FE5;">+86 15611998991</span></span>
+            </p>
+            <p class="MsoNormal">
+                <span><span style="font-size:16px;"><span style="color:#666666;">地址：<span>北京市海淀区西土城路十号北京邮电大学</span></span></span></span>
+            </p>
+            <p class="MsoNormal">
+	<span style="font-size:16px;color:#666666;line-height:2;"><strong><br>
+ </strong></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;color:#666666;line-height:2;"><strong>其他业务请咨询：</strong></span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;line-height:2;color:#666666;">邮箱：<span style="font-size:16px;line-height:2;color:#666666;"><span style="color:#337FE5;">sz1999@163.com</span></span><span style="font-size:16px;color:#337FE5;line-height:2;">.com</span></span><span style="color:#666666;font-size:16px;">&nbsp; &nbsp; &nbsp;</span><span style="font-size:16px;color:#337FE5;">&nbsp;</span>
+            </p>
+            <p class="MsoNormal">
+                <span style="font-size:16px;"><span style="color:#666666;">电话: </span><span style="color:#337FE5;">+86 13671246526</span></span>
+            </p>
+            
+            <p class="MsoNormal">
+                <span><span style="font-size:16px;"><span style="color:#666666;">地址：<span>北京市海淀区西土城路十号北京邮电大学</span></span></span></span>
+            </p>
+            
+            <p class="MsoNormal">
+                <br>
+            </p>
+            <p class="MsoNormal">
+                <br>
+            </p>            </div>
+    </div>
+</div>
+{% endblock %}

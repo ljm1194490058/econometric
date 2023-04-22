@@ -1,0 +1,198 @@
+{% extends '用户端/workbench.html' %}
+{% load static %}
+{% block title %}创建新预测{% endblock title %}
+{% block main %}
+    <div class="row">
+        <div id="workplace" class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div id="form-part" class="card-body">
+                     <h4 class="card-title">创建新预测</h4>
+                    <form id="main-form" class="form-horizontal form-material">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="forecastName" class="col-sm-3 col-form-label">预测名称</label>
+                            <input type="text" class="col-sm-9 form-control" id="forecastName" style="width:300px">
+                        </div>
+        {#                <div class="form-group" style="margin-top: 20px;">#}
+        {#                    <label for="forecastAlgorithm">算法选择</label>#}
+        {#                    <select id=“forecastAlgorithm“ style="width:200px">#}
+        {#                        <option value='-1' selected>请选择预测算法</option>#}
+        {#                        {% for al in algorithms%}#}
+        {#                        <option value={{al.id}}> {{al.name}}</option>#}
+        {#                        {% endfor %}#}
+        {#                    </select>#}
+        {#                </div>#}
+                        <!-- <div id="paras" style="display:none">
+                            <div class="form-group">
+                                <label for="forecastName">参数1</label>
+                                <input type="text" class="form-control" id="para1" style="width:300px">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="forecastName">参数2</label>
+                                <input type="text" class="form-control" id="para2" style="width:300px">
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="formFile" class="form-label col-sm-3">请上传数据文件(.xlsx)</label>
+                            <div style="display: flex;flex-direction: row;">
+                                <input class="form-control" type="file" id="myfile" style="width:300px">
+                                <button type="button" class="btn btn-primary" onclick="upload()"
+                                    style="margin-left:20px;color: #fff;
+                                    background-color: #007bff;
+                                    border-color: #007bff;">上传</button>
+                                <a type="button" class="btn btn-primary" href="{% url 'downloadData' %}"
+                                style="margin-left:20px;color: #fff;
+                                background-color: #007bff;
+                                border-color: #007bff;">下载模版</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="forecastName" class="col-sm-3 col-form-label">文件名</label>
+                            <input type="text" class="form-control" id="filename" style="width:300px" readonly>
+                            <input type="text" id="dataid" style="display: none;" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="forecastType" class="col-sm-3 col-form-label">类型</label><br/>
+                            <div class="radio">
+                                {% if is_personal %}
+                                    <input type="radio" name="forecastType" value="personal" checked> 个人
+                                {% if has_team %}
+                                    <input type="radio" name="forecastType" value="team"> 团队
+                                {% endif %}
+                                {% endif %}
+                                {% if is_team %}
+                                    <input type="radio" name="forecastType" value="team" checked> 团队
+                                {% endif %}
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" style="color: #fff;
+                        background-color: #007bff;
+                        border-color: #007bff;" onclick="createF()">创建</button>
+                    </form>
+                </div>
+                <div id="data-part" class="card-body">
+                     <h4 class="card-title">数据预览</h4>
+                    <div id="data-diagram">
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+    <script type="text/javascript">
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        function createF() {
+            var formData = new FormData();
+            var name = $('#forecastName').val();
+            {#var tmp = document.getElementsByTagName("select");#}
+            {#var al = tmp[0].value;#}
+            var dataset = $('#dataid').val();
+            let forecastType = $('input:radio[name="forecastType"]:checked')
+            cdata = {
+                'name': name,
+                {#'al': Number(al),#}
+                'dataset': Number(dataset)
+            }
+            formData.append('forecastName', name);
+            {#formData.append('forecastAlgorithm', Number(al));#}
+            formData.append('dataid', Number(dataset));
+            formData.append('forecastType', forecastType.val())
+            $.ajax({
+                type: "POST",
+                url: "/createForecast/",
+                headers: { "X-CSRFToken": csrftoken },
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    alert(data.msg);
+                    // window.history.back(-1);
+                    window.location.href = document.referrer;
+                }
+            })
+        }
+
+
+        function upload() {
+            var myFile = document.getElementById("myfile").files[0];
+            var formData = new FormData();
+            formData.append('myfile', myFile);
+            $.ajax({
+                type: "POST",
+                url: "/uploadData/",
+                headers: { "X-CSRFToken": csrftoken },
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.code == 0) {
+                        alert(data.msg);
+                        document.getElementById("filename").value = data.filename
+                        document.getElementById("dataid").value = data.dataid
+                        setChart(data.dataindex,data.numdata,data.filename,data.columnName)
+                    }
+                    else alert(data.msg)
+                }
+
+            })
+        }
+
+        function showData() {
+            var dataPart = document.getElementById("data-part");
+            dataPart.style.display = "inline";
+        }
+
+        // function checkAlgorithm() {
+
+        //     var al = document.getElementsByTagName("select");
+        //     if (al[0].value != "0") {
+        //         document.getElementById("paras").style.display = "inline";
+        //     }
+        //     else {
+        //         document.getElementById("paras").style.display = "none";
+        //     }
+        // }
+
+        var myChart = echarts.init(document.getElementById('data-diagram'));
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: []
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: { type: 'value'},
+        };
+
+        function setChart(index,data,name,column){
+            option.title.text = name;
+            option.xAxis.data = index;
+            option.legend.data = column;
+            for (x in data){
+                option.series.push({type:'line',data:data[x],name:column[x]})
+            }
+
+            myChart.setOption(option)
+            showData()
+        }
+    </script>
+{% endblock js %}

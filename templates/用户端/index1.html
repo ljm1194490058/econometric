@@ -1,0 +1,483 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}历史算法{% endblock title %}
+{% block main %}
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 class="font-weight-bold">使用算法历史</h4>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="justify-content-end d-flex">
+                                <a href="{% url 'app:createForecast'  %}" class="btn btn-danger btn-icon-text btn-sm">删除所选算法</a>
+                                <a href="{% url 'app:createForecast'  %}" class="btn btn-success btn-icon-text btn-sm ml-1">新增算法</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="table-responsive">
+                       <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>预测名称</th>
+                                <th>数据集</th>
+                                <th>算法ID</th>
+                                <th>算法名称</th>
+                                <th>算法文件</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for al in al_list %}
+                                <tr>
+                                    <th scope="row">{{ al.forecast_name }}</th>
+                                    <td>{{ al.data_set }}</td>
+                                    <td>{{ al.al_id }}</td>
+                                    <td>{{ al.name }}</td>
+                                    <td>{{ al.filename }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr class="odd text-center">
+                                    <td valign="top" colspan="6" class="dataTables_empty">暂无算法</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                  </div>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+<script>
+
+</script>
+    <script src="{% static 'js/echarts/echarts.min.js' %}"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        let csrftoken = ''
+        tokenElement = document.querySelector('[name=csrfmiddlewaretoken]')
+        if (tokenElement !== null) {
+            csrftoken = tokenElement.value
+        }
+        var myChart = echarts.init(document.getElementById('forecast-diagram'));
+        var predictChart = echarts.init(document.getElementById('predict-diagram'));
+        var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: []
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {type: 'value'},
+        };
+
+        var predict_option = {
+            title: {
+                text: "批量预测结果",
+                left: "center",
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {type: 'value'},
+        }
+        dataid = "{{dataset.dataid}}"
+        fid = "{{dataset.fid}}"
+        alid = "{{aid}}"
+        index = {{dataset.dataindex|safe}}
+            data = "{{dataset.numdata}}"
+        columnName = "{{dataset.columnName|safe}}"
+        paranum = "{{paranum}}"
+        multipe = "{{multiple}}"
+        multipe = multipe !== "False"
+        datax = '{{datax|safe}}'
+        datay = '{{datay|safe}}'
+        let x;
+        if (datax !== "None") {
+            datax = JSON.parse(datax)
+        } else {
+            datax = []
+        }
+
+        if (datay !== "None") {
+            datay = JSON.parse(datay)
+            {#showXY()#}
+        } else {
+            datay = []
+        }
+
+
+        {#index = JSON.parse(index)#}
+        data = JSON.parse(data)
+        columnName = columnName.slice(1, -1)
+        columnName = columnName.split(",")
+
+        for (x in columnName) {
+            if (x === 0) columnName[x] = columnName[x].slice(1, -1);
+            else columnName[x] = columnName[x].slice(2, -1)
+        }
+
+        option.xAxis.data = index;
+        option.legend.data = columnName
+        for (x in data) {
+            option.series.push(
+                {
+                    type: 'line',
+                    data: data[x],
+                    name: columnName[x]
+                }
+            )
+        }
+
+        myChart.setOption(option);
+
+        function deleteItem() {
+            var formData = new FormData();
+            formData.append("fid", fid);
+            $.ajax({
+                type: "POST",
+                url: "/deleteForecast/",
+                headers: {"X-CSRFToken": csrftoken},
+                dataType: "json",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.code === 0) {
+                        alert(data.msg)
+                        window.location.href = document.referrer;
+                    }
+                }
+            })
+
+        }
+
+        function changeDiagram(dname) {
+            if (dname === 'all') {
+                option.series = []
+                for (x in data) {
+                    option.series.push({type: 'line', data: data[x], name: columnName[x]})
+                }
+                myChart.setOption(option, true)
+                return
+            }
+
+            for (x in columnName) {
+                if (columnName[x] === dname) {
+
+                    option.series = []
+                    option.series.push({type: 'line', data: data[x], name: columnName[x]})
+                    myChart.setOption(option, true)
+                    break
+                }
+            }
+
+        }
+
+        {##}
+        {#function hideXY() {#}
+        {#    document.getElementById("predict-button").style.display = "none"#}
+        {#    document.getElementById("predict-button-multi").style.display = "none"#}
+        {#    xdivs = document.getElementById("predict_action_x")#}
+        {#    ydivs = document.getElementById("predict_action_y")#}
+        {#    inputs = document.getElementById("operation-content").getElementsByTagName("input")#}
+        {#    for (item of inputs) {#}
+        {#        item.value = ""#}
+        {#    }#}
+        {#    for (item of columnName) {#}
+        {#        xsubdiv = xdivs.getElementsByTagName("div")#}
+        {#        ysubdiv = ydivs.getElementsByTagName("div")#}
+        {#        for (div of xsubdiv) {#}
+        {#            if (div.id == item) div.style.display = "none"#}
+        {#        }#}
+        {#        for (div of ysubdiv) {#}
+        {#            if (div.id == item) div.style.display = "none"#}
+        {#        }#}
+        {#    }#}
+        {#}#}
+            {##}
+            {#function showXY() {#}
+            {#    document.getElementById("predict-button").style.display = "inline"#}
+            {#    document.getElementById("predict-button-multi").style.display = "inline"#}
+            {#    xdivs = document.getElementById("predict_action_x")#}
+            {#    ydivs = document.getElementById("predict_action_y")#}
+            {##}
+            {#    for (x of datax) {#}
+            {#        subdiv = xdivs.getElementsByTagName("div")#}
+            {#        for (div of subdiv) {#}
+            {#            if (div.id == x) div.style.display = "flex"#}
+            {#        }#}
+            {#    }#}
+            {##}
+            {#    for (y of datay) {#}
+            {#        subdiv = ydivs.getElementsByTagName("div")#}
+            {#        for (div of subdiv) {#}
+            {#            if (div.id == y) div.style.display = "flex"#}
+            {#        }#}
+            {#    }#}
+            {##}
+            {#}#}
+                {##}
+                {#function runAl() {#}
+                {#    var checks = null#}
+                {#    var checks_y = null#}
+                {#    var checked = []#}
+                {#    var checked_y = []#}
+                {#    if (multipe) {#}
+                {#        checks = document.getElementsByName("xs")#}
+                {#    } else {#}
+                {#        checks = document.getElementsByName("x")#}
+                {#    }#}
+                {#    for (var i = 0; i < checks.length; i++) {#}
+                {#        if (checks[i].checked) {#}
+                {#            checked.push(checks[i].value)#}
+                {#        }#}
+                {#    }#}
+                {##}
+                {#    checks_y = document.getElementsByName("y")#}
+                {#    for (var i = 0; i < checks_y.length; i++) {#}
+                {#        if (checks_y[i].checked) {#}
+                {#            checked_y.push(checks_y[i].value)#}
+                {#        }#}
+                {#    }#}
+                {#    if (checked.length == 0) {#}
+                {#        alert("请选择自变量！")#}
+                {#        return#}
+                {#    }#}
+                {##}
+                {#    if (checked_y.length == 0) {#}
+                {#        alert("请选择因自变量！")#}
+                {#        return#}
+                {#    }#}
+                {##}
+                {#    if (checked.indexOf(checked_y[0]) == 0) {#}
+                {#        alert("自变量中不允许包含因变量！")#}
+                {#        return#}
+                {#    }#}
+                {##}
+                {#    var paras = {}#}
+                {#    var arr = document.getElementById("parameters").getElementsByTagName("INPUT");#}
+                {#    for (var j = 0; j < arr.length; j++) {#}
+                {#        if (arr[j].type = "text") {#}
+                {#            if (arr[j].value == "") {#}
+                {#                alert("参数不能为空！")#}
+                {#                return#}
+                {#            }#}
+                {#            paras[arr[j].name] = arr[j].value#}
+                {#        }#}
+                {##}
+                {#    }#}
+                {##}
+                {#    datax = checked;#}
+                {#    datay = checked_y;#}
+                {##}
+                {#    var formData = new FormData();#}
+                {#    formData.append("fid", fid);#}
+                {#    formData.append("dataid", dataid);#}
+                {#    formData.append("alid", alid);#}
+                {#    formData.append("paras", JSON.stringify(paras));#}
+                {#    formData.append("xdata", JSON.stringify(checked))#}
+                {#    formData.append("ydata", JSON.stringify(checked_y))#}
+                {#    $.ajax({#}
+                {#        type: "POST",#}
+                {#        url: "/runAl/",#}
+                {#        headers: {"X-CSRFToken": csrftoken},#}
+                {#        dataType: "json",#}
+                {#        data: formData,#}
+                {#        cache: false,#}
+                {#        processData: false,#}
+                {#        contentType: false,#}
+                {#        success: function (data) {#}
+                {#            if (data.code == 0) {#}
+                {#                alert(data.msg)#}
+                {#                sc = document.getElementById("score")#}
+                {##}
+                {#                sc.innerHTML = data.score#}
+                {#                if (data.score < 0.4) sc.style.color = "red"#}
+                {#                else if (data.score < 0.6) sc.style.color = "yellow"#}
+                {#                else sc.style.color = "green"#}
+                {#                hideXY()#}
+                {#                showXY()#}
+                {#            }#}
+                {#        }#}
+                {#    })#}
+                {#}#}
+                    {##}
+                    {#function runPredict() {#}
+                    {#    butt = document.getElementById("predict-button")#}
+                    {#    butt_load = document.getElementById("predict-button-loading")#}
+                    {#    butt.style.display = "none"#}
+                    {#    butt_load.style.display = "inline"#}
+                    {#    xdivs = document.getElementById("predict_action_x")#}
+                    {#    ydivs = document.getElementById("predict_action_y")#}
+                    {#    inputs = xdivs.getElementsByTagName("input")#}
+                    {#    inputdata = []#}
+                    {#    for (item of inputs) {#}
+                    {#        if (item.value != "") {#}
+                    {#            inputdata.push(Number(item.value))#}
+                    {#        }#}
+                    {##}
+                    {#    }#}
+                    {#    if (inputdata.length == 0) {#}
+                    {#        alert("请输入数据！");#}
+                    {#        butt.style.display = "inline"#}
+                    {#        butt_load.style.display = "none"#}
+                    {#        return;#}
+                    {#    }#}
+                    {#    inputdata = [inputdata]#}
+                    {#    var formData = new FormData();#}
+                    {#    formData.append("fid", fid);#}
+                    {#    formData.append("data", JSON.stringify(inputdata))#}
+                    {##}
+                    {#    $.ajax({#}
+                    {#        type: "POST",#}
+                    {#        url: "/runPredict/",#}
+                    {#        headers: {"X-CSRFToken": csrftoken},#}
+                    {#        dataType: "json",#}
+                    {#        data: formData,#}
+                    {#        cache: false,#}
+                    {#        processData: false,#}
+                    {#        contentType: false,#}
+                    {#        success: function (data) {#}
+                    {#            if (data.code == 0) {#}
+                    {#                yd = data.y[0][0]#}
+                    {#                sub = ydivs.getElementsByTagName("div")#}
+                    {#                for (y of datay) {#}
+                    {##}
+                    {#                    for (div of sub) {#}
+                    {#                        if (div.id == y) {#}
+                    {#                            div.getElementsByTagName("input")[0].value = yd#}
+                    {#                        }#}
+                    {#                    }#}
+                    {#                }#}
+                    {#            }#}
+                    {#            butt.style.display = "inline"#}
+                    {#            butt_load.style.display = "none"#}
+                    {#        }#}
+                    {#    })#}
+                    {#}#}
+                        {##}
+                        {#function runMultiPredict() {#}
+                        {#    butt = document.getElementById("predict-button-multi");#}
+                        {#    butt_load = document.getElementById("predict-button-loading-multi");#}
+                        {#    butt.style.display = "none";#}
+                        {#    butt_load.style.display = "inline";#}
+                        {#    var predictfile = document.getElementById("customFile").files[0];#}
+                        {#    var formData = new FormData();#}
+                        {#    formData.append('myfile', predictfile);#}
+                        {#    formData.append("fid", fid);#}
+                        {#    $.ajax({#}
+                        {#        type: "POST",#}
+                        {#        url: "/runMultiPredict/",#}
+                        {#        headers: {"X-CSRFToken": csrftoken},#}
+                        {#        data: formData,#}
+                        {#        cache: false,#}
+                        {#        processData: false,#}
+                        {#        contentType: false,#}
+                        {#        success: function (data) {#}
+                        {#            if (data.code === 0) {#}
+                        {#                $('#predict-diagram').css({'display': 'block'})#}
+                        {#                predict_option.xAxis.data = data.index;#}
+                        {#                predict_option.series = [{#}
+                        {#                    type: 'line',#}
+                        {#                    data: data.y[0],#}
+                        {#                    name: datay[0]#}
+                        {#                }]#}
+                        {#                predictChart.setOption(predict_option, true)#}
+                        {#            } else {#}
+                        {#                alert(data.msg)#}
+                        {#            }#}
+                        {#            butt.style.display = "inline"#}
+                        {#            butt_load.style.display = "none"#}
+                        {#        }#}
+                        {#    })#}
+                        {##}
+                        {#}#}
+
+                            function showFilename(file) {
+                                $("#filename_label").html(file.name);
+                            }
+
+                            function orderManage(isBuy) {
+                                let time = $('#order-time').text()
+                                let price = $('#order-price').text()
+                                let count = $('#order-count').val()
+                                if (time === '' || price === '' || count === '') {
+                                    alert('购买信息不足')
+                                    return
+                                }
+                                let isTeamForecast = '{{ is_team_forecast }}' === 'True'
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/orderManage/",
+                                    headers: {"X-CSRFToken": csrftoken},
+                                    data: {
+                                        'time': time,
+                                        'price': price,
+                                        'count': count,
+                                        'forecast_id': fid,
+                                        'is_team_forecast': isTeamForecast,
+                                        'is_buy': isBuy,
+                                    },
+                                    success: (data) => {
+                                        if (data.code === 0) {
+                                            if (isBuy) alert('买入成功')
+                                            else alert('卖出成功')
+                                            window.location.reload()
+                                        } else {
+                                            alert('买入失败，请稍后重试')
+                                        }
+                                    }
+                                })
+                            }
+
+                            myChart.on('click', (params) => {
+                                $('#order-data').css({
+                                    'display': 'block'
+                                })
+                                console.log(params)
+                                let time = $('#order-data-form #order-time')
+                                let price = $('#order-data-form #order-price')
+                                time.html(params.name)
+                                price.html(params.data)
+                            })
+
+                            predictChart.on('click', (params) => {
+                                $('#order-data').css({
+                                    'display': 'block',
+                                })
+                                let time = $('#order-data-form #order-time')
+                                let price = $('#order-data-form #order-price')
+                                time.html(params.name)
+                                price.html(params.data)
+                            })
+
+    </script>
+{% endblock js %}

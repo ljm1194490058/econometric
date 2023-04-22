@@ -1,0 +1,323 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <style>
+        .container {
+            position: relative;
+            width: 1200px;
+            margin: 0px auto;
+        }
+
+        .text_field {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: #FFFAFA;
+            min-width: 80px;
+
+        }
+
+        .text_field:hover .menu {
+            display: block;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*nav*/
+        .text_field a {
+            color: gray;
+        }
+
+        .text_field a:hover {
+            text-decoration: none;
+        }
+
+        .btn_field a {
+            color: gray;
+        }
+
+        .btn_field a:hover {
+            text-decoration: none;
+        }
+
+        .maxTitle {
+            position: relative;
+            line-height: 34px;
+        }
+
+        .maxTitle span {
+            position: relative;
+            z-index: 0;
+            padding-right: 18px;
+            background: #fff;
+            color: #0093c4;
+            font-size: 30px;
+        }
+
+        .maxTitle .sub {
+            position: absolute;
+            z-index: -1;
+            top: 18px;
+            height: 1px;
+            width: 940px;;
+            background: #d6d6d6;
+        }
+
+    </style>
+
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">企业简介</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:aboutus' %}">关于我们</a>&nbsp;&gt;&nbsp;服务对象
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+    <div class="page-left-menu" style="margin-top: 0px;">
+        <div class="page-left-title">
+            <h1>
+                <span class="zh">关于我们</span>
+                <small class="en"> / ABOUT</small>
+            </h1>
+        </div>
+        <div class="page-left-menu-box">
+            <div class="menu1">
+                <div class="menu-item1" data-type="6">
+                    <a href="{% url 'app:aboutus' %}">
+                        企业简介  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1 active" data-type="143">
+                    <a href="{% url 'app:serviceobject' %}">
+                        服务对象  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1" data-type="144">
+                    <a href="{% url 'app:companyculture' %}">
+                        公司文化   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;     </a>
+                </div>
+
+                <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+
+
+            </div>
+
+        </div>
+    </div>
+        <div class="container" style="overflow: hidden;">
+            <div class="maxTitle">
+                <span class="title">服务对象</span>
+                <div class="sub"></div>
+            </div>
+            <div class="content-line"></div>
+            <div class="content">
+                <p>
+                    <br>
+                </p>
+                <p class="MsoNormal">
+                    <span style="color:#000000;line-height:2;font-size:16px;">{{serviceobject_texts.0}}</span>
+                </p>
+                <p class="MsoNormal">
+	<span style="font-size:16px;line-height:2;"><span style="color:#666666;"></span><br>
+                    </span>
+                </p>
+                <p class="MsoNormal">
+                    <span style="font-size:16px;line-height:2;"><span
+                            style="color:#000000;font-size:16px;">本公司合作和服务</span><span
+                            style="color:#000000;font-size:16px;">的机构有：</span></span>
+                </p>
+                <p class="MsoNormal">
+	<span style="font-size:16px;line-height:2;"><span style="color:#666666;">
+	</span></span></p>
+                <table class="MsoTableGrid ke-zeroborder" style="border:none;" border="0" cellspacing="0"
+                       cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <img alt="" src="{%static serviceobject_img1 %}">
+                            </p>
+                            <a href="http://ec.europa.eu/index_en.htm" target="_blank"> </a>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.1}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img2 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.2}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img3 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.3}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img4 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.4}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img5 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.5}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img6 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.6}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img7 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.7}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img8 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.8}}</span>
+                            </p>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img9 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;">{{serviceobject_texts.9}}</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width=" 390">
+                                <img alt="" src="{%static serviceobject_img10 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                               <span style="color:#000000;font-size:16px;">{{serviceobject_texts.10}}</span>
+                                        
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img11 %}"><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                                <span style="color: rgb(0, 0, 0); font-size: 16px;" font-size:16px;color:#666666;"="">{{serviceobject_texts.11}}</span>
+                                
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="390">
+                            <img alt="" src="{%static serviceobject_img12 %}"><span
+                                style="font-size:16px;color:#666666;"></span><br>
+                        </td>
+                        <td width="390">
+                            <p class="MsoNormal">
+                            <span style="color:#000000;">{{serviceobject_texts.12}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p align="left">
+                                <span style="color:#000000;">&nbsp; </span>
+                            </p>
+                            <p align="left">
+                                <span style="color:#000000;">&nbsp;&nbsp; </span><img alt="" src="{{ serviceobject_img13.img }}">
+                            </p>
+                        </td>
+                        <td>
+
+                            <p>
+                                <span style="color:#000000;"></span>
+                            </p>
+                            <p>
+                                <span style="color:#000000;font-size:16px;">{{serviceobject_texts.13}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div align="left">
+                                <img width="150" height="150" title="" align="" alt=""
+                                     src="{%static serviceobject_img14 %}"><br>
+                            </div>
+                        </td>
+                        <td>
+                            <p>
+                                <span style="color:#000000;font-size:16px;">{{serviceobject_texts.14}}</span>
+                            </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'user/css/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/dataTables.bootstrap4.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'user/css/select.dataTables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+  <!-- css -->{% block css %}{% endblock css %}
+</head>
+<body class="sidebar-dark">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-3" href="{% url 'app:index' %}" style="color: white;">经济预测平台</a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'app:index' %}"><i class="ti-world icon-md text-info"></i></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+             <!-- <form action="" method="post">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <button class="input-group-text" id="search" type="submit">
+                  <i class="icon-search"></i>
+                </button>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search" name="search_info">
+            </div>
+              </form><-->
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+                {% if is_login %}
+                    {% if is_personal %}
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <i class="ti-user"></i>欢迎登录
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'app:personcenter' %}">
+                            <i class="ti-user text-primary"></i>个人中心
+                          </a>
+                          <a class="dropdown-item" href="{% url "app:logout" %}">
+                            <i class="ti-power-off text-primary"></i>退出登录
+                          </a>
+                        </div>
+                    {% else %}
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <i class="ti-user"></i>欢迎登录
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'app:personcenter2' %}">
+                            <i class="ti-user text-primary"></i>团队中心
+                          </a>
+                          <a class="dropdown-item" href="{% url "app:logout" %}">
+                            <i class="ti-power-off text-primary"></i>退出登录
+                          </a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                    <i class="ti-user"></i>未登录
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="{% url "app:login" %}">
+                    <i class="ti-shift-left text-primary"></i>登录
+                  </a>
+                  <a class="dropdown-item" href="{% url "app:login" %}">
+                    <i class="ti-shift-left text-primary"></i>注册
+                  </a>
+                </div>
+                {% endif %}
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 导航栏 -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- 导航栏 -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+            {% if is_login %}
+            {% if is_personal %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:personcenter' %}">
+              <i class="ti-support menu-icon"></i>
+              <span class="menu-title">个人信息</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link"  href="{% url 'app:personal_info' %}">
+              <i class="ti-settings menu-icon"></i>
+              <span class="menu-title">信息管理</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:balance_manage' %}">
+              <i class="ti-money menu-icon"></i>
+              <span class="menu-title">余额管理</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:myWorkbench' 1 %}/">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">工作台</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:forecast_history' 1 %}/">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">预测记录</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:dataset_manage' %}">
+              <i class="ti-server menu-icon"></i>
+              <span class="menu-title">数据管理</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:algorithm_history' %}">
+              <i class="icon-clock menu-icon"></i>
+              <span class="menu-title">历史算法</span>
+            </a>
+          </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:index' %}">
+                        <i class="ti-home menu-icon"></i>
+                        <span class="menu-title">首页</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="{% url 'app:personcenter2' %}">
+                        <i class="ti-support menu-icon"></i>
+                        <span class="menu-title">团队信息</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:team_info' %}">
+                        <i class="ti-settings menu-icon"></i>
+                        <span class="menu-title">信息管理</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:myWorkbench' 1 %}/">
+                        <i class="icon-grid menu-icon"></i>
+                        <span class="menu-title">工作台</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:forecast_history' 1 %}/">
+                        <i class="icon-bar-graph menu-icon"></i>
+                        <span class="menu-title">预测记录</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:algorithm_history' %}">
+                        <i class="icon-clock menu-icon"></i>
+                        <span class="menu-title">历史算法</span>
+                    </a>
+                </li>
+            {% endif %}
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:login' %}">
+                        <i class="ti-shift-left menu-icon"></i>
+                        <span class="menu-title">登录</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:login' %}">
+                        <i class="ti-shift-left menu-icon"></i>
+                        <span class="menu-title">注册</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+      </nav>
+        <!-- 网页主体 -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+           <div class="container-fluid">
+            <!-- 网页主体内容 -->
+              {% block main %}
+
+              {% endblock main %}
+            </div>
+        </div>
+        <!-- 网页尾部 -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2023.DjangoM All rights reserved.</span>
+          </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between"></div>
+        </footer> 
+      </div>
+    </div>
+  </div>
+
+  <!-- plugins:js -->
+  <script src="{% static 'user/js/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <script src="{% static 'user/js/off-canvas.js' %}"></script>
+  <script src="{% static 'user/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'user/js/template.js' %}"></script>
+  <script src="{% static 'user/js/settings.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{% static 'user/js/dashboard.js' %}"></script>
+  <!-- End custom js for this page-->
+    {% block js %}{% endblock js %}
+</body>
+
+</html>
+

@@ -1,0 +1,382 @@
+{% extends '用户端/workbench.html' %}
+{% load static %}
+{% block title %}预测实例{% endblock title %}
+{% load static %}
+{% block css %}
+    <style>
+        #title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
+            justify-content: space-between;
+        }
+
+
+        #data-operation {
+            margin-left: auto;
+            margin-right: auto;
+            width: 320px;
+        }
+
+        #forecast-diagram {
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            width: 600px;
+        }
+
+        #predict-diagram {
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+<!--            width: 600px;-->
+        }
+
+        #forecast-result {
+            margin-top: 50px;
+            margin-left: 50px
+        }
+
+        #forecast-operation {
+
+            padding-bottom: 200px;
+            margin-bottom: 200px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 50px
+        }
+
+        #operation-content {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        #predict_action_x {
+            width: 45%;
+        }
+
+        #predict_action_y {
+            width: 45%;
+        }
+
+        .input-group {
+
+            display: none;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        #predict-button {
+            margin-top: 20px;
+            width: 98px;
+            display: none;
+        }
+
+        #predict-button-loading {
+            margin-top: 20px;
+            width: 98px;
+            display: none;
+        }
+
+        #predict-button-multi {
+            margin-top: 20px;
+            width: 98px;
+            display: none;
+        }
+
+        #predict-button-loading-multi {
+            margin-top: 20px;
+            width: 98px;
+            display: none;
+        }
+
+        #muti-predict {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div name="workplace" class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div id="form-part" class="card-body">
+                     <h4 class="card-title">预测实例</h4>
+                        <div id="workplace">
+        {% if can_delete_forecast %}
+        <button type="button" class="btn btn-primary"
+                style="margin-top: 20px;margin-left:80%;background-color: red;border: none;" onclick="deleteItem()">删除实例
+        </button>
+        {% endif %}
+        <h3 style="text-align: center ;margin-top: 30px;">{{ fname }}</h3>
+        <h5 style="text-align: center ;margin-top: 10px;">{{ aname }} 算法</h5>
+        <div class="forecast-content">
+            <div id="data-operation"></div>
+            <div id="forecast-diagram"></div>
+            <div style="text-align: center; margin: 10px 0">
+                <div id="option-button">
+                    <button type="button" class="btn btn-info" onclick="changeDiagram('all')">总览</button>
+                    {% for item in dataset.columnName %}
+                        <button type="button" class="btn btn-info"
+                                onclick="changeDiagram('{{ item }}')">{{ item }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+            <div style="display: none;" id="predict-diagram"></div>
+            <div id="forecast-result">
+                {% if can_add_order %}
+                <div id="order-data" style="display:none;">
+                    <h4>数据详情</h4>
+                    <form id="order-data-form">
+                        <div>当前账户余额：{{ balance }}</div>
+                        <div>时间：<span id="order-time"></span></div>
+                        <div>价格：<span id="order-price"></span></div>
+                        <div class="row">
+                            <div class="col-2" style="white-space: nowrap; margin-right: 10px;">
+                                <label>数量：
+                                    <input id="order-count" name="count" value="1" type="number" style="width: 60px;">
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label style="margin: 0 10px;">
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="orderManage(true)">买入</button>
+                                </label>
+                                <label style="margin: 0 10px;">
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="orderManage(false)">卖出</button>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% endif %}
+                {% if can_run_algorithm %}
+                    <h4>算法操作</h4>
+                    <form name="run_algorithm" method="post" action="{% url 'forecast:index' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="file_path" value="{{ file_path }}">
+                        <input type="hidden" name="features" value="{{ dataset.columnName }}">
+                        <input class="btn btn-primary" type="submit" value="运行算法"/>
+                    </form>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script type="text/javascript">
+        let csrftoken = ''
+        tokenElement = document.querySelector('[name=csrfmiddlewaretoken]')
+        if (tokenElement !== null) {
+            csrftoken = tokenElement.value
+        }
+        var myChart = echarts.init(document.getElementById('forecast-diagram'));
+        var predictChart = echarts.init(document.getElementById('predict-diagram'));
+        var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: []
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {type: 'value'},
+        };
+
+        var predict_option = {
+            title: {
+                text: "批量预测结果",
+                left: "center",
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            series: [],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {type: 'value'},
+        }
+        dataid = "{{dataset.dataid}}";
+        fid = "{{dataset.fid}}";
+        alid = "{{aid}}";
+        index = {{dataset.dataindex|safe}};
+        data = "{{dataset.numdata}}";
+        columnName = "{{dataset.columnName|safe}}";
+        paranum = "{{paranum}}";
+        multipe = "{{multiple}}";
+        multipe = multipe !== "False";
+        datax = '{{datax|safe}}';
+        datay = '{{datay|safe}}';
+        let x;
+        if (datax !== "None") {
+            datax = JSON.parse(datax)
+        } else {
+            datax = []
+        }
+
+        if (datay !== "None") {
+            datay = JSON.parse(datay)
+            {#showXY()#}
+        } else {
+            datay = []
+        }
+
+        data = JSON.parse(data);
+        columnName = columnName.slice(1, -1);
+        columnName = columnName.split(",");
+
+        for (x in columnName) {
+            if (x === 0) columnName[x] = columnName[x].slice(1, -1);
+            else columnName[x] = columnName[x].slice(2, -1)
+        }
+
+        option.xAxis.data = index;
+        option.legend.data = columnName
+        for (x in data) {
+            option.series.push(
+                {
+                    type: 'line',
+                    data: data[x],
+                    name: columnName[x]
+                }
+            )
+        }
+
+        myChart.setOption(option);
+
+        function deleteItem() {
+            var formData = new FormData();
+            formData.append("fid", fid);
+            $.ajax({
+                type: "POST",
+                url: "/deleteForecast/",
+                headers: {"X-CSRFToken": csrftoken},
+                dataType: "json",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.code === 0) {
+                        alert(data.msg)
+                        window.location.href = document.referrer;
+                    }
+                }
+            })
+
+        }
+
+        function changeDiagram(dname) {
+            if (dname === 'all') {
+                option.series = []
+                for (x in data) {
+                    option.series.push({type: 'line', data: data[x], name: columnName[x]})
+                }
+                myChart.setOption(option, true)
+                return
+            }
+
+            for (x in columnName) {
+                if (columnName[x] === dname) {
+
+                    option.series = []
+                    option.series.push({type: 'line', data: data[x], name: columnName[x]})
+                    myChart.setOption(option, true)
+                    break
+                }
+            }
+
+        }
+
+        function showFilename(file) {
+            $("#filename_label").html(file.name);
+        }
+
+        function orderManage(isBuy) {
+            let time = $('#order-time').text();
+            let price = $('#order-price').text();
+            let count = $('#order-count').val();
+            if (time === '' || price === '' || count === '') {
+                alert('购买信息不足')
+                return
+            }
+            let isTeamForecast = '{{ is_team_forecast }}' === 'True';
+            $.ajax({
+                type: "POST",
+                url: "/orderManage/",
+                headers: {"X-CSRFToken": csrftoken},
+                data: {
+                    'time': time,
+                    'price': price,
+                    'count': count,
+                    'forecast_id': fid,
+                    'is_team_forecast': isTeamForecast,
+                    'is_buy': isBuy,
+                },
+                success: (data) => {
+                    if (data.code === 0) {
+                        if (isBuy) alert('买入成功')
+                        else alert('卖出成功')
+                        window.location.reload()
+                    } else {
+                        alert('买入失败，请稍后重试')
+                    }
+                }
+            })
+        }
+
+        myChart.on('click', (params) => {
+            $('#order-data').css({
+                'display': 'block'
+            })
+            console.log(params)
+            let time = $('#order-data-form #order-time')
+            let price = $('#order-data-form #order-price')
+            time.html(params.name)
+            price.html(params.data)
+        })
+
+        predictChart.on('click', (params) => {
+            $('#order-data').css({
+                'display': 'block',
+            })
+            let time = $('#order-data-form #order-time')
+            let price = $('#order-data-form #order-price')
+            time.html(params.name)
+            price.html(params.data)
+        })
+
+    </script>
+{% endblock js %}

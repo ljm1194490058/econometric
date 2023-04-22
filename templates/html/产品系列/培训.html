@@ -1,0 +1,292 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container--.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;培训课程            </div>
+    </div>
+</div>
+<div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+    <div class="container" style="overflow: hidden">
+        <div class="mainHead" style="line-height:40px;color:#333333;font-size:28px;">
+            <p class="title">全球动态一般均衡模型（CGE）培训</p>
+        </div>
+        <!-- mainContent -->
+        <div class="mainContent">
+
+            <p class="MsoNormal" align="center" style="text-align:center;">
+                <b><span style="font-size:16px;">全球动态一般均衡模型（</span></b><b><span style="font-size:16px;">CGE</span></b><b><span style="font-size:16px;">）培训</span></b><b></b>
+            </p>
+            <p class="MsoNormal" align="center" style="text-align:center;">
+                <b><span style="font-size:16px;">&nbsp;</span></b>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训内容</span></b><span style="font-size:16px;">：全球CGE静态模型、动态模型（基本理论、数据结构、软件操作）以及热点案例（英国脱欧，能源及气候变化CGE，自贸区问题研究, 美国总统特朗普政策对中国以及其他国家的影响）</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训对象</span></b><span style="font-size:16px;">：任何对CGE模型感兴趣的学员</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训时间</span></b><span style="font-size:16px;">：2017.2.24—2017.2.26
+（星期五-星期天）</span><b></b>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训地点</span></b><span style="font-size:16px;">：北京市东城区安定门东大街28号雍和大厦C座5层501</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训费用</span></b><span style="font-size:16px;">：标准价
+5000元/人，本科生价 3000元/人，包含学习费、教材费、茶歇费、餐费，不含住宿费及交通费，可根据需要开具发票；另设两个贫困生全额奖学金</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:53.85pt;text-align:justify;text-indent:-53.85pt;">
+                <b><span style="font-size:16px;">培训效果：</span></b><span style="font-size:16px;">(1)学员能够掌握全球静态和动态CGE模型数据库生成、政策模拟和结果解释; (2)熟练掌握GEMPACK环境、GTAPAgg、RunGTAP软件操作; (3)能够独立完成基于全球CGE模型分析的政策报告</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:0cm;text-align:justify;">
+                <b><span style="font-size:16px;">课程背景：</span></b><span style="font-size:16px;">全球动态一般均衡模型（CGE）是在全球GTAP（Global
+Trade Analysis Project, GTAP）基础上完善得到的多国多部门应用一般均衡模型。GTAP模型由美国普渡大学教授Thomas Hertel所领导的全球贸易分析计划（Global Trade Analysis Project，GTAP）发展出来的，目前已被广泛应用于财税、国际贸易、环境与自然资源、行业与区域经济、农业、能源与气候变化、金融等领域。在GTAP模型架构中，首先建立可详细描述对每个国家（或地区）生产、消费、政府支出等行为的子模型，然后通过国际间商品贸易之关系，将各子模型连结成一个多国多部门的一般均衡模型。在此模型架构中进行政策仿真时，可以同时探讨政策对各国各部门生产、进出口、商品价格、要素供需、要素报酬、国内生产总值、社会福利、最终消费、财政税收等经济指标的变化。本次培训的全球动态一般均衡模型（CGE）中，我们在GTAP基础上使用了新的动态投资决定机制，对投资决策的刻画更加细致，同时结合已开展的一些实际应用案例介绍如何利用该模型开展政策研究。</span>
+            </p>
+            <p class="MsoNormal" style="margin-left:0cm;text-align:justify;">
+	<span style="font-size:16px;"><br />
+ </span>
+            </p>
+            <p class="MsoNormal" style="margin-left:0cm;text-align:justify;">
+                <b><span style="font-size:16px;">课程安排：</span></b><b></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月24日 上午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）培训课开班仪式</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）专题讲座：经济建模及在宏观经济决策中的应用（报告人：国家信息中心领导）</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（3）模型框架：全球CGE模型基本架构、理论假设</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（4）数据库结构：数据结构及平衡，税种与价格的连接关系</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月24日 下午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）GEMPACK、GTAPAgg和RunGTAP软件操作：模型数据库生成、导入、模拟、结果查看</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）静态GTAP的应用案例及操作</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月25日 上午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）核心模块讲解：生产商、居民、投资者的优化行为</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）动态模块讲解：投资函数、动态基线建立</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月25日 下午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）RunDynam软件操作：模型数据库生成、导入、模拟、结果查看</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）动态GTAP的应用案例及操作</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月26日 上午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）模型模拟结果解释：宏观结果解释（BOTE）、行业结果解释</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）其他CGE模型简介：GTAP-FDI</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（3）小组作业：学员分组完成课程作业</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">2月26日下午：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（1）小组作业：学员分组成果汇报</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;">&nbsp;
+（2）课题结业：颁发结业证书</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">主办单位</span></b><b></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">&nbsp;此次培训由国家信息中心和英飞咨询有限公司共同主办，英飞咨询承办。合作伙伴：中国能源模型论坛（CEMF）。软件支持：澳大利亚维多利亚大学CoPS中心</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;"><br />
+ </span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">国家信息中心</span></b><span style="font-size:16px;">：国家信息中心是隶属于国家发改委的政策决策支持机构。国家信息中心经济预测部长期致力于可计算一般均衡模型、投入产出模型和政策模型研究，具有丰富的模型研制和应用经验，曾开发中国大规模动态可计算一般均衡模型（SICGE）、国家多区域可计算一般均衡模型（SICGE-R），宏观经济政策计量模型、国际投入产出模型、中国区域间投入产出模型等。利用这些模型工具国家信息中心完成大量政府研究任务，研究成果上报国家发展和改革委员会以及其他部委，多次获党中央、国务院等国家领导的批示。</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;"><br />
+</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">英飞咨询</span></b><span style="font-size:16px;">：英飞咨询（Infinite-Sum
+Modeling）是由国内外领先政策顾问组成的研究与咨询团队。公司主营业务包括经济建模、构建配套数据和公共政策研究，主要利用一般均衡模型（CGE）分析不同政策对全球、国家以及区域层次上整体经济以及各行业的影响，评估其对社会福利、劳动力、GDP等效应。公司战略合作伙伴主要有中国国家信息中心、澳大利亚维多利亚大学CoPS中心、加拿大Ciuriak Consulting 咨询公司。英飞咨询可以为政府机构、非政府组织、行业组织、个体公司及相关研究团队提供咨询服务，主要服务对象包括欧盟委员会、世界银行 、亚洲发展银行 、中国农业部、国家电网、加拿大外交部、加拿大首席执行长协会、新加坡贸易与产业部、麦肯锡、Open Europe、BKP
+Development Research 等。</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;"><br />
+</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">中国能源模型论坛</span></b><span style="font-size:16px;">：中国能源模型论坛（CEMF）由清华大学产业发展与环境治理研究中心（CIDEG）与美国环保协会（EDF）共同发起成立，旨在为国内外能源、经济、环境和人类健康模型团队提供对话互动和观点交流的平台，为决策者和其他群体理解各类模型创造机会，共同推动中国能源与环境模型的能力建设，提升中国能源、环境与经济领域的科学决策水平。</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">主讲教师</span></b><b></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">肖敬亮</span></b><b><span style="font-size:16px;">: &nbsp;</span></b><span style="font-size:16px;">男，经济学博士，在经济建模、政策分析方面有多年从业经验。2009年在莫纳什（Monash）大学CoPS中心获取经济学博士学位；2004年，获取兰卡斯特大学运筹学硕士学位；2003年，获得赫特福德大学计算机硕士学位。博士期间，师从经济建模领域的领军人物Peter Dixon教授，研究嵌入动态金融模块的一般均衡模型，用以分析汇率对中国经济的影响。2006-2010年，参与莫纳什大学教学与科研工作，2010-2012年，在香港PineBridge投资公司担任经济分析师一职，现任英飞咨询公司资深经济分析师，以及Ciuriak 咨询公司(加拿大)客座研究员，参与加拿大、欧盟、新加坡等多个国家与国际机构咨询项目，负责CGE模型的创建、模拟与分析。同时，为加拿大外交部、加拿大哥伦比亚省政府、新加坡政府、湖南大学、莫纳什大学等众多政府与科研机构提供专业培训。其发表以及研究成果曾被英国经济学人（Economist）、美国华尔街日报（Wall Street Journal）、加拿大国家邮报（National Post）引用。</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;"><br />
+ </span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">蔡松锋</span></b><b><span style="font-size:16px;">:&nbsp; </span></b><span style="font-size:16px;">男，国家信息中心经济预测部助理研究员，主要研究领域为能源、环境、气候变化与一般均衡模型（CGE）理论及其应用。参与国家973计划、国家社会科学基金、国家发改委、商务部、交通部等委托项目和地方政府委托项目二十余项，在SCI、国内核心期刊等发表文章30余篇，参与编写《区域间投入产出分析》、《2002、2007年中国区域间投入产出表》等专著。从2008年开始从事CGE模型和GTAP模型研究，并多次参与GTAP国际会议并做研究报告，利用GTAP和GTAP-E开展过欧韩自贸区、中美自贸区、TPP、RCEP、FTAAP、农业贸易问题、主要国家二氧化碳排放达峰、全球碳交易、气候变化对农业的影响等研究。同时参与研制162部门中国可计算一般均衡模型（SIC-GE），是目前国内外最大规模的中国CGE模型。同时开发了北京、天津、上海、四川和海南等区域一般均衡模型和中国31个省的多区域一般均衡模型。</span><b></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;"><br />
+ </span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">张韬</span></b><b><span style="font-size:16px;">: </span></b><span style="font-size:16px;">男，北京师范大学硕士。兴趣涉及生态经济、环境与资源经济、国际贸易，擅长GEMPACK、R、Stata、ArcGIS。在公司内主要负责一般均衡模型构建、模拟与分析，有着5年与CGE模型相关工作经验，利用CGE模型研究过CETA、欧盟-东非、TPP、RCEP、欧盟-土耳其、欧盟-塞浦路斯、英国脱欧、美国大选、农产品价格等国内外热点问题。在CGE模型数据处理方面，有着丰富的模型数据库生成、调整、更新以及其它相关计算的经验，利用GEMPACK、R等形成众多规模化数据处理程序。学习期间主要研究环境与资源经济学，利用利用投入产出模型及一般均衡模型分析社会经济政策对资源利用效率以及污染物排放的影响，运用统计模型、多智能主体模型、系统动力学模型分析及预测资源变化趋势以及相关的社会经济与生态环境效应。</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">报名方法</span></b><span style="font-size:16px;">：</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">请将姓名、单位、电话、邮箱、通讯地址（邮寄发票）、微信号发送至课程联系人的任何联系方式，截止日期为2017年2月23日</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <b><span style="font-size:16px;">课程联系人：</span></b><b></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">国家信息中心&nbsp;&nbsp; </span><b><span style="font-size:16px;">蔡松锋</span></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">电话：13681477305&nbsp; </span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">邮箱： </span><span style="font-size:16px;">caisf@cei.gov.cn</span><span style="font-size:16px;">&nbsp;</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">微信号：siccaisongfeng</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <br />
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">英飞咨询&nbsp;&nbsp; </span><b><span style="font-size:16px;">张韬</span></b>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">电话：18310935320&nbsp;&nbsp;&nbsp; </span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">邮箱：</span><span style="font-size:16px;">zhangt.simlab@gmail.com</span><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;</span>
+            </p>
+            <p class="MsoNormal" style="text-align:justify;">
+                <span style="font-size:16px;">微信号：anlian_weisui</span>
+            </p>            </div>
+            </div>
+</div>
+{% endblock %}

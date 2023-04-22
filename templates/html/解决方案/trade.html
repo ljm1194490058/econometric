@@ -1,0 +1,160 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container-solution.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">解决方案</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:solution' %}">解决方案</a>&nbsp;&gt;&nbsp;国际贸易
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">解决方案</span>
+                    <small class="en"> / SOLUTION</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1 active" data-type="181">
+                        <a href="{% url 'app:trade' %}">
+                            贸易 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:env' %}">
+                            环境能源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:source' %}">
+                            资源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:agri' %}">
+                            农业 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:finance' %}">
+                            财政金融 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:poverty' %}">
+                            贫困 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1" data-type="11">
+                        <a href="{% url 'app:labor' %}">
+                            劳动力 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:disaster' %}">
+                            灾害评估 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        <div class="container" style="overflow: hidden;padding-top: 0">
+            <div class="mainHead">
+                <p class="title">国际贸易</p>
+            </div>
+            <div style="margin-top:30px;"></div>
+            <!-- mainContent -->
+            <div class="mainContent">
+
+                <p class="MsoListParagraphCxSpFirst" style="margin-left:54.0pt;text-indent:-18.0pt;">
+                    <br/>
+                </p>
+                <p>
+	<span style="font-size:16px;line-height:2;color:#000000;"><span style="color:#666666;font-size:16px;">国际贸易主要研究贸易政策，尤其是贸易协议的签订，对目标区域的社会经济效应，如GDP、就业、进出口、最终消费、投资与储蓄等。</span><span
+            style="color:#666666;font-size:16px;">适用范围（但不仅限于）：</span><span style="color:#666666;font-size:16px;">跨太平洋战略经济伙伴关系协定（TPP）、区域全面经济伙伴关系协定（RCEP）、中澳自贸协定、中国自由贸易试验区等。</span><br/>
+          </span>
+                </p>
+                <p>
+	<span style="font-size:16px;line-height:2;color:#000000;"><br/>
+          </span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#337FE5;"><strong>税收</strong></span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#666666;">如进口税、生产</span><span
+                        style="line-height:2;font-size:16px;color:#666666;">税、消费税等税收制度变化的效应。在分析签订自由贸易协定（FTA）的效应时，重要的一块工作就是根据关税减免表及历史贸易状况，辨别敏感项、半敏感项及非敏感项，进而估算CGE模型中的关税冲击。结合有实证分析基础的参数（如Armington替代弹性），以及当前的经济结构，我们便可以通过模型估算出关税的减免对各个行业以及宏观经济的影响。</span>
+                </p>
+                <p>
+                    <br/>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#337FE5;"><strong>贸易壁垒（NTBs）</strong></span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#666666;">利用国际NTBs度量方法，如关税等量法、补贴等量法、贸易限制指数等方法，针对不同咨询项目评估非关税贸易壁垒，将其引入CGE模型。公司通常将NTBs划分为商品贸易和服务贸易NTBs两类，再通过引力模型的估算，将其转换为关税当量。</span>
+                </p>
+                <p>
+	<span style="line-height:2;font-size:16px;color:#000000;"><br/>
+          </span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#337FE5;"><strong>外国直接投资（FDI）</strong></span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#000000;"><span
+                            style="color:#666666;font-size:16px;">GTAP-FDI模型，作为自主研发的产品，</span><span
+                            style="font-size:16px;line-height:32px;color:#666666;">模型中投资部分引用的是MONASH动态模型中的投资模块，而非原来GTAP-Dyn的投资方法。另外，在此基础之上，进一步将国内外资本区分开来，用以分析外来直接投资（FDI）对经济体的影响</span><span
+                            style="color:#666666;font-size:16px;">。GTAP-FDI模型多次运用于欧盟、加拿大外交部（DFATD）、新加坡外交部（MTI）咨询项目中，并生产了配套的GTAP-FDI数据集与操作程序。</span></span>
+                </p>
+                <p>
+	<span style="line-height:2;font-size:16px;color:#000000;"><br/>
+          </span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#337FE5;"><strong>原产地规则(ROOs)</strong></span>
+                </p>
+                <p>
+                    <span style="line-height:2;font-size:16px;color:#666666;">并非所有国家的进出口都遵循原产地规则，这时需要比较关税减免的效应和辨别ROOs的成本，来确定CGE模型是否引入ROOs；其后，需将辨别原产地规</span><span
+                        style="line-height:2;font-size:16px;color:#000000;"><span style="color:#666666;">则的成本换算成关税当量引入CGE模型</span>。</span>
+                </p>
+                <p>
+                    <br/>
+                </p>
+                <p>
+                    <span style="font-size:16px;color:#000000;"><strong>更多应用案例，请参考公司</strong></span><span
+                        style="font-size:16px;"><a href="{% url 'app:research_report' %}" target="_blank"><strong><span
+                        style="color:#337FE5;font-size:16px;">研究报告</span></strong></a><strong><span
+                        style="color:#000000;font-size:16px;">。</span></strong></span>
+                </p>
+                <p>
+                    <br/>
+                </p>
+                <p>
+                    <br/>
+                </p>
+                <p>
+                    <br/>
+                </p></div>
+        </div>
+    </div>
+{% endblock %}

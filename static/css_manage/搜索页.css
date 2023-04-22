@@ -1,0 +1,104 @@
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.body-bg{
+    background:#212121;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.search{
+	position:absolute;
+    width:80%;
+    height:10%;
+    top:40%;
+    left:15%;
+}
+.search input{
+	width:75%;
+	height:100%;
+    border-radius: 50px 50px 50px 50px;
+    background: transparent;
+    border-bottom-color: grey;
+    border-right-color: grey;
+    color:white;
+}
+.search img{
+	border-radius:50%;
+	position:absolute;
+	top:5%;
+	width:6%;
+    height:90%;
+}
+::-ms-input-placeholder{
+    color:whitesmoke;
+}
+.search-svg{
+    width:3%;
+    height:5%;
+    position:relative;
+    left:0;
+
+}
+
+
+*{
+	padding: 0;margin: 0;
+}
+
+.wrap{
+	width: 100%;margin: 0 auto;
+}
+
+.clear{
+	clear: both;
+}
+
+a{
+	text-decoration: none;}
+
+ul,li{
+    list-style: none;
+}
+
+nav .level>li{
+    position:relative;
+    float:left;
+    width: 16.66%;
+    text-align: center;
+    background: #333;
+    padding: 10px 0;
+    font-size: 16px;
+    transition: .4s;}
+
+nav .level>li a{
+    color: white;
+}
+
+nav .level>li:hover{
+    background: #999999;
+}
+
+
+后台
+nav .two{
+    display: none;margin-top: 10px;
+} 
+
+nav .level>li:hover .two{
+	display: block;
+}
+
+nav .two li{
+    padding: 5px 0;
+    transition: .4s;
+    cursor: pointer;
+}
+
+nav .two li:hover{
+    background: #FFFFFF;
+}

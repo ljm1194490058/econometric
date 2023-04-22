@@ -1,0 +1,184 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container-solution.css' %}">
+
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="crumbs">
+      <div class="container">
+          <p class="title">解决方案</p>
+          <div class="childs">
+              <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:solution' %}">解决方案</a></div>
+      </div>
+  </div>
+    <div class="main">
+
+      <div class="container">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">解决方案</span>
+                    <small class="en"> / SOLUTION</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <!-- <div class="menu-item1 " data-type="181">
+                        <a href="{% url 'app:trade' %}">
+                            贸易 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:env' %}">
+                            环境能源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:source' %}">
+                            资源 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:agri' %}">
+                            农业 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:finance' %}">
+                            财政金融 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:poverty' %}">
+                            贫困 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1" data-type="11">
+                        <a href="{% url 'app:labor' %}">
+                            劳动力 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:disaster' %}">
+                            灾害评估 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div> -->
+                    <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+                </div>
+            </div>
+            </div>
+
+        <div class="mainContent" style="overflow: hidden;padding-top: 0">
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.0 }}</p>
+            <div class="childImg">
+              <img src="{%static solution_img1 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.1 }}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.2 }}</p>
+            <div class="childImg">
+              <img src="{%static solution_img2 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.3 }}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.4 }}</p>
+            <div class="childImg">
+              <img src="{%static solution_img3 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.5 }}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.6 }}</p>
+            <div class="childImg">
+              <img src="{%static solution_img4 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.7}}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.8}}</p>
+            <div class="childImg">
+              <img src="{%static solution_img5 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.9}}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle">{{ solution_texts.10}}</p>
+            <div class="childImg">
+              <img src="{%static solution_img6 %}">
+            </div>
+            <div class="childInfo">
+              <p>{{ solution_texts.11}}</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <!-- <div class="child left">
+            <p class="childTitle"><a href="{% url 'app:finance' %}">金融</a></p>
+            <div class="childImg">
+              <a href="{% url 'app:finance' %}"><img src="{{solution_img7.img}}"></a>
+            </div>
+            <div class="childInfo">
+              <p>将金融变量及金融部门引入CGE模型，评估财政政策、汇率变动等外来冲击对经济体的影响</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div>
+          <div class="child left">
+            <p class="childTitle"><a href="{% url 'app:agri' %}">农业</a></p>
+            <div class="childImg">
+              <a href="{% url 'app:agri' %}"><img src="{{ solution_img8.img }}"></a>
+            </div>
+            <div class="childInfo">
+              <p>宏观政策、农业政策对单个产业部门或多产业部门的影响。如种植结构调整、农业补贴、农产品贸易、农产品库存等政策分析</p>
+              <p>
+                <a href=""></a>
+              </p>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+          </div>
+{% endblock %}

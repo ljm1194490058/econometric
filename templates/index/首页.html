@@ -1,0 +1,170 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.min.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/1120.css' %}">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="{% static 'css/bootstrap/js/bootstrap.min.js'%}"></script>
+
+{% endblock %}
+
+
+{% block ext_js %}
+{{ block.super }}
+
+
+{% endblock %}
+
+{% block content %}
+<style>
+
+</style>
+
+<body>
+    <div class="slideshow_bars">
+        <div id="index_slider" class="carousel slide" data-ride="carousel">
+
+            <!-- 指示符 -->
+            <ul class="carousel-indicators">
+                <li data-target="#index_slider" data-slide-to="2" class="active"></li>
+                <li data-target="#index_slider" data-slide-to="1"></li>
+                <li data-target="#index_slider" data-slide-to="0"></li>
+            </ul>
+
+            <!-- 轮播图片 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{%static index_img1 %}" style="height:600px">
+                </div>
+                <div class="carousel-item">
+                    <img src="{%static index_img2 %}" style="height:600px">
+                </div>
+                <div class="carousel-item">
+                    <img src="{%static index_img3 %}" style="height:600px">
+                </div>
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#index_slider" data-slide="prev" role="button">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#index_slider" data-slide="next" role="button">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
+    </div>
+    <div class="img_text_one">
+        <img src="{%static index_img4 %}">
+        <div class="intro">
+            <h style="font-size:20px;color:#00a3d9;">{{index_texts.0}}</h>
+            <h style="color:gray;">
+                {{index_texts.1}}
+            </h>
+            <a href="{% url 'app:aboutus' %}">
+                <button> 查看更多>></button>
+            </a>
+
+        </div>
+    </div>
+    <div class="img_text_two">
+        <h1>—————————</h1>
+        <h2>平台特色</h2>
+        <h1>—————————</h1>
+        <div class="graphic_1">
+            <img src="{%static index_img5 %}">
+            
+                <p class="childTitle">
+                    <h3>{{index_texts.2}}</h3>
+                </p>
+            
+            
+                <p class="childInfo">{{index_texts.3}}</p>
+            
+        </div>
+        <div class="graphic_1">
+            <img src="{%static index_img6 %}">
+            
+                <p class="childTitle">
+                    <h3>{{index_texts.4}} </h3>
+                </p>
+           
+            
+                <p class="childInfo">{{index_texts.5}}</p>
+            
+        </div>
+        <div class="graphic_1">
+            <img src="{%static index_img7 %}">
+            
+                <p class="childTitle">
+                    <h3>{{index_texts.6}} </h3>
+                </p>
+            
+            
+                <p class="childInfo">{{index_texts.7}}</p>
+            
+        </div>
+    </div>
+    <div class="img_text_three">
+        <div class="graphic_2">
+            <img src="{%static index_img8 %}">
+            <a href="{% url 'app:teammember' %}">
+                <h2 style="margin-top:20px">团队成员</h2>
+            </a>
+           
+            
+        </div>
+        <div class="graphic_2">
+            <img src="{%static index_img9 %}">
+            <a href="{% url 'app:contactus' %}">
+                <h2 style="margin-top:20px">联系我们</h2>
+            </a>
+           
+            
+        </div>
+        <div class="graphic_2">
+            <img src="{%static index_img10 %}">
+            <a href="{% url 'app:recruitment' %}">
+                <h2 style="margin-top:20px">人才招聘</h2>
+            </a>
+           
+            
+        </div>
+    </div>
+    <div class="img_text_four">
+        <h1>—————————</h1>
+        <h2>解决方案</h2>
+        <h1>—————————</h1>
+    </div>
+    <div class="img_text_five">
+        <div class="graphic_3">
+            <img src="{%static index_img11 %}">
+            <p>{{index_texts.8}}</p>
+        </div>
+        <div class="graphic_3">
+            <img src="{%static index_img12 %}">
+            <p>{{index_texts.9}}</p>
+        </div>
+        <div class="graphic_3">
+            <img src="{%static index_img13 %}">
+            <p>{{index_texts.10}}</p>
+        </div>
+        <div class="graphic_3">
+            <img src="{%static index_img14 %}">
+            <p>{{index_texts.11}}</p>
+        </div>
+        <div class="graphic_3">
+            <img src="{%static index_img15 %}">
+            <p>{{index_texts.12}}</p>
+        </div>
+        <div class="graphic_3">
+            <img src="{%static index_img16 %}">
+            <p>{{index_texts.13}}</p>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,185 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+
+{% block content %}
+    <style>
+        /* Make the image fully responsive */
+        .child {
+            border: 1px solid #e6e6e6;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .member_img img {
+            max-height: 200px;
+            max-width: 100%;
+
+        }
+
+        .member_name {
+            padding: 10px;
+        }
+
+        .member_info {
+            color: #808080;
+            padding: 0 10px;
+        }
+
+        .childInfo {
+            color: #808080;
+            padding: 2px;
+        }
+
+        .child-o {
+            height: 30px;
+            border-bottom: solid #e6e6e6;
+            border-top: solid #e6e6e6;
+            padding: 1px;
+        }
+
+        .suoyou {
+            font-size: 15px;
+            width: 50px;
+            padding: 25px;
+        }
+
+        .child_list {
+            padding-top: 10px;
+            border-bottom: solid #e6e6e6;
+            width: 76%;
+            float: right;
+        }
+
+        .sub {
+            padding: 20px;
+        }
+
+        .content_title {
+            padding: 0 15px 15px;
+            text-align: center;
+        }
+
+        .content_img img {
+            text-align: center;
+            max-height: 300px;
+            max-width: 100%;
+            padding-top: 10px;
+        }
+
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*nav*/
+        .text_field a {
+            color: gray;
+        }
+
+        .text_field a:hover {
+        }
+
+        text-decoration: none
+
+        ;
+        .btn_field a {
+            color: gray;
+        }
+
+        .btn_field a:hover {
+            text-decoration: none;
+        }
+
+    </style>
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">荣誉顾问</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}l">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:teammember' %}">团队成员</a>&nbsp;&gt;&nbsp;荣誉顾问
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main" style="padding-top: 30px;">
+
+        <div class="container">
+
+            <div class="page-left-menu" style="margin-top: 0px;">
+                <div class="page-left-title">
+                    <h1>
+                        <span class="zh">团队成员</span>
+                    </h1>
+                    
+                </div>
+
+
+                <div class="page-left-menu-box">
+                    <div class="menu1">
+                        <div class="menu-item1">
+                            <a href="{% url 'app:consultant_content' %}">
+                                荣誉顾问
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <div class="menu-item1 active">
+                            <a href="{% url 'app:business_team' %}">
+                                公司团队
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="productmain" style="overflow: hidden;">
+
+                <div class="mainNav">
+                    <div class="child-o">
+                        <a class="suoyou" href="{% url 'app:business_team' %}">所有</a>|
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content" style="display: block;">
+
+                <div class="child_list">
+                        <span class="childImg">
+                            <img src="{% static 'images/plus.jpg' %}"/>
+                        </span>
+                    <a href="{% url 'app:consultant_content' %}">
+                        <span class="sub">Badri N. Gopalakrishnan</span>|
+                        <span class="sub">国际贸易、计量经济、产业经济  </span>|
+                        <span class="sub">美国、印度 </span>
+                    </a>
+
+                    <div class="childSub3" style="color: #808080; padding: 10px 10px;">
+                        经济学博士。Badri研究领域，涉及国际贸易、计量经济、产业经济、农业经济、环境经济和劳动力经济，以及生产率和一般均衡分析与模拟。2007年至今，任职普度大学全球贸易分析中心经济研究师，作为研究骨干，参与生成多期GTAP数据集，承接20余项来自于世界银行、UN、USITC、USDA、加拿大、欧盟、印度、WHO等机构资助的相关咨询项目，并提供全球经济分析的短期与学期培训课程。其中GTAP
+                        v7数据集就发布以来，引用次数达万次以上，之后发布了GTAP v8和v9数据。
+                    </div>
+                </div>
+
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+{% block main %}
+    <div class="row">
+        <div id="workplace" class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div id="form-part" class="card-body">
+                     <h4 class="card-title">{{ title }}</h4>
+                    <form id="main-form" class="form-horizontal form-material">
+                        {% csrf_token %}
+                         {% for field in form %}
+                        <div class="form-group">
+                            <label for="{{ field.id_for_label }}" class="col-sm-3 col-form-label">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                         {% endfor %}
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </form>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+{% endblock js %}

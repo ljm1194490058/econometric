@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}工作台{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'user/css/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/dataTables.bootstrap4.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'user/css/select.dataTables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+  <!-- css -->{% block css %}{% endblock css %}
+</head>
+<body class="sidebar-dark">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-3" href="{% url 'app:index' %}" style="color: white;">经济预测平台</a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'app:index' %}"><i class="ti-world icon-md text-info"></i></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+             <!-- <form action="" method="post">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <button class="input-group-text" id="search" type="submit">
+                  <i class="icon-search"></i>
+                </button>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search" name="search_info">
+            </div>
+              </form><-->
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-profile dropdown">
+                {% if is_login %}
+                    {% if is_personal %}
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <i class="ti-user"></i>欢迎登录
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'app:personcenter' %}">
+                            <i class="ti-user text-primary"></i>个人中心
+                          </a>
+                          <a class="dropdown-item" href="{% url "app:logout" %}">
+                            <i class="ti-power-off text-primary"></i>退出登录
+                          </a>
+                        </div>
+                    {% else %}
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <i class="ti-user"></i>欢迎登录
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'app:personcenter2' %}">
+                            <i class="ti-user text-primary"></i>团队中心
+                          </a>
+                          <a class="dropdown-item" href="{% url "app:logout" %}">
+                            <i class="ti-power-off text-primary"></i>退出登录
+                          </a>
+                        </div>
+                    {% endif %}
+                {% else %}
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                    <i class="ti-user"></i>未登录
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                    <a class="dropdown-item" href="{% url "app:login" %}">
+                    <i class="ti-shift-left text-primary"></i>登录
+                  </a>
+                  <a class="dropdown-item" href="{% url "app:login" %}">
+                    <i class="ti-shift-left text-primary"></i>注册
+                  </a>
+                </div>
+                {% endif %}
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 导航栏 -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- 导航栏 -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:createForecast' %}">
+              <i class="ti-plus menu-icon"></i>
+              <span class="menu-title">创建新预测</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:myOrder' %}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">订单管理</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:userPermissions' %}">
+              <i class="ti-flickr menu-icon"></i>
+              <span class="menu-title">权限管理</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+        <!-- 网页主体 -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="container-fluid">
+            <!-- 网页主体内容 -->
+              {% block main %}
+                <div class="row mb-4">
+                    <div class="col-12 col-xl-8 mb-4">
+                        <h3 class="font-weight-bold">欢迎进入经济预测平台</h3>
+                        <h6 class="font-weight-normal mb-0">我的预测</h6>
+                    </div>
+                </div>
+                <div class="workplace">
+        <!--<h3 style="text-align: center ;margin-top: 50px;">我的预测</h3>-->
+        {% if can_view_forecast %}
+        <div class="list-group">
+            <div class="row">
+            {% for forecast in forecasts %}
+            <div class="col-12 col-xl-6 mb-4">
+            <a href="{% url 'app:myForecast' forecast.id %}" class="list-group-item">
+                <div id="{{ forecast.id }}" style="height:300px"></div>
+                <p class="list-group-item-text" style="text-align: center;">{{forecast.name}}</p>
+            </a>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+
+        <div id='pagination'>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% if current > 1 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ current|add:-1 }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="{{ current|add:-1 }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for i in total %}
+                    <li class="page-item"><a class="page-link" href="{{i}}">{{i}}</a></li>
+                    {% endfor %}
+
+                    {% if current|add:1 <= totalnum %} <li class="page-item">
+                        <a class="page-link" href="{{current|add:1}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="{{current|add:1}}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+
+
+    </div>
+              {% endblock main %}
+            </div>
+        </div>
+        <!-- 网页尾部 -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2023.DjangoM All rights reserved.</span>
+          </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between"></div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'user/js/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'user/js/off-canvas.js' %}"></script>
+  <script src="{% static 'user/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'user/js/template.js' %}"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="{% static 'js/echarts/echarts.min.js' %}"></script>
+  {% block js %}
+      <script src="{% static 'css/bootstrap/js/tether.min.js' %}"></script>
+      <script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+                <script type="text/javascript">
+        var charts = new Array(4)
+        var options = []
+        for (var i = 0; i < 4; i++) {
+            options.push({
+                title: {
+                    text: '预览图'
+                },
+                series: [],
+                grid:{
+                    left:55
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: []
+                },
+                yAxis: { type: 'value' },
+            })
+        }
+        var forecast1 = "{{forecasts.0|safe}}"
+        var forecast2 = "{{forecasts.1|safe}}"
+        var forecast3 = "{{forecasts.2|safe}}"
+        var forecast4 = "{{forecasts.3|safe}}"
+
+        if (forecast1 !== "") {
+            index = "{{forecasts.0.dataset.dataindex|safe}}".replaceAll("\'", "\"")
+            index = JSON.parse(index)
+            data = "{{forecasts.0.dataset.numdata}}"
+            data = JSON.parse(data)
+            setChart(0, index, data)
+            fid = "{{forecasts.0.id}}"
+            charts[0] = echarts.init(document.getElementById(fid))
+            charts[0].setOption(options[0])
+
+        }
+
+        if (forecast2 !== "") {
+            index = "{{forecasts.1.dataset.dataindex|safe}}".replaceAll("\'", "\"")
+            index = JSON.parse(index)
+            data = "{{forecasts.1.dataset.numdata}}"
+            data = JSON.parse(data)
+            setChart(1, index, data)
+            fid = "{{forecasts.1.id}}"
+            charts[1] = echarts.init(document.getElementById(fid))
+            charts[1].setOption(options[1])
+        }
+
+        if (forecast3 !== "") {
+            index = "{{forecasts.2.dataset.dataindex|safe}}".replaceAll("\'", "\"")
+            index = JSON.parse(index)
+            data = "{{forecasts.2.dataset.numdata}}"
+            data = JSON.parse(data)
+            setChart(2, index, data)
+            fid = "{{forecasts.2.id}}"
+            charts[2] = echarts.init(document.getElementById(fid))
+            charts[2].setOption(options[2])
+        }
+
+        if (forecast4 !== "") {
+            index = "{{forecasts.3.dataset.dataindex|safe}}".replaceAll("\'", "\"")
+            index = JSON.parse(index)
+            data = "{{forecasts.3.dataset.numdata}}"
+            data = JSON.parse(data)
+            setChart(3, index, data)
+            fid = "{{forecasts.3.id}}"
+            charts[3] = echarts.init(document.getElementById(fid))
+            charts[3].setOption(options[3])
+        }
+
+
+
+        function setChart(oindex, index, data) {
+            options[oindex].xAxis.data = index;
+            for (x in data) {
+                options[oindex].series.push({ type: 'line', data: data[x] })
+            }
+        }
+
+
+        // var myChart = [
+        //     echarts.init(document.getElementById('chart1')),
+        // ];
+        // var data = [
+        //     [0.247809, 3.476346],
+        //     [0.64827, 4.119688],
+        //     [0.731209, 4.282233],
+        //     [0.236833, 3.486582],
+        //     [0.969788, 4.655492],
+        //     [0.607492, 3.965162],
+        //     [0.358622, 3.5149],
+        //     [0.147846, 3.125947],
+        //     [0.63782, 4.094115],
+        //     [0.230372, 3.476039]
+        // ];
+
+        // var option = {
+        //     dataset: [{
+        //         source: data
+        //     }],
+        //     series: [{ type: 'scatter' }, { type: 'line', data: [[0.147846, 3.125947], [0.969788, 4.655492]] }],
+        //     xAxis: {},
+        //     yAxis: {},
+        // };
+
+        // myChart[0].setOption(option);
+    </script>
+  {% endblock js %}
+</body>
+
+</html>
+

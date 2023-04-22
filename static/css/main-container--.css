@@ -1,0 +1,132 @@
+.main .mainNav {
+    height: 44px;
+    line-height: 44px;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+.main .mainNav .child.on {
+    color: #0093c4;
+}
+/*@media all and (max-width:639px)*/
+.main .mainNav .child {
+    margin: 4px 0;
+    line-height: 12px;
+    height: 12px;
+    padding: 0 8px;
+    font-size: 12px;
+}
+.main .mainNav .child {
+    transition-duration: 0.5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: 0.5s;
+}
+.main .mainNav .child {
+    cursor: pointer;
+    margin-top: 18px;
+    line-height: 12px;
+    float: left;
+    height: 12px;
+    padding: 0 34px;
+    border-right: 1px solid #dfdfdf;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+.main .mainNav .child {
+    cursor: pointer;
+    margin-top: 18px;
+    line-height: 12px;
+    float: left;
+    height: 12px;
+    padding: 0 34px;
+    border-right: 1px solid #dfdfdf;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+.main .mainNav .child.on {
+    color: #0093c4;
+}
+
+.main .content {
+    display: none;
+    margin-top: 30px;
+}
+.content, .mainContent {
+    font-size: 16px;
+    color: #000;
+    line-height: 2;
+}
+/*@media all and (max-width:639px)*/
+.main .content .child {
+    padding: 14px 0;
+}
+.main .content .child {
+    padding: 20px 0;
+    border-bottom: 1px solid #d1d1d1;
+}
+/*@media all and (max-width:639px)*/
+.main .content .child .childContent {
+    padding: 14px 0 4px 0;
+    line-height: 20px;
+    font-size: 12px;
+}
+.main .content .child .childContent {
+    display: none;
+    padding: 26px 0 10px 0;
+    color: #666;
+    line-height: 22px;
+    font-size: 14px;
+}
+/*@media all and (max-width:639px)*/
+.main .content .child .childIcon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+.main .content .child .childIcon {
+    transition-duration: 0.5s;
+    -ms-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: 0.5s;
+}
+.main .content .child .childIcon {
+    cursor: pointer;
+    float: left;
+    margin-right: 18px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #666;
+}
+/*@media all and (max-width:639px)*/
+.main .content .child .childIcon .sub {
+    height: 1px;
+    top: 9px;
+    left: 5px;
+    width: 10px;
+}
+.main .content .child .childIcon .sub {
+    position: absolute;
+    height: 2px;
+    top: 14px;
+    left: 9px;
+    width: 12px;
+    height: 2px;
+    background: #fff;
+}
+
+/*@media all and (max-width:639px)*/
+.main .content .child .title {
+    line-height: 20px;
+    font-size: 12px;
+}
+.main .content .child .title {
+    line-height: 30px;
+    color: #333333;
+    font-size: 14px;
+}
+.main .content .child .title a {
+    color: #333333;
+}

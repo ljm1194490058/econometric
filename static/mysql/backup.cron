@@ -1,0 +1,1 @@
+0 0 * * * source /home/z217/workplace/z217/suzhe/econometric/static/mysql/backup_full.sh

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>经济预测与政策模拟系统平台——登录</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/all.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/index.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/2.0_login.css' %}"/>
+
+</head>
+<body>
+<div style="padding-top:0;left:10%;">
+    <div class="login-wrap">
+        <div class="login-html">
+            <div class="logo"><img src="/static/images/logo0.jpg"></div>
+            <div class="header">个 人 注 册</div>
+            <div class="login-form">
+                <form action="{% url 'app:register' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="username" placeholder="用户名" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-user"></i></span>
+                            </div>
+                            <span class="msg">{{ userinfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="password" autocomplete="off" name="password" placeholder="密码" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-lock"></i></span>
+                            </div>
+                            <span class="msg">{{ psinfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="field" placeholder="研究领域" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-paste"></i></span>
+                            </div><span class="msg">{{ fdinfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="name" placeholder="团队名称" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-users"></i></span>
+                            </div><span class="msg">{{ ninfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="phone" placeholder="手机号" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-phone"></i></span>
+                            </div><span class="msg">{{ phinfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="email" placeholder="邮箱" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-mail-bulk"></i></span>
+                            </div><span class="msg">{{ einfo }}</span>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="org" placeholder="隶属组织" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-users-cog"></i></span>
+                            </div><span class="msg">{{ oinfo }}</span>
+                        </div>
+                        <div class="group">
+                            <button type="submit" class="button">注册</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

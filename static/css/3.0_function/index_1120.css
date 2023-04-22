@@ -1,0 +1,322 @@
+*{
+    padding:0;            /*清除内边距*/
+    margin:0;              /*清除外边距*/
+    text-decoration: none;
+
+
+}
+.navigation_bars{/*水平导航条*/
+    background-color:white;
+    position:fixed;
+    width:100%;
+    height:100px;
+    border-bottom-style:solid;
+    border-bottom-color: #F5F5F5;
+}
+.logo{/*公司logo*/
+    position:relative;
+    width:35%;
+    height: 60%;
+    margin: 0;
+    left: 3%;
+    top:20%;
+}
+.navigation_textbox{/*导航条的文本框*/
+    position:absolute;
+    top:40%;
+    width:55%;
+    height:60%;
+    left:40%;
+
+}
+.text_field{/*导航条的文本*/
+    position:relative;
+    display: inline-block;
+    width:10%;
+    line-height:60px;
+    text-align:center;
+    float:left;
+}
+.btn_field{/*导航条里的登录/注册*/
+    position: relative;
+    width:8%;
+    line-height:60px;
+    text-align:center;
+    float:right;
+
+    
+}
+.text_field a:hover{
+    color: #00a3d9;
+}
+.btn_field a:hover{
+    color: #00a3d9;
+}
+.drop-content{
+    display: none;
+    position: relative;
+    min-width: 60px;
+}
+.drop-content :hover{
+    background: aliceblue;
+}
+.drop-content a {
+    line-height:30px;
+    padding: 3px 5px;
+    text-decoration: none;
+    display: block;
+}
+.text_field:hover .drop-content{
+    display: block;
+}
+
+.slideshow_bars{/*轮播图*/
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top:100px;
+}
+
+.img_text_one{/*大概介绍域 */
+    background-color: white;
+    position:relative;
+    width: 100%;
+    height: 400px;
+    top:540px;
+}
+.img_text_one img{
+    position: absolute;
+    width:45%;
+    height:70%;
+    margin: 0;
+    left:3%;
+    top:15%;
+
+}
+.intro{
+    position:absolute;
+    top:15%;
+    width:47%;
+    height:70%;
+    margin: 0;
+    left:50%;
+}
+.intro h{
+    position: relative;
+    display: block;
+    width:90%;
+    left:7%;
+    margin-bottom: 5%;
+}
+.intro button{
+    position: relative;
+    display: block;
+    width:30%;
+    left:7%;
+    margin-bottom: 5%;
+    background-color: white;
+    color: grey;
+    padding: 11px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+}
+.intro button:hover{
+    border:none;
+    background-color: #00a3d9;
+    color: white;
+}
+
+.img_text_two{/*产品介绍域*/
+    background-color: whitesmoke;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    top:540px;
+}
+.img_text_two h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: "微软雅黑 Light";
+    color:lightgrey;
+}
+.img_text_two h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: "微软雅黑 Light";
+    color:gray;
+    font-weight: bold;
+}
+.graphic_1{
+    position:relative;
+    display: inline-block;
+    width:27.1%;
+    height:70%;
+    top:20%;
+    margin-left:3%;
+    margin-right: 3%;
+    text-align:center;
+}
+.graphic_1 img{
+    position:relative;
+    width:80%;
+    height: 70%;
+    margin-left:10%;
+    margin-right: 10%;
+
+    top:5%;
+}
+.graphic_1 h3{
+    position: relative;
+    display: block;
+    width:80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 15px;
+    color: #0C0C0C;
+    margin-left:10%;
+    margin-right: 10%;
+}
+.graphic_1 p{
+    position: relative;
+    display: block;
+    width:80%;
+    margin-bottom: 2%;
+    font-size: 10px;
+    color: gray;
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+.img_text_three{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    top:540px;
+}
+.graphic_2{
+    position:relative;
+    display: inline-block;
+    width:27.1%;
+    height:80%;
+    top:15%;
+    margin-left:3%;
+    margin-right: 3%;
+    text-align:center;
+}
+.graphic_2 img{
+    position:relative;
+    width:80%;
+    height: 70%;
+    margin-left:10%;
+    margin-right: 10%;
+    top:5%;
+}
+.graphic_2 h1{
+    text-align: center;
+    font-size: 25px;
+    font-family: "微软雅黑 Light";
+    color:lightgrey;
+}
+.graphic_2 h2{
+    text-align: center;
+    font-size: 25px;
+    font-family: "微软雅黑 Light";
+    color:gray;
+    font-weight: bold;
+}
+
+.img_text_four{
+    background-color: whitesmoke;
+    position: relative;
+    width: 100%;
+    height: 130px;
+    top:540px;
+}
+.img_text_four h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: "微软雅黑 Light";
+    color:lightgrey;
+}
+.img_text_four h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: "微软雅黑 Light";
+    color:gray;
+    font-weight: bold;
+}
+
+.img_text_five{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    top:540px;
+}
+.graphic_3{
+    display: inline-block;
+    position:relative;
+    width:30%;
+    height:40%;
+    margin-top:3%;
+    margin-left: 2.5%;
+}
+.graphic_3 img{
+    width:100%;
+    height:100%;
+
+}
+.graphic_3 p{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    color:black;
+}
+
+.foot{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    top:540px;
+    background-color:gray;
+}
+.text_block{
+    display: inline-block;
+    position:relative;
+    width:16%;
+    height:50%;
+    margin-top:2.5%;
+    margin-left: 3%;
+
+
+}
+.text_block h4{
+    font-size: 15px;
+    font-family: "微软雅黑";
+    color:gainsboro;
+    font-weight: bold;
+    margin-bottom: 7%;
+
+}
+.text_block p{
+    font-size: 13px;
+    font-family: "微软雅黑 Light";
+    color:lightgrey;
+}
+.warranty{
+    display: inline-block;
+    position:relative;
+    width:100%;
+    height:15%;
+    background-color: black;
+    float: bottom;
+}
+.warranty p{
+    color:whitesmoke;
+    text-align: center;
+    line-height:40px;
+}

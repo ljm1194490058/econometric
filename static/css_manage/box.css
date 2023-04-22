@@ -1,0 +1,52 @@
+.box iframe{
+	position: absolute;
+	left:2.5%;
+	width:95%;
+	height:75%;
+}
+.message1 a{
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	top: 30%;
+	left: 32%;
+}
+.message2 a{
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	top: 30%;
+	left: 52%;
+}
+
+.bill1 a{
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	top: 30%;
+	left: 22%;
+}
+
+.bill2 a{
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	top: 30%;
+	left: 42%;
+}
+
+.bill3 a{
+	color: black;
+	text-decoration: none;
+	position: absolute;
+	top: 30%;
+	left: 62%;
+}
+
+.message1 a:hover,
+.message2 a:hover,
+.bill1 a:hover,
+.bill2 a:hover,
+.bill3 a:hover{
+	background-color:rgba(0,0,0,0.2);
+}

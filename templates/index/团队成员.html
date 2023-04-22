@@ -1,0 +1,168 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <style>
+        /* Make the image fully responsive */
+        .child{
+            border:1px solid #e6e6e6;
+            width:30%;
+            padding: 10px;
+            text-align: center;
+            display:inline-block;
+        }
+        .member_img img {
+            max-height: 200px;
+            max-width: 100%;
+
+        }
+        .member_name {
+            padding: 10px;
+        }
+
+        .member_info{
+            color: #808080;
+            padding:0 10px;
+        }
+        .childInfo{
+            color: #808080;
+            padding: 2px;
+        }
+
+        .child-o{
+            height: 30px;
+            border-bottom: solid #e6e6e6 ;
+            border-top: solid #e6e6e6 ;
+            padding: 1px;
+        }
+        .suoyou{
+            font-size: 15px;
+            width: 50px;
+            padding: 25px;
+        }
+
+        .child_list{
+            padding-top: 10px;
+            border-bottom: solid #e6e6e6 ;
+            width:76%;
+            float:right;
+        }
+        .sub{
+            padding:20px;
+        }
+        .content_title{
+            padding: 0 15px 15px;
+            text-align: center;
+        }
+        .content_img img{
+            text-align: center;
+            max-height: 300px;
+            max-width: 100%;
+            padding-top: 10px;
+        }
+
+
+        .carousel-inner img {
+               width: 100%;
+               height: 100%;
+           }
+        /*nav*/
+        .text_field a{
+        color: gray;
+        }
+        .text_field a:hover{
+        }
+        text-decoration: none;
+        .btn_field a{
+            color: gray;
+        }
+        .btn_field a:hover{
+            text-decoration: none;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">荣誉顾问</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:companyculture' %}">团队成员</a>&nbsp;&gt;&nbsp;荣誉顾问
+        </div>
+    </div>
+</div>
+<div class="main" style="padding-top: 30px;">
+
+    <div class="container">
+
+            <div class="page-left-menu" style="margin-top: 0px;">
+                <div class="page-left-title">
+                    <h1>
+                        <span class="zh">团队成员</span>
+                    </h1>
+
+                </div>
+
+
+                <div class="page-left-menu-box">
+                    <div class="menu1">
+                        <div class="menu-item1">
+                            <a href="{% url 'app:consultant_content' %}">
+                                荣誉顾问
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <div class="menu-item1 active">
+                            <a href="{% url 'app:teammember' %}">
+                                公司团队
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+                    </div>
+
+                </div>
+                
+            </div>
+        <div class="productmain" style="overflow: hidden;">
+
+            <div class="content">
+
+
+                <div class="child">
+                    <div class="member_img">
+                        <img src="{{teammember_img1.img}}" />
+                    </div>
+                    <div class="member_name">
+                        <a href="{% url 'app:consultant_content' %}">Harsha Vardhana Singh</a>
+                    </div>
+                    <div class="member_info">
+                        Harsha Vardhana Singh博士作为印度的Rhodes学者毕业于牛津大学经济学博士项目，在国际贸易政策、发展、基础设施管制和全球治理方面有超过三十年的研究经验。
+                    </div>
+                    <div class="childInfo">
+                        <img src="{% static 'images/xiangxixinxi.jpg' %}" />
+                        <span>详细信息</span>
+                    </div>
+
+
+                </div>
+
+
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}团队中心{% endblock title %}
+{% block main %}
+    {% csrf_token %}
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-3 col-xlg-3 col-md-5">
+                <div class="">
+                    <div class="card-block">
+                        <center class="m-t-30"><img src="{% static 'images/index_images/5.jpg' %}" class="img-circle"
+                                                    width="150"/>
+                            <h4 class="card-title mt-3">{{ name }}</h4>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-9 col-xlg-9 col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material">
+                            <div class="form-group">
+                                <label class="col-md-12">团队名称</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="{{ name }}"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email" class="col-md-12">负责人邮箱</label>
+                                <div class="col-md-12">
+                                    <input type="email" value="{{ email }}" disabled="true"
+                                           class="form-control form-control-line" name="example-email"
+                                           id="example-email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">研究领域</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="{{ field }}"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">负责人所属组织</label>
+                                <div class="col-md-12">
+                                    <input type="text" value="{{ organization }}"
+                                           class="form-control form-control-line">
+                                </div>
+                            </div>
+                        <button type="button" class="btn btn-primary" onclick="changeInfo()">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+
+
+<script type="text/javascript">
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    function changeInfo() {
+        var fields = document.getElementsByTagName("input")
+        var name = "", field = "", org = ""
+        for (i in fields) {
+            if (i == 1) name = fields[i].value
+            else if (i == 3) field = fields[i].value
+            else if (i == 4) org = fields[i].value
+        }
+        if (name == "") {
+            alert("团队名称不能为空！");
+            window.location.reload();
+            return
+        }
+        if (field == "") {
+            alert("研究领域不能为空！");
+            window.location.reload();
+            return
+        }
+        if (org == "") {
+            alert("隶属组织不能为空！");
+            window.location.reload();
+            return
+        }
+
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("field", field);
+        formData.append("organization", org);
+        $.ajax({
+            type: "POST",
+            url: "/changeInfo/",
+            headers: {"X-CSRFToken": csrftoken},
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                if (data.code == 0) {
+                    alert("修改成功！");
+                    window.location.reload()
+                } else alert(data.msg)
+            }
+        })
+    }
+</script>
+{% endblock main %}

@@ -1,0 +1,265 @@
+{% extends '用户端/workbench.html' %}
+{% load static %}
+{% block title %}预测实例{% endblock title %}
+{% block css %}
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"#}
+{#          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">#}
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <style>
+        .show {
+            display: block !important;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 160px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            font-size: 14px;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        }
+
+        .dropdown .dropdown-menu {
+            margin-top: 2px;
+            font-size: 0.875rem;
+            box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+        }
+
+        .open > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu > li > a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.42857143;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: "Glyphicons Halflings";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .glyphicon-ok:before {
+            content: "\e013";
+        }
+
+        :after, :before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .btn{
+            display: inline-block;
+    font-weight: 400;
+    color: #1F1F1F;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    border-radius: 0.1875rem;
+                background-image:none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .btn-default{
+            font-weight: 400;
+            font-size: 0.875rem;
+            border-radius: 4px;
+            background-image:none;
+            text-shadow:none;
+            border: 0;
+            outline: 1px solid #CED4DA;
+        }
+    .btn-primary, .wizard > .actions a {
+    color: #fff;
+    background-color: #4B49AC;
+    border-color: #4B49AC;
+}
+    </style>
+{% endblock %}
+{% block main %}
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <div class="row forms-sample">
+                        <form method="post" action="/forecast/xunlian">
+                    <div class="col-md-12">
+                        <h4>模型选择</h4>
+                        <div class="form-group">
+                        {% for item in algorithm %}
+                          <div class="form-check mr-2">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" id="inlineCheckbox1" value="{{ item }}" name="model_name"> {{ item }}
+                            <i class="input-helper"></i></label>
+                          </div>
+                        {% endfor %}
+                        </div>
+                      </div>
+                        <div class="col-md-6">
+                            <h4 class="card-title">特征选取</h4>
+                            <div class="form-group" style="width: 340px">
+                            <select name="train_features" id="train_features" multiple="multiple" class="selectpicker form-control" style="width:180px;height: 38px;" tabindex="-98">
+                                {% for item in features %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                             </div>
+                            <h4 class="card-title">目标特征</h4>
+                            <div class="form-group" style="width: 340px">
+                            <select name="target_feature" id="target_feature" class="selectpicker form-control"
+                                    style="width:180px;height: 38px;" tabindex="-98">
+                                {% for item in features %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                            </div>
+                                <h4 class="card-title">已保存模型选择</h4>
+                            <div class="form-group"  style="width: 340px">
+                            <select name="model" id="model" class="selectpicker form-control"
+                                    style="width:180px;height: 38px;" tabindex="-98">
+                                {% for item in model %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                             </div>
+                            <button type="submit" class="btn btn-primary btn-sm" name="train">训练模型</button>
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-sm" name="result">查看结果</button>
+                            <br>
+                            <br>
+                            <h3 id="text">{{message}}</h3>
+                            {% if message_error %}
+                                  <script>
+                                    alert("{{ message_error }}");
+                                  </script>
+                                {% endif %}
+                        </div>
+
+                        </form>
+
+                    </div>
+                   <div class="row">
+                       <div class="col-md-12 mt-3">
+                           <h3 class="card-title">预测结果</h3>
+                           <h4>评估指标mae：{{mae}}</h4>
+                           <h4>评估指标mse：{{mse}}</h4>
+                           <img src="{{image_path}}" id="result" >
+                       </div>
+                   </div>
+
+               </div>
+           </div>
+        </div>
+    </div>
+  {% csrf_token %}
+
+{% endblock %}
+{% block js %}
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        function algorithm_select(){
+            var model = '';
+            var radio = document.getElementsByName("model");
+            for(var i = 0;i <radio.length;i++){
+                console.log(radio[i].checked)
+                if(radio[i].checked==true){
+                    if(model.length == 0)model = model+radio[i].value;
+                    else model = model +',' + radio[i].value;
+                }
+            }
+            return model
+        }
+        function feature_select(){
+            return $("#train_features").val()
+        }
+        function target_select(){
+            return $("#target_feature").val()
+        }
+        function model_select(){
+            return $("#model").val()
+        }
+        function train_model(){
+            $("#text").text("训练中.....")
+            $.ajax({
+                headers: {'X-CSRFToken': csrftoken,
+                'contentType':'application/json; charset=UTF-8'},
+                method:"POST",
+                url:"/forecast/train",
+                data:{
+                    "features":JSON.stringify(feature_select()),
+                    "algorithm":algorithm_select(),
+                    "target":target_select(),
+                    "file_path": "{{ file_path }}",
+                },
+                success: function (data){
+                    $("#text").text("训练完成")
+                    location.reload(true)
+                },
+                error: function (msg){
+                    alert("error ")
+                }
+            });
+        }
+        function get_result(){
+            $.ajax({
+                headers: {'X-CSRFToken': csrftoken,
+                'contentType':'application/json; charset=UTF-8'},
+                method:"POST",
+                url:"/forecast/result",
+                data:{
+                    "features":JSON.stringify(feature_select()),
+                    "algorithm":algorithm_select(),
+                    "target":target_select(),
+                    "model":model_select(),
+                    "file_path": "{{ file_path }}",
+                },
+                success: function (data){
+                    $("#text").text("训练完成")
+                    console.log(data)
+                    $("#result").attr('src',data)
+                    console.log("success")
+                },
+                error: function (msg){
+                    alert("error "+ msg)
+                }
+            });
+        }
+    </script>
+
+  {% endblock js %}

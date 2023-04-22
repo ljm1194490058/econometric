@@ -1,0 +1,58 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}团队中心{% endblock title %}
+{% block main %}
+    {% csrf_token %}
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-3 col-xlg-3 col-md-5">
+                <div class="">
+                    <div class="card-block">
+                        <center class="m-t-30"><img src="{% static 'images/index_images/5.jpg' %}" class="img-circle"
+                                                    width="150"/>
+                            <h4 class="card-title mt-3">{{ name }}</h4>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-9 col-xlg-9 col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material">
+                            <div class="form-group">
+                                <label class="col-md-12">团队名称</label>
+                                <div class="col-md-12">{{ name }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email" class="col-md-12">负责人邮箱</label>
+                                <div class="col-md-12">{{ email }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">研究领域</label>
+                                <div class="col-md-12">{{ field }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">负责人所属组织</label>
+                                <div class="col-md-12">{{ organization }}
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="col-md-12">Message</label>
+                                <div class="col-md-12">
+                                    <textarea rows="5" placeholder="please input something"
+                                              class="form-control form-control-line"></textarea>
+                                </div>
+                            </div> -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+{% endblock main %}

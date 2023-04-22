@@ -1,0 +1,62 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}数据管理{% endblock title %}
+{% block main %}
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 class="font-weight-bold">数据集</h4>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="justify-content-end d-flex">
+                                <a class="btn btn-danger btn-icon-text btn-sm" onclick="dels()">删除所选数据</a>
+                                <a href="{% url 'app:dataset_add'  %}" class="btn btn-success btn-icon-text btn-sm ml-1">新增数据</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="table-responsive">
+                       <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center;"><input type="checkbox" id="checkAll"></th>
+                                <th>ID</th>
+                                <th>name</th>
+                                <th>usertype</th>
+                                <th>userId</th>
+                                <th>filepath</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <form action="{% url 'app:dataset_del' %}" method="post" id="delsform">{% csrf_token %}
+                                {% for data in datas %}
+                                    <tr>
+                                        <td class="inbox-small-cells">
+                                            <input type="checkbox" class="mail-checkbox" name="delslist" value="{{ data.id }}">
+                                        </td>
+                                        <td>{{ data.id }}</td>
+                                        <td>{{ data.name }}</td>
+                                        <td>{{ data.usertype }}</td>
+                                        <td>{{ data.userId }}</td>
+                                        <td>{{ data.filepath }}</td>
+                                    </tr>
+                                {% empty %}
+                                <tr class="odd text-center">
+                                    <td valign="top" colspan="6" class="dataTables_empty">暂无数据</td>
+                                </tr>
+                                {% endfor %}
+                            </form>
+                            </tbody>
+                        </table>
+                  </div>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block js %}
+    <script src="{% static 'js/dels.js' %}"></script>
+{% endblock js %}

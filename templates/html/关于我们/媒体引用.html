@@ -1,0 +1,389 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <style>
+
+
+        .text_field {
+            position: relative;
+            display: inline-block;
+        }
+        .menu{
+            display: none;
+            position: absolute;
+            background-color: #FFFAFA;
+            min-width: 80px;
+
+        }
+        .text_field:hover .menu{
+            display: block;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+        /*nav*/
+        .text_field a{
+            color: gray;
+        }
+        .text_field a:hover{
+            text-decoration: none;
+        }
+        .btn_field a{
+            color: gray;
+        }
+        .btn_field a:hover{
+            text-decoration: none;
+        }
+        .maxTitle {
+            position: relative;
+            line-height: 34px;
+        }
+        .maxTitle span {
+            position: relative;
+            z-index: 1;
+            padding-right: 18px;
+            background: #fff;
+            color: #0093c4;
+            font-size: 30px;
+        }
+        .maxTitle .sub {
+            position: absolute;
+            top: 18px;
+            width: 100%;
+            height: 1px;
+            width: 100%;
+            background: #d6d6d6;
+        }
+
+    </style>
+
+<div class="crumbs">
+    <div class="container">
+        <p class="title">企业简介</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:aboutus' %}">关于我们</a>&nbsp;&gt;&nbsp;媒体引用            </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-left-menu" style="margin-top: 0px;">
+        <div class="page-left-title">
+            <h1>
+                <span class="zh">关于我们</span>
+                <small class="en"> / ABOUT</small>
+            </h1>
+        </div>
+        <div class="page-left-menu-box">
+            <div class="menu1">
+                <div class="menu-item1" data-type="6">
+                    <a href="{% url 'app:aboutus' %}">
+                        企业简介  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1" data-type="143">
+                    <a href="{% url 'app:serviceobject' %}">
+                        服务对象  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1" data-type="144">
+                    <a href="{% url 'app:companyculture' %}">
+                        公司文化   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;     </a>
+                </div>
+
+                <div class="menu-item1 active" data-type="213">
+                    <a href="{% url 'app:media' %}">
+                        媒体引用   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;     </a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container" style="overflow: hidden;">
+        <div class="mainContent">
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1529535577.png' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1529535577.png" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=137">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/linkicon.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=137">
+                    <p class="childTitle">英飞咨询（ISM）出席区块链经济论坛</p>
+                </a>
+                <p class="childTime">2018-06-21</p>
+                <a href="aboutshow.php?cid=213&amp;id=137">
+                    <p class="childInfo">区块链经济论坛是区块链开发者、咨询顾问、政策制定者、CEO和风投资本家们齐聚一堂的国际论坛。今年论坛于旧金山举行。</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1527796032.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1527796032.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=133">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/linkicon.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=133">
+                    <p class="childTitle">背信弃义！特朗普为何突然变卦？</p>
+                </a>
+                <p class="childTime">2018-06-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=133">
+                    <p class="childInfo">美国白宫周二发布声明，将对500亿美元从中国进口的包括高科技以及与“中国制造2025”相关的产品征收25%关税，最终征税名单将在6月15日宣布，并在随后开始征收关...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1526317702.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1526317702.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=129">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=129">
+                    <p class="childTitle">技术冲击不可小觑 中美谈判将决定全球化的命运</p>
+                </a>
+                <p class="childTime">2018-05-15</p>
+                <a href="aboutshow.php?cid=213&amp;id=129">
+                    <p class="childInfo">美国对中国的技术制裁，基本可以达到遏制中国相关行业发展的目的。也可以理解为，《中国制造2025》重点发展的行业对技术的依赖程度较高。美国封锁技术转让，将对...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1522865360.png' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1522865360.png" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=122">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=122">
+                    <p class="childTitle">中美贸易博弈是持久战，中国如何制定应对预案？</p>
+                </a>
+                <p class="childTime">2018-04-05</p>
+                <a href="aboutshow.php?cid=213&amp;id=122">
+                    <p class="childInfo">美国对中国的压制，是中国发展过程中必须面对的挑战，未来将会是一种常态。中国当然不应该为了避免贸易战而限制自己合理的发展，这等于“因噎废食”。同时，中国...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1522266154.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1522266154.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=119">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=119">
+                    <p class="childTitle">英飞咨询（ISM）出席欧盟-印度“低碳经济模型”专家对话会</p>
+                </a>
+                <p class="childTime">2018-03-29</p>
+                <a href="aboutshow.php?cid=213&amp;id=119">
+                    <p class="childInfo">近日，欧盟和印度之间有关巴黎协议（Paris Agreement）的战略合作邀请了英飞咨询公司参加“低碳经济模型”专家对话会。会议于2018年3月27日在印度新德里举行。</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1521832497.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1521832497.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=117">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=117">
+                    <p class="childTitle">美国提高关税可能砸自己脚：逆差难扭转，增速会受损</p>
+                </a>
+                <p class="childTime">2018-03-24</p>
+                <a href="aboutshow.php?cid=213&amp;id=117">
+                    <p class="childInfo">北京时间3月23号凌晨，特朗普签署总统备忘录，宣布对中国价值500亿美元的进口商品征收关税，涵盖1300多种商品，中美贸易摩擦全面升级。中国商务部随即宣布“反制...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1458710296.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1458710296.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=65">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=65">
+                    <p class="childTitle">自由党需向单边关税裁判迈出第一步</p>
+                </a>
+                <p class="childTime">2016-03-23</p>
+                <a href="aboutshow.php?cid=213&amp;id=65">
+                    <p class="childInfo">经济学家指出大部分的关税只给政府带来少量的创收，并且对加拿大制造业以及对外谈判上增益极少。自由党政府可以针对绝大多数进口签订单边关税协定，这将使得加拿...</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1456820929.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1456820929.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=62">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=62">
+                    <p class="childTitle">权衡的游戏</p>
+                </a>
+                <p class="childTime">2016-03-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=62">
+                    <p class="childInfo">TPP将会给相关经济体带来多大的利益？</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1456810993.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1456810993.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=61">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=61">
+                    <p class="childTitle">TPP自由贸易协定的福利？NO</p>
+                </a>
+                <p class="childTime">2016-03-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=61">
+                    <p class="childInfo">取消关税的效益直到2030年才能完全享受到。</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1456804746.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1456804746.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=60">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=60">
+                    <p class="childTitle">TPP与加拿大？拿数据来说话！</p>
+                </a>
+                <p class="childTime">2016-03-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=60">
+                    <p class="childInfo">评估TPP对加拿大的经济效益还需要更多的数据支撑。</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1456799703.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1456799703.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=59">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=59">
+                    <p class="childTitle">加韩自贸协定会给加拿大卑诗省带来多大收益？</p>
+                </a>
+                <p class="childTime">2016-03-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=59">
+                    <p class="childInfo">加韩自贸协定预估对加拿大的经济增长较小，最终大约21亿加元。但是对卑诗省居民的影响又当如何？</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{% static 'images/1521832347.jpg' %}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="images/1521832347.jpg" data-lightbox="child">
+
+                        </a>
+                        <a href="aboutshow.php?cid=213&amp;id=58">
+                            <div class="childHideIcon">
+                                <img src="images/linkicon.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="aboutshow.php?cid=213&amp;id=58">
+                    <p class="childTitle">推倒阻止贸易的高墙</p>
+                </a>
+                <p class="childTime">2016-03-01</p>
+                <a href="aboutshow.php?cid=213&amp;id=58">
+                    <p class="childInfo">意大利面碗成为了自1995年来双边贸易协定的形象代言。尽管加拿大因1989年的加美自贸协定在这个潮流占据一席，但在这个世界杯中却不能很满意的分杯羹。加拿大与欧...</p>
+                </a>
+            </div>
+            <div style="clear:both"></div>
+            <div class="page_list"><a href="javascript:;" title="已是第一页">&lt;&lt;</a><a href="javascript:;" title="已是第一页">&lt;</a><a href="javascript:;" class="on">1</a><a href="?cid=213&amp;page=2" class="num" title="第 2 页">2</a><a href="?cid=213&amp;page=2" title="下一页">&gt;</a><a href="?cid=213&amp;page=2" title="最后一页">&gt;&gt;</a></div>            </div>
+
+    </div>
+</div>
+
+{% endblock %}

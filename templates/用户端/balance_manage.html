@@ -1,0 +1,57 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}余额管理{% endblock title %}
+{% block main %}
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <h4 class="card-title">我的余额</h4>
+                   {% if is_personal %}
+                       <div class="form-group">
+                           <label class="col-md-12">个人余额</label>
+                           <div class="col-md-12">{{ balance }}</div>
+                       </div>
+                   {% endif %}
+                   {% if has_team %}
+                       <div class="form-group">
+                           <label class="col-md-12">团队余额</label>
+                           <div class="col-md-12">{{ team_balance }}</div>
+                       </div>
+                   {% endif %}
+               <hr>{% csrf_token %}
+                    <h4 class="card-title">交易</h4>
+                   <div class="form-group">
+                       <label class="col-md-12">交易金额</label>
+                       <div class="col-md-12">
+                           <input type="number" id="balance" class="form-control form-control-line">
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary" onclick="balance_manage('提现')">提现</button>
+                   <button type="button" class="btn btn-warning" onclick="balance_manage('充值')">充值</button>
+               </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        function balance_manage(type) {
+            $.ajax({
+                type: "POST",
+                url: "/app/balance_manage/",
+                headers: { 'X-CSRFToken': csrftoken },
+                dataType: "json",
+                data: {
+                    type: type,
+                    num: $('#balance').val()
+                },
+                success: (data) => {
+                    alert(data.msg);
+                    location.reload();
+                }
+            })
+        }
+    </script>
+{% endblock js %}

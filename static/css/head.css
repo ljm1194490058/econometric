@@ -1,0 +1,105 @@
+.text_field {
+    position: relative;
+    display: inline-block;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #FFFAFA;
+    width: 100%;
+    line-height: 60px;
+}
+
+.text_field:hover .menu {
+    display: block;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+/*nav*/
+.text_field a {
+    color: gray;
+}
+
+.text_field a:hover {
+    text-decoration: none;
+}
+
+.btn_field a {
+    color: gray;
+}
+
+.btn_field a:hover {
+    text-decoration: none;
+}
+
+
+* {
+    padding: 0; /*清除内边距*/
+    margin: 0; /*清除外边距*/
+    text-decoration: none;
+}
+
+.navigation_bars { /*水平导航条*/
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    border-bottom-style: solid;
+    border-bottom-color: #F5F5F5;
+}
+
+.logo0 {
+    width: 88px;
+    height: 84px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 20%;
+}
+
+.navigation_textbox { /*导航条的文本框*/
+    position: absolute;
+    top: 40%;
+    width: 55%;
+    height: 60%;
+    left: 40%;
+
+}
+
+.text_field { /*导航条的文本*/
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+}
+
+.btn_field { /*导航条里的登录/注册*/
+    position: relative;
+    width: 10%;
+    line-height: 60px;
+    text-align: center;
+    float: right;
+
+
+}
+
+.text_field a:hover {
+    color: #00a3d9;
+}
+
+.btn_field a:hover {
+    color: #00a3d9;
+}
+
+
+

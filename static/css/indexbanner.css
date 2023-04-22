@@ -1,0 +1,102 @@
+.banner .contentInfo .sub{
+    animation:sub .5s  ease-in-out 0s  both;
+    -moz-animation:sub .5s  ease-in-out 0s  both;
+    -webkit-animation:sub .5s ease-in-out 0s  both;
+    -o-animation:sub .5s ease-in-out 0s  both;
+}
+@keyframes sub{
+    0%{height:0px;}
+    100%{height:120px;}
+}
+@-moz-keyframes sub{
+    0%{height:0px;}
+    100%{height:120px;}
+}
+@-webkit-keyframes sub {
+    0%{height:0px;}
+    100%{height:120px;}
+}
+@-o-keyframes sub{
+    0%{height:0px;}
+    100%{height:120px;}
+}
+
+.banner .contentInfo .quan{
+    animation:quan .2s  ease-in-out .5s  both;
+    -moz-animation:quan .2s  ease-in-out .5s  both;
+    -webkit-animation:quan .2s  ease-in-out .5s  both;
+    -o-animation:quan .2s  ease-in-out .5s  both;
+}
+@keyframes quan{
+    0%{ transform:scale(0);}
+    100%{transform:scale(1);}
+}
+@-moz-keyframes quan{
+    0%{ -moz-transform:scale(0);}
+    100%{-moz-transform:scale(1);}
+}
+@-webkit-keyframes quan {
+    0%{ -webkit-transform:scale(0);}
+    100%{-webkit-transform:scale(1);}
+}
+@-o-keyframes quan{
+    0%{ -o-transform:scale(0);}
+    100%{-o-transform:scale(1);}
+}
+
+.banner .contentInfo .title{
+    animation:tranx .8s  ease-in-out .5s  both;
+    -moz-animation:tranx .8s  ease-in-out .5s  both;
+    -webkit-animation:tranx .8s  ease-in-out .5s  both;
+    -o-animation:tranx .8s  ease-in-out .5s  both;
+}
+.banner .contentInfo .info{
+    animation:tranx .8s  ease-in-out .7s  both;
+    -moz-animation:tranx .8s  ease-in-out .7s  both;
+    -webkit-animation:tranx .8s  ease-in-out .7s  both;
+    -o-animation:tranx .8s  ease-in-out .7s  both;
+}
+.banner .contentInfo .btn{
+    animation:tranx .8s  ease-in-out .9s  both;
+    -moz-animation:tranx .8s  ease-in-out .9s  both;
+    -webkit-animation:tranx .8s  ease-in-out .9s  both;
+    -o-animation:tranx .8s  ease-in-out .9s  both;
+}
+@keyframes tranx{
+    0%{ transform:translateX(-700px);}
+    100%{transform:translateX(0);}
+}
+@-moz-keyframes tranx{
+    0%{ -moz-transform:translateX(-700px);}
+    100%{-moz-transform:translateX(0);}
+}
+@-webkit-keyframes tranx {
+    0%{ -webkit-transform:translateX(-700px);}
+    100%{-webkit-transform:translateX(0);}
+}
+@-o-keyframes tranx{
+    0%{ -o-transform:translateX(-700px);}
+    100%{-o-transform:translateX(0);}
+}
+
+
+@keyframes bannerNavChildOn{
+    0%{background:#fff; transform:scale(1);}
+    50%{transform:scale(0);}
+    100%{background:#000;transform:scale(1);}
+}
+@-moz-keyframes bannerNavChildOn{
+    0%{background:#fff; -moz-transform:scale(1);}
+    50%{transform:scale(0);}
+    100%{background:#000;-moz-transform:scale(1);}
+}
+@-webkit-keyframes bannerNavChildOn {
+    0%{background:#fff; -webkit-transform:scale(1);}
+    50%{transform:scale(0);}
+    100%{background:#000;-webkit-transform:scale(1);}
+}
+@-o-keyframes bannerNavChildOn{
+    0%{background:#fff; -o-transform:scale(1);}
+    50%{transform:scale(0);}
+    100%{background:#000;-o-transform:scale(1);}
+}

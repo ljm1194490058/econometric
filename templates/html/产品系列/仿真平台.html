@@ -1,0 +1,119 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">仿真平台</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;仿真平台
+            </div>
+        </div>
+    </div>
+    <div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+        <div class="container" style="overflow: hidden;padding-top: 0;">
+            <div class="mainContent">
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{simulation_platform_img1.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{simulation_platform_img1.img}}" data-lightbox="child">
+                            </a>
+                            <a href="{% url 'app:simulation' %}">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:simulation' %}">
+                        <p class="childTitle">全球CGE模型在线培训视频免费开放</p>
+                    </a>
+                    <p class="childTime">2019-05-02</p>
+                    <a href="{% url 'app:simulation' %}">
+                        <p class="childInfo"></p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{simulation_platform_img2.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{simulation_platform_img2.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:simulation' %}">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:simulation' %}">
+                        <p class="childTitle">量化经济分析平台</p>
+                    </a>
+                    <p class="childTime">2018-03-29</p>
+                    <a href="{% url 'app:simulation' %}">
+                        <p class="childInfo">
+                            加强对世界主要经济体宏观经济形势判断、地缘政治事件的影响分析、社会经济与生态环境综合评估等方面的能力，尽快建立和完善集舆情、数据、模型与人才智库的全球...</p>
+                    </a>
+                </div>
+                <div style="clear:both"></div>
+                <div class="page_info">共<span>1</span>页<span>2</span>条记录</div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

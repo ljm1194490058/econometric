@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <meta charset="UTF-8">
+    <link href="{% static 'css/head.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/footer.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+    <div class="navigation_bars" style="z-index:1">
+        <img class="logo0" src="/static/images/logo0.jpg">
+        <img class="logo" src="/static/images/logo.jpg">
+        <div class="navigation_textbox"><!--导航栏-->
+            <div class="text_field">
+                <a href="{% url 'app:index' %}">首页</a>
+            </div>
+
+            <!-- <div class="text_field">
+                <span><a href="{% url 'app:produce' %}">产品系列</a></span>
+                <div class="menu">
+                    <a href="{% url 'app:produce' %}">
+                        <div style="text-align: center">数据软件</div>
+                    </a>
+                    <a href="{% url 'app:simulation_platform' %}">
+                        <div style="text-align: center">仿真平台</div>
+                    </a>
+                    <a href="{% url 'app:training_courses' %}">
+                        <div style="text-align: center">培训课程</div>
+                    </a>
+                    <a href="{% url 'app:database' %}">
+                        <div style="text-align: center">资料库</div>
+                    </a>
+                    <a href="{% url 'app:research_report' %}">
+                        <div style="text-align: center">研究报告</div>
+                    </a>
+                </div>
+            </div> -->
+
+            {% if is_login %}
+                {% if is_personal %}
+                    <div class="btn_field">
+                        <span><a href="{% url 'app:personcenter' %}">个人中心</a></span>
+                    </div>
+
+                    <div class="btn_field">
+                        <span><a href="{% url 'app:logout' %}">退出</a></span>
+                    </div>
+                {% endif %}
+
+                {% if is_team %}
+                    <div class="btn_field">
+                        <span><a href="{% url 'app:personcenter2' %}">团队中心</a></span>
+                    </div>
+
+                    <div class="btn_field">
+                        <span><a href="{% url 'app:logout' %}">退出</a></span>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="btn_field">
+                    <span><a href="{% url 'app:login' %}">注册</a></span>
+                </div>
+                <div class="btn_field">
+                    <span><a href="{% url 'app:login' %}">登录</a></span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <div class="foot">
+        <div class="text_block">
+            <h4>关于我们</h4>
+            <p>企业简介</p>
+            <p>服务对象</p>
+            <p>公司文化</p>
+        </div>
+        <div class="text_block">
+            <h4>解决方案</h4>
+            <p>解决方案</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+        </div>
+        <div class="text_block">
+            <h4>人才招聘</h4>
+            <p>人才招聘</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+        </div>
+        <div class="text_block">
+            <h4>联系我们</h4>
+            <p>联系我们</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <div class="warranty">
+        <p>@copyright</p>
+    </div>
+{% endblock %}

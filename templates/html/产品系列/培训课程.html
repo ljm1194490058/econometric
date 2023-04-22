@@ -1,0 +1,187 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script src="{% static 'js/3.0_function/jquery.min.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;培训课程            </div>
+    </div>
+</div>
+<div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+
+
+
+    <div class="container" style="overflow: hidden;padding-top: 0;">
+        <div class="mainContent">
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{training_courses_img1.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{training_courses_img1.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="../../html/产品系列/培训.html">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childTitle">全球动态一般均衡模型(GTAPISM)培训--201812</p>
+                </a>
+                <p class="childTime">2019-01-15</p>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childInfo">全球动态CGE模型（基本理论、数据结构、动态机制、软件操作、结果解释）以及案例练习（英国脱欧、一带一路、 自然灾害、自贸区、特朗普经济政策等）</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{training_courses_img2.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{training_courses_img2.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:peixun' %}">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childTitle">全球动态一般均衡模型(GTAPISM)培训--201804</p>
+                </a>
+                <p class="childTime">2018-03-21</p>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childInfo">全球动态CGE模型（基本理论、数据结构、动态机制、软件操作、结果解释）以及案例练习（英国脱欧、一带一路、 自然灾害、自贸区、特朗普经济政策等）</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{training_courses_img3.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{training_courses_img3.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:peixun' %}">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childTitle">全球动态一般均衡模型（CGE）培训</p>
+                </a>
+                <p class="childTime">2017-09-06</p>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childInfo">全球动态CGE模型（基本理论、数据结构、软件操作、结果解释）以及案例的课堂或小组练习（英国脱欧，一带一路，自然灾害，特朗普经济政策影响等）</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{training_courses_img4.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{training_courses_img4.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:peixun' %}">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childTitle">全球静态一般均衡模型（CGE）培训</p>
+                </a>
+                <p class="childTime">2017-08-16</p>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childInfo">全球静态CGE模型（基本理论、数据结构、软件操作、结果解释）以及案例课堂或小组练习（英国脱欧，一带一路，自然灾害，特朗普经济政策影响等）</p>
+                </a>
+            </div>
+            <div class="child">
+                <div class="childImg">
+                    <img class="childImgimg" src="{{training_courses_img5.img}}">
+                    <div class="childHide">
+                        <a class="example-image-link" href="{{training_courses_img5.img}}" data-lightbox="child">
+
+                        </a>
+                        <a href="{% url 'app:peixun' %}">
+                            <div class="childHideIcon">
+                                <img src="{% static 'images/img-33.png' %}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childTitle">全球动态一般均衡模型（CGE）培训</p>
+                </a>
+                <p class="childTime">2017-02-18</p>
+                <a href="{% url 'app:peixun' %}">
+                    <p class="childInfo">全球 CGE 静态模型、动态模型（基本理论、数据结构、软件操作） 以及热点案例（ 英
+                        国脱欧，能源及气候变化 CGE，自贸区问题研究, 美国总统特朗普政策对中...</p>
+                </a>
+            </div>
+            <div style="clear:both"></div>
+            <div class="page_info">共<span>1</span>页<span>5</span>条记录</div>            </div>
+
+    </div>
+</div>
+{% endblock %}

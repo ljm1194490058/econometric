@@ -1,0 +1,184 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+        <style>
+        /* Make the image fully responsive */
+        .child{
+            border:1px solid #e6e6e6;
+            width:30%;
+            padding: 10px;
+            text-align: center;
+            display:inline-block;
+        }
+        .member_img img {
+            max-height: 200px;
+            max-width: 100%;
+
+        }
+        .member_name {
+            padding: 10px;
+        }
+
+        .member_info{
+            color: #808080;
+            padding:0 10px;
+        }
+        .childInfo{
+            color: #808080;
+            padding: 2px;
+        }
+
+        .child-o{
+            height: 30px;
+            border-bottom: solid #e6e6e6 ;
+            border-top: solid #e6e6e6 ;
+            padding: 1px;
+        }
+        .suoyou{
+            font-size: 15px;
+            width: 50px;
+            padding: 25px;
+        }
+
+        .child_list{
+            padding-top: 10px;
+            border-bottom: solid #e6e6e6 ;
+            width:76%;
+            float:right;
+        }
+        .sub{
+            padding:20px;
+        }
+        .content_title{
+            padding: 0 15px 15px;
+            text-align: center;
+        }
+        .content_img img{
+            text-align: center;
+            max-height: 300px;
+            max-width: 100%;
+            padding-top: 10px;
+        }
+
+
+
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+        /*nav*/
+        .text_field a{
+            color: gray;
+        }
+        .text_field a:hover{
+        }
+        text-decoration: none;
+        .btn_field a{
+            color: gray;
+        }
+        .btn_field a:hover{
+            text-decoration: none;
+        }
+
+    </style>
+<div class="crumbs">
+    <div class="container">
+        <p class="title">荣誉顾问</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:teammember' %}">团队成员</a>&nbsp;&gt;&nbsp;公司团队
+        </div>
+    </div>
+</div>
+
+<!-- main -->
+<div class="main" style="padding-top: 30px;">
+
+    <div class="container">
+
+            <div class="page-left-menu" style="margin-top: 0px;">
+                <div class="page-left-title">
+                    <h1>
+                        <span class="zh">团队成员</span>
+                    </h1>
+
+                </div>
+
+
+                <div class="page-left-menu-box">
+                    <div class="menu1">
+                        <div class="menu-item1 active">
+                            <a href="{% url 'app:consultant_content' %}">
+                                荣誉顾问
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <div class="menu-item1">
+                            <a href="{% url 'app:teammember' %}">
+                                公司团队
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                        </div>
+
+                        <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+                    </div>
+
+                </div>
+                
+            </div>
+        <div class="productmain" style="overflow: hidden;">
+
+            <!--            <div class="mainNav">-->
+            <!--                <div class="child-o">-->
+            <!--                    <a href="people.php?cid=114">所有</a></div>            </div>-->
+
+
+
+            <div class="content">
+                <div class="content_child">
+                    <div class="content_title">
+                    <div class="content_name">
+                        <h5>Harsha Vardhana Singh</h5>
+                    </div>
+                    <div class="content_img">
+                        <img src="{{consultant_content_img1.img}}" />
+                    </div>
+                    </div>
+                    <div class="content_info">
+                        <p>
+                            Harsha Vardhana Singh博士作为印度的Rhodes学者毕业于牛津大学经济学博士项目，在国际贸易政策、发展、基础设施管制和全球治理方面有超过三十年的研究经验。他是Council on Emerging Market Enterprises以及Brookings Institution India的高级学者（曾经担任这里的主管）。直至2013年9月30日，Singh在WTO担任了八年的副主管。他主要负责农业和服务业贸易、贸易环境、技术贸易壁垒、卫生和植物检疫措施和电子商务。
+                        </p>
+                        <p>
+                            在印度，Singh担任了Telecom Regulatory Authority of India的经济顾问和秘书。从1985年中开始，他在GATT/WTO秘书处工作了十二年。他曾在SIPA (哥伦比亚大学), Fletcher学院 (塔夫茨大学)和南开大学担任教职，并且担任过国际贸易与可持续发展中心 (ICTSD)和国际可持续发展研究所(IISD)的高级学者，并且为2014-2016世界经济论坛贸易和FDI全球议程理事会的成员，高级政策委员会和WTO 争端解决小组的主管，并为多个研究机构的贸易和管制方面的访问学者。
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main over -->
+{% endblock %}
+
+

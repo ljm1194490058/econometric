@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    {#	<title>经济预测与政策模拟系统平台——登录</title>#}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/2.0_login.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/index.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/all.min.css' %}"/>
+</head>
+<body>
+<div style="padding-top:0;left:10%;">
+    <div class="login-wrap">
+        <div class="login-html">
+            <div class="logo"><img src="/static/images/logo0.jpg"></div>
+            <div class="header">经济预测系统平台</div>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+            <label for="tab-1" class="tab">登 录</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up">
+            <label for="tab-2" class="tab">注 册</label>
+            <div class="login-form">
+                <form method="post" action="{% url 'app:login' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="sign-in-htm">
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="username" placeholder="用户名" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-user"></i></span>
+                            </div>
+                        </div>
+                        <div class="simpleui-input-inline">
+                            <div class="el-input el-input--prefix">
+                                <input type="text" autocomplete="off" name="password" placeholder="密码" autofocus="autofocus" class="el-input__inner">
+                                <span class="el-input__prefix"><i class="el-input__icon fas fa-lock"></i></span>
+                            </div>
+                        <span style="color:red">{{ msg }}</span>
+                        </div>
+                        <input id="next1" type="checkbox" checked name="boxes" value="个人用户" onclick="pickoneoftwo()">个人用户&nbsp; &nbsp; &nbsp; &nbsp;
+                        <input id="next2" type="checkbox" name="boxes" value="团队用户" onclick="pickoneoftwo()">团队用户<br><br>
+                        <script type="text/javascript">
+                            var flag = true;
+                            function pickoneoftwo() {
+                                var check1 = document.getElementById("next1");
+                                var check2 = document.getElementById("next2");
+                                if (check1.checked && flag) {
+                                    check2.checked = false;
+                                    flag = false;
+                                }
+                                if (check2.checked && !flag) {
+                                    check1.checked = false;
+                                    flag = true;
+                                }
+                            }
+                        </script>
+{#                        <div class="group">#}
+{#                            <input id="check" type="checkbox" class="check" checked>#}
+{#                            <label for="check">#}
+{#                                <span class="icon"></span>记住密码#}
+{#                            </label>#}
+{#                        </div>#}
+                        <div class="group">
+                            <button type="submit" class="button">登录</button>
+                            <a href="{% url 'app:index' %}">
+                                <button type="button" class="button" style="margin-top: 20px;">返回首页</button>
+                            </a>
+                            
+                        </div>
+
+{#                        <div class="foot-lnk">#}
+{#                            <br/>#}
+{#                            <a href="2.0.1找回密码.html">忘记密码?</a>#}
+{#                        </div>#}
+                    </div>
+                </form>
+
+                <div class="sign-up-htm"><br/><br/>
+                    <div class="group">
+                        <label for="user" class="label" style="font-size:16px">请选择注册类型</label>
+                    </div>
+                    <div class="group">
+                        <a href="{% url 'app:register' %}">
+                            <input type="submit" class="button" value="个 人 注 册">
+                        </a>
+                    </div>
+                    <div class="group">
+                        <a href="{% url 'app:register2' %}">
+                            <input type="submit" class="button" value="团 队 注 册">
+                        </a>
+                    </div>
+                    <div class="group">
+                        <a href="{% url 'app:index' %}">
+                            <input type="submit" class="button" value="返 回 首 页">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

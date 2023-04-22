@@ -1,0 +1,193 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <style>
+        .maxTitle {
+            position: relative;
+            line-height: 34px;
+        }
+        .maxTitle span {
+            position: relative;
+            z-index: 1;
+            padding-right: 18px;
+            background: #fff;
+            color: #0093c4;
+            font-size: 30px;
+        }
+        .maxTitle .sub {
+            position: absolute;
+            top: 18px;
+            width: 100%;
+            height: 1px;
+            width: 100%;
+            background: #d6d6d6;
+        }
+    </style>
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">企业简介</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:aboutus' %}">关于我们</a>&nbsp;&gt;&nbsp;企业简介            </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-left-menu" style="margin-top: 0px;">
+        <div class="page-left-title">
+            <h1>
+                <span class="zh">关于我们</span>
+                <small class="en"> / ABOUT</small>
+            </h1>
+        </div>
+        <div class="page-left-menu-box">
+            <div class="menu1">
+                <div class="menu-item1 active" data-type="6">
+                    <a href="{% url 'app:aboutus' %}">
+                        企业简介  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1" data-type="143">
+                    <a href="{% url 'app:serviceobject' %}">
+                        服务对象  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;      </a>
+                </div>
+
+                <div class="menu-item1" data-type="144">
+                    <a href="{% url 'app:companyculture' %}">
+                        公司文化   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;     </a>
+                </div>
+
+                <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+
+
+    <div class="container" style="overflow: hidden;">
+        <div class="maxTitle">
+            <span class="title">
+                企业简介</span>
+            <div class="sub"></div>
+        </div>
+        <div class="head" style="display: none;">
+        </div>
+        <div class="content">
+            <!-- left -->
+            <div class="">
+                <p>
+                    <span style="color:#666666;font-size:16px;">&nbsp;&nbsp;&nbsp;</span>
+                </p>
+                <p>
+                    <span style="color:#666666;font-size:16px;">&nbsp; &nbsp; 某算法公司是由国内外领先政策顾问和数据专家组成的研究与咨询团队，在中国、</span><span style="color:#666666;font-size:16px;">加拿大、美国和印度都设有分部。公司主营业务包括政策仿真实验平台、经济建模、</span><span style="color:#666666;font-size:16px;">量化投资策略、</span><span style="color:#666666;font-size:16px;">配套数据的开发及相关咨询服务，主要利用经济模型以及大数据来分析热点政策对全球、国家以及省市层次上经济以及各行业的影响，评估其对区域GDP、劳动力、商品产出与价格、以及资本回报等的影响。政策分析领域包括：国际贸易、环境能源、自然灾害、劳动力市场、贫困、财税以及一些行业政策等。</span>
+                </p>
+                <p>
+                    <span style="color:#666666;font-size:16px;"></span><span style="color:#666666;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;本公司可以为政府机构、行业协会、龙头企业及科研团队提供咨询服务，主要涉及宏观经济分析与预测、应用经济、气候经济、贸易、商业及投资战略。相关领域主要包括贸易、环境资源与能源、劳动力与就业、金融、贫困及自然灾害评估等。</span>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    <span style="color:#666666;font-size:16px;"></span>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <ul>
+                    <li>
+                        <strong><span style="color:#666666;font-size:16px;">经济模型开发</span></strong>
+                    </li>
+                </ul>
+                <span style="color:#666666;font-size:16px;"> &nbsp;&nbsp;&nbsp;&nbsp;目前公司建立了的全球、国家、区域三位一体的经济模型：全球动态模型、 国家动态模型、中国区域模型。全球模型基于140个国家，57 个行业的投入产出数据，以及各国之间完整的双边贸易数据构建而成，因此模型能刻画行业和国家之间的供应链关系。国家模型由中国最新的139个行业的投入产出表构建而成。 中国区域模型数据库基于中国31个省，42个行业的投入产出数据等构建而成， 模型适用于跟踪政策对各区域的经济影响 。</span>
+                <div style="text-align:center;">
+                    <img alt="" src="/static/images/picture-3.png"><br>
+                </div>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">图1 全球-国家-区域三位一体动态模型</span>
+                </div>
+                <span style="color:#666666;font-size:16px;">
+<ul>
+	<li>
+		<strong>政策仿真实验平台</strong>
+	</li>
+</ul>
+</span><span style="color:#666666;font-size:16px;"> &nbsp;&nbsp;&nbsp;&nbsp;从国际发展趋势来看，政策效应定量分析在各级政府决策中扮演着越来越重要的角色。然而，传统政策分析模型因为数据基础条件差、模型黑箱化、可视性差的问题始终未能成为各级政府的决策支持系统。为此，公司设计了政策仿真实验平台，其平台的架构及拓深主要包括四个内容。第一，利用先进的网络爬虫与基于人工智能的大数据挖掘技术获取实时的政策热点话题，以期提高科研机构以及政府部门的政策和舆情敏感性；第二，针对客户关注的政策热点问题，以经济模型为核心，辅以相关政策模块，研发强大的量化分析模型；第三，开发友好的用户界面，便于用户简易便捷地对政策效应及热点话题展开定量分析和动态展示，大大提高政策分析的效率；第四，为客户提供系统的模型应用培训，提升平台的科学性，使客户也具备良好的模型应用能力和二次开发能力。</span><br>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">&nbsp;<img alt="" src="/static/images/picture-3.png"></span>
+                </div>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">图2 政策仿真实</span><span style="color:#666666;font-size:16px;"></span><span style="color:#666666;font-size:16px;">验平台架构</span>
+                </div>
+                <span style="color:#666666;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;政策仿真实验平台是一个综合一体化科研决策支持系统。不仅可以作为教学、科研平台，更是一个决策支持系统。平台主要包括：“平台首页”、“政策热点”、“数据展示”、“情景模拟”、“结果对比”、“用户注册”、“系统管理”等功能。下图为部分结果可视化效果。</span><br>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">&nbsp;&nbsp;<img alt="" src="/static/images/picture-1.png"></span>
+                </div>
+                <span style="color:#666666;font-size:16px;">
+<div style="text-align:center;">
+	图3 政策仿真平台部分结果可视化效果
+</div>
+</span>  <span style="color:#666666;font-size:16px;">
+<ul>
+	<li>
+		<strong>数据库研发</strong>
+	</li>
+</ul>
+</span>  <span style="color:#666666;font-size:16px;"> &nbsp;&nbsp;&nbsp;&nbsp;在研发经济模型的同时，公司会收集、整理和构建相关的数据库，并且对于标准化的数据还会提供相应的数据处理程序。基于普度大学最新版GTAP数据开发了适用于动态全球经济模型的数据库，包括了全球140个国家、57个行业的投入产出数据、各国的双边贸易数据、运输和贸易壁垒数据，以及碳排放和能源数据；构建了中国的省级区域间投入产出数据；正在结合大数据以及调查数据建立中国市级区域数据库及其相关模型（从31个省份数据细分到200多个城市数据）。</span><br>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">&nbsp;<img alt="" src="/static/images/picture-2.png"></span>
+                </div>
+                <span style="color:#666666;font-size:16px;">
+<div style="text-align:center;">
+	图4 江苏省市级城镇化率、常住人口、人均GDP数据
+</div>
+</span>  <span style="color:#666666;font-size:16px;">
+<ul>
+	<li>
+		<strong>技能培训与软件销售</strong>
+	</li>
+</ul>
+</span>
+                <p>
+                    <span style="color:#666666;font-size:16px;"> &nbsp;&nbsp;&nbsp;&nbsp;公司每年定期举办公开培训课程，教授经济模型与政策分析技术，并且还可以根据客户要求，定制化了提供与模型相关的数据、模型及结果分析的培训课程。此外，作为澳大利亚维多利亚大学政策研究中心（CoPS）开发的建模软件GEMPACK的区官方代理，负责售后服务。此软件是一款用于一般均衡建模的专业软件。</span>
+                </p>
+                <p>
+	<span style="color:#666666;font-size:16px;">
+      </span>
+                </p>
+                <ul>
+                    <li>
+                        <span style="font-size:16px;color:#666666;"><strong>定位全球</strong></span>
+                    </li>
+                </ul>
+                <span style="font-size:16px;color:#666666;">公司在全球的4个分部以及世界各地拥有客户资源和合作伙伴。</span>
+                <div style="text-align:center;">
+                    <span style="color:#666666;font-size:16px;">&nbsp;</span><span style="color:#666666;font-size:16px;"><img src="/static/images/picture-16.png" alt=""></span>
+                </div>
+                <span style="font-size:16px;color:#666666;">服务对象：欧盟委员会、世界银行、亚洲发展银行、加拿大外交部、新加坡贸易产业部、麦肯锡、中国国家信息中心、中国农业部信息中心等。</span><br>
+                <span style="font-size:16px;color:#666666;">战略合作伙伴：澳大利亚维多利亚大学政策研究CoPS中心， 美国普度大学GTAP中心，加拿大Ciuriak 咨询公司，上市公司久其软件（002279）。</span><br>
+
+                <span style="font-size:16px;color:#666666;"></span>
+
+                <span style="color:#666666;font-size:16px;"></span>
+                                </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

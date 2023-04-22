@@ -1,0 +1,142 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">人才招聘</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:recruitment' %}">人才招聘</a></div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-left-menu" style="margin-top: 0px;">
+        <div class="page-left-title">
+            <h1>
+                <span class="zh">人才招聘</span>
+                <small class="en"> / ABOUT</small>
+            </h1>
+        </div>
+        <img class="wpica" style="width:180px;margin-left:10px;" alt="微信" src="{% static 'images/QRCode.png' %}">
+
+        
+    </div>
+    <div class="container" style="overflow: hidden;padding-top: 0">
+        <!-- <div class="maxTitle">
+            <span class="title">人才招聘</span>
+            <div class="sub"></div>
+        </div> -->
+        <div class="content-line"></div>
+        <div class="content">
+            <p>
+                <span> </span>
+            </p>
+            <p class="MsoNormal" style="background:white;">
+                <span style="font-size:16px;color:#666666;">在这里不仅有坦诚的同事和良好的工作环境，更有你所需要的其他福利:</span>
+            </p>
+            <p class="MsoNormal" style="background:white;">
+                <span style="font-size:16px;color:#666666;">体现个人价值的平台；</span><br>
+                <span style="font-size:16px;color:#666666;">与国际上权威专家学习和交流的机会；</span>
+            </p>
+            <p class="MsoNormal" style="background:white;">
+	<span style="font-size:16px;"><span style="color:#666666;">参加国际会议，到国外深造的机会；</span><br>
+             </span>         <span style="font-size:16px;color:#666666;">  自由的弹性工作时间；</span><br>
+                <span style="font-size:16px;color:#666666;">  绩效奖金、年终奖；</span><br>
+                <span style="font-size:16px;color:#666666;">  期权奖励...</span><span style="font-size:16px;color:#666666;">。</span><br>
+                <br>
+                <span style="font-size:16px;color:#666666;">英飞咨询</span><span style="font-size:16px;color:#666666;">是一个年轻拼搏的团队。</span><br>
+                <span style="font-size:16px;color:#666666;">  我们，青春洋溢却身怀绝技！</span><br>
+                <span style="font-size:16px;color:#666666;">  我们，热爱思考、善于创新，不断完善工作流程与质量！</span><br>
+                <span style="font-size:16px;color:#666666;">  我们期待有共同特征的你和我们一起为社会，为客户，为自己以及家人创造价值！&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">  我们期待你的加入！</span>
+            </p>
+            <p>
+                <br>
+            </p>
+            <p>
+                <br>
+            </p>
+            <p>
+                <strong><span style="font-size:16px;color:#337FE5;">我们正招聘以下职位</span></strong>
+            </p>
+            <p>
+                <strong><span style="font-size:16px;color:#337FE5;"> </span></strong>
+            </p>
+            <hr>
+            <p>
+                <br>
+            </p>
+            <p>
+                <span style="font-size:16px;color:#666666;"><strong></strong></span><span style="font-size:16px;color:#337FE5;"><strong>岗位名称1：研究助理/行政助理/实习生</strong></span><br>
+                <span style="font-size:16px;color:#666666;">工作地点：北京</span><br>
+                <span style="font-size:16px;color:#666666;">工作性质：全职</span><br>
+                <span style="font-size:16px;color:#666666;">最低学历：本科</span><br>
+                <span style="font-size:16px;color:#666666;">招聘人数：2-3人</span><br>
+                <span style="font-size:16px;color:#666666;">社会福利：-五险一金、绩效工资</span><br>
+                <br>
+                <span style="font-size:16px;color:#666666;"><strong>职位描述</strong></span><br>
+                <span style="font-size:16px;color:#666666;">1.	参与研究咨询项目，能独立完成如收集数据、整理数据、分析数据和撰写报告等研究任务。&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">2.	清晰了解客户需求，根据客户需求设计项目方案。&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">3.	维护公司运营平台，如公司网站与微信公众平台等。</span><br>
+                <span style="font-size:16px;color:#666666;">4.	中英文资料翻译，美化项目报告、汇报材料、运营平台等。</span><br>
+                <span style="font-size:16px;color:#666666;">5.	组织、协调、监督公司运营，如组织培训和会议、数据软件销售等。&nbsp;</span><br>
+                <br>
+                <span style="font-size:16px;color:#666666;"><strong>任职要求：</strong>&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">1.	本科及以上学历。&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">2.	熟练的 EXCEL/PPT或其他排版技能，有一定的美工基础。&nbsp;</span><br>
+                <span style="font-size:16px;color:#666666;">3.	较强中英文表达能力；</span><br>
+                <span style="font-size:16px;color:#666666;">4.	强烈的责任心，工作细致，具有良好的团队合作精神，能够承担一定的工作压力。&nbsp;</span>
+            </p>
+            <hr>
+            <p>
+	<span style="font-size:16px;color:#337FE5;"><strong><br>
+</strong></span>
+            </p>
+            <p>
+                <span style="font-size:16px;color:#337FE5;"><strong>岗位名称2：经济建模顾问 / 经济分析顾问</strong></span>
+            </p>
+            <span style="font-size:16px;color:#666666;">工作地点：北京</span><br>
+            <span style="font-size:16px;color:#666666;">工作性质：全职</span><br>
+            <span style="font-size:16px;color:#666666;">最低学历：本科</span><br>
+            <span style="font-size:16px;color:#666666;">招聘人数：1人</span><br>
+            <span style="font-size:16px;color:#666666;">社会福利：五险一金、绩效工资、股份激励</span><br>
+            <br>
+            <span style="font-size:16px;color:#666666;"><strong>职位描述</strong></span><br>
+            <span style="font-size:16px;color:#666666;">1.	投入产出分析</span><br>
+            <span style="font-size:16px;color:#666666;">2.	一般均衡模型分析&nbsp;</span><br>
+            <span style="font-size:16px;color:#666666;">3.	数据处理与分析</span><br>
+            <br>
+            <span style="font-size:16px;color:#666666;"><strong>任职要求：</strong>&nbsp;</span><br>
+            <span style="font-size:16px;color:#666666;">1.	本科学历，有3年相关工作经验，硕士以上学历，需要有相关学习经历或研究；</span><br>
+            <span style="font-size:16px;color:#666666;">2.	较强中英文字表达能力；</span><br>
+            <span style="font-size:16px;color:#666666;">3.	有一定数据库、数据处理、分析经验。&nbsp;</span><br>
+            <p>
+                <span style="font-size:16px;color:#666666;">4.	有GEMPACK/ R/ GAMS/Python等软件经验的优先。&nbsp;</span>
+            </p>
+            <p>
+	<span style="font-size:16px;color:#666666;"><br>
+  </span>
+            </p>
+            <p>
+                <span style="font-size:16px;color:#666666;">如果您对以上岗位感兴趣，请联系我们</span>
+            </p>
+            <div>
+                <br>
+            </div>            </div>
+    </div>
+</div>
+{% endblock %}

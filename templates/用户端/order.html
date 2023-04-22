@@ -1,0 +1,63 @@
+{% extends '用户端/workbench.html' %}
+{% load static %}
+{% block title %}订单管理{% endblock title %}
+{% block main %}
+
+    <div class="row mb-4">
+        <div class="col-12 col-xl-8">
+            <h3 class="font-weight-bold">欢迎进入经济预测平台</h3>
+            <h6 class="font-weight-normal mb-0">返回 <a href="{% url 'app:myWorkbench' 1 %}"><span class="text-primary">我的预测</span></a></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 class="font-weight-bold">我的订单</h4>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="justify-content-end d-flex">
+                                <a href="{% url 'app:createForecast'  %}" class="btn btn-danger btn-icon-text btn-sm">删除所选订单</a>
+                                <a href="{% url 'app:createForecast'  %}" class="btn btn-success btn-icon-text btn-sm ml-1">新增订单</a>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="table-responsive">
+                       <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>预测</th>
+                                <th>时间</th>
+                                <th>价格</th>
+                                <th>数量</th>
+                                <th>创建时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                    <tr>
+                                        <td>{{ order.id }}</td>
+                                        <td>{{ order.forecast_name }}</td>
+                                        <td>{{ order.time }}</td>
+                                        <td>{{ order.price }}</td>
+                                        <td>{{ order.count }}</td>
+                                        <td>{{ order.create_time }}</td>
+                                    </tr>
+                                {% empty %}
+                                <tr class="odd text-center">
+                                    <td valign="top" colspan="6" class="dataTables_empty">暂无订单</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                  </div>
+                </div>
+           </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block js %}
+{% endblock js %}

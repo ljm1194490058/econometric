@@ -1,0 +1,419 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container--.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;研究报告            </div>
+    </div>
+</div>
+<div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+<div class="container" style="overflow: hidden">
+    <div class="mainHead" style="line-height:40px;color:#333333;font-size:28px;">
+        <p class="title">GTAP模型简介</p>
+    </div>
+    <!-- mainContent -->
+    <div class="mainContent">
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">一、GTAP模型简介</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">GTAP模型主要由两个部分组成，模型主程序和模型数据库。模型主程序根据新古典经济理论设定一些相关方程，并可以进行模拟运算。模型数据库提供各个国家或地区经济运行的主要数据及进出口数据，为主程序的运行提供数据支持。模型从生产着手，对于每个国家都进行了投入产出函数的设定和分析，不同私人部门、政府和生产者有着不同的生产或需求函数，并由存款和投资解决资金平衡问题。GTAP模型拥有自己独立的数据库、模型和支持软件。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">使用GTAP模型评估一项或多项政策冲击（Policy Shock）对多国多部门产生的效应时，代表该项政策的外生变量在市场初始均衡状态下被赋予新的数值，从而使产品及要素市场达到新的均衡点；内生变量在初始和新均衡状态下的数值变化，即反映了政策对经济活动的影响程度。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">二、假设与框架</span></strong>
+</div>
+</span>
+        <p style="text-align:justify;">
+            <span style="font-size:16px;color:#000000;"><span style="color:#000000;font-size:16px;font-family:SimSun;">GTAP是一个比较静态模型，假定市场是完全竞争的，且生产的规模报酬不变。在这两个假设下，生产者以生产成本最小化原则进行生产，而消费者以效用最大化为原则进行消费。在此基础上，所有产品和投入要素市场全部出清，由总供给和总需求决定产品市场及要素市场同时出清时（即均衡状态）内生变量的数值。模型同时还假定，共有五种生产要素——土地、资本、熟练劳动力、非熟练劳动力以及自然资源，三个代表性主体——私人家庭、政府和厂商；生产函数采用固定弹性替代函数（Constant elasticity of substitution ，简称CES），消费函数为固定差异弹性</span><span style="font-size:16px;color:#000000;font-family:SimSun;">（Constant Difference of Elasticity，简称CDE）</span><span style="color:#000000;font-size:16px;font-family:SimSun;">形式；假定劳动力在国内可以自由流动，土地在部门间不流动；根据Armington假说，国内生产的商品和进口商品之间不能完全替代，国家间通过商品贸易和资金流动建立联系。</span></span>
+        </p>
+        <p style="text-align:justify;">
+	<span style="font-size:16px;color:#000000;"><br />
+           </span>
+        </p>
+
+        <span style="font-size:16px;color:#666666;">
+<div style="text-align:center;">
+	<span style="color:#000000;font-size:16px;font-family:SimSun;">&nbsp; 图1 GTAP模型结构</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">具体来说，每个国家只有一个账户，所有的税收、金融资产、资本和劳动力的收入都积聚到这个账户，即图1中的“区域家庭”部门，假设这个地区的区域部门决定该国或地区的私人家庭与政府部门的消费行为以及储蓄行为。区域家庭部门中的政府支出与私人支出将分为购买国内产品与进口产品两个部门，并目厂商的中间投入物也部分来自进口，同样的产品销售也分为内销和外销。GTAP模型假设来自不同地区的产品非同质，因此不能完全相互替代（Armington假定）。假设一国或地区的储蓄进入一个虚拟的全球银行，由此银行决定投资的流向。所有经济行为主体的支出与收入相等。根据会计恒等式与市场均衡方程构成了封闭体系下的均衡。其中，区域家庭单位的账户内的收入分为私人消费、存款和政府消费三大部分。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;">
+<div style="text-align:justify;">
+	<span style="font-family:SimSun;color:#000000;font-size:16px;">这里区域家庭部门的支出方程采用CDE效用方程。而政府的效用方程采用柯布—道格拉斯</span><span style="font-family:SimSun;color:#000000;font-size:16px;">（Cobb-Douglas Utility Function，简称CD）</span><span style="font-family:SimSun;color:#000000;font-size:16px;">方程形式：</span>
+</div>
+</span>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">其中U 为效用，A 为技术水平参数，X、Y 为产品，a 表示X 所得在U 中所占的份额。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">三、模型数据库</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP模型是建立在一个完备的多国投入产出数据库基础之上。基础数据库是GTAP最重要的资源，详细记载了各个区域内部相关产品的生产及区域间的国际贸易情况。GTAP基础数据库给每一个地区都建立了生产、消费与贸易流量表。模型从生产着手，对于每个国家都进行了投入产出函数设定与分析，并结合各国进出口贸易数据，能够进行任意国家（或地区）和产品的重新组合。不同私人、政府和生产者面对不同的生产或需求函数，并由存款和投资解决资金平衡问题。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">2011年发布的GTAP第八版数据库集成了2007年的129个国家和地区、57个部门的全球经济数据。而最新的GTAP第九版数据库包含了140个国家和地区以及57个部门 ，此外，与第八版数据库不同，这一版数据库的最新的基准年是2011年。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">GTAP数据库还包含其他几方面数据：</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <strong><span style="color:#000000;font-size:16px;">① &nbsp;参数</span></strong>
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">GTAP模型中资料可更新，而参数不因模拟的不同而有所改变。其资料库中参数主要是CDE形式的最小支出函数的替代参数、CDE形式的最小支出函数的扩张参数、Armington加总结构下的国产品与进口品之间的替代弹性、Armington结构下不同进口品之间的替代弹性、资本与劳动及土地间的替代弹性、中间生产投入要素之间的替代弹性、不完全移动性原始要素之间的转换弹性、不完全移动性变量的参数、资本存量预期投资报酬率的变动、投资资金分配机制的二元变量。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">② &nbsp;宏观经济资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP资料库是利用简明的支出侧衡等式（Y=C+I+G+（X-M））来计算各国GDP。至于所得面则由工资收入、资本利息、地租、自然资源收入与税收组合而成，最后总支出面的GDP等于总所得面的GDP。一般而言，GTAP只要由世界银行DAD数据库（Development Economics Analytical Database）即可取得GDP与人口数据。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">③ &nbsp;产业资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">即GTAP资料库中部门之间的产业间经济流量（Inter-industry Flows）。其中有两部分值得注意：一是各部门生产出来的商品的销售去向：二是各部门为了生产这些产品的投入成本。GTAP资料库为处理这些问题将销售部分依照购买用途分为5类，而成本支出也依照支付对象划分为7类，如下所示：</span>
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">&nbsp; &nbsp; 总产出=中间投入+私人消费+投资+政府消费+出口</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">&nbsp; &nbsp; 总成本=中间投入+非技术劳动力工资+技术劳动力工资+资本+土地+自然资源+其他税赋</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">④ &nbsp;双边贸易资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">对于双边贸易资料，有两个问题值得注意：一是复出口问题：二是贸易资料收集问题。GTAP资料库是采用联合国、世界银行、FAO, IFS等可信度较高的世界贸易资料，来调整各国或地区资料上的差异，以获得最精确最可信的数据，供使用者进行模拟分析。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">⑤ &nbsp;政府保护及补贴资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP资料库中，贸易品的关税资料来源于两部分：一是世界银行的UNCTADTRAIN资料库：二是经第六版GTAP资料库（GTAP IDB）进行补充工作。世界银行的资料在使用前必须先经过两道程序：第一步是从其中抽取GTAP资料库所需的资料加以处理修整，如果关税资料遗漏的话，就用贸易量加权平均的方法求得；第二步是要对GTAP第六版资料库进行修补，修整原则如下：一是如果该关税资料仅世界银行有而IDB没有，则采用TRAIN资料：二是如果该关税资料仅IDB有而世界银行没有，则采用IDB资料：二是如果该关税资料两者都有，则采用TRAIN资料。但尽量使用IDB资料来补充TRAIN遗漏且无法得知的关税资料。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">⑥ &nbsp;服务贸易资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP 第七版资料库共有15种服务部门，分别是电力、瓦斯、自来水、建筑业、贸易、营造业、水运、空运、通信业、金融、保险、工商服务、娱乐、教育/健康/国防等公共服务、住房，由于这些部门的资料过于分散，目_可靠性较低，GTAP资料库只能使用可靠的资料，再配合数学计算方法，尽量使这些服务部门的资料齐全统一，对于服务贸易资料，GTAP资料库目前仍显得不足，这需要以后加以不断的更新。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">⑦ &nbsp;其他资料</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">除上述资料外，GTAP资料库中尚有几项重要的资料：一是投入产出乘数，乘数可由资料库中的系数资料算出：二是资本存货与折旧的资料，该资料来源于DAD（Development Economics Analytical Database），并以基期年百万美元为计算基础。为了防止遗漏GTAP资料库采取了如下的补救办法：如果一国的折旧资料遗漏，就使用在其附近的有完整折旧资料的国家的平均资本存货与GDP的比率来推算遗漏国家的折旧资料。若附近国家也没有折旧资料，那么就设定该国资本存货与GDP的比率为2.5, &nbsp;而折旧资料为基期年资本存货的4%。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">四、生产模块</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">一国的总供给通过里昂惕夫生产函数（Leontief Function）决定增加值部分（Value Added）和中间产品投入（Intermediate Input）在特定产品总产出中的比例，其中增值部分由CES生产函数决定资本、劳动力和土地等生产要素的投入比例，而中间产品投入由CES函数决定本土采购和进口的比例。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <p style="text-align:justify;">
+            <span style="font-size:16px;color:#000000;font-family:SimSun;">具体来说，GTAP模型中厂商的生产函数采用树形结构。假定生产函数具有可分性（Separability）以及规模报酬不变。厂商的主要投入分为原始投入与中间投入。在可分性假设下，厂商对原始投入的最优使用决策不受中间投入物价格变动的影响，反之亦然。同时，在规模报酬不变的假定下，厂商要素投入使用比例也不会因为生产数量的变动而变动。树形结构的顶层描述厂商对中间投入与初始总投入的需求，在Leontief函数的假定下，厂商中间投入与初始总投入与总产出呈现固定比例关系。这种设定的主要优点在于可以大幅度降低模型中需要估计的参数数量。树形结构底层左边描述了初始投入与生产的关系。假定初始投入与生产为CES关系，不同初始要素之间的替代弹性相等。据此对初始投入进行加总，可以得到加总初始投入（Aggregate Primary Input）。树形结构描述了中间投入与生产的关系，其中包括两层：第一层为国产与总进口之间的替代关系，通过 CES组成一个综合中间投入物：第二层为不同来源进口中间投入物之间的替代关系，同样也是通过CES进行替代。</span>
+        </p>
+        <p style="text-align:justify;">
+	<span style="font-size:16px;color:#000000;"><br />
+            </span>
+        </p>
+        <div style="text-align:center;">
+            <img src="/uploads/image/20170914/1505360121.png" alt="" />
+        </div>
+        <span style="font-size:16px;color:#666666;">
+<div style="text-align:center;">
+	<span style="color:#000000;font-size:16px;font-family:SimSun;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;图2 GTAP生产结构</span>
+</div>
+</span>
+        <p style="text-align:justify;">
+            <br />
+        </p>
+        <p style="text-align:justify;">
+            <br />
+        </p>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">五、消费模块</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-size:16px;font-family:SimSun;color:#000000;">一国的总需求则由私人消费（Private Consumption）、政府消费（Government Consumption）及储蓄（Saving）三部分依据CD</span><span style="font-size:16px;font-family:SimSun;color:#000000;">效用函数构成，其中私人消费由各自的CDE函数决定需求的产品结构，政府消费是通过CD效用函数决定每种产品的消费，而各产品部门通过CES函数决定本土采购和进口的比例。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">具体来说，区域家庭单位的行为基本上是由一个包含政府支出、私人支出以及储蓄的加总效用函数（Aggregate Utility Function）所决定的。假定该地区家庭单位追求效用最大化，由于采用CD效用函数，使得可支配收入分配与签署二大类当期消费比例被固定。在私人支出方面，考虑私人家庭单位消费非齐次性（Non-homothetic），以及考虑人口成长的影响，私人家庭单位采用CDE效用函数，以每人平均为基础。这样设定的优点在于容许个别产品消费的收入弹性价格弹性存在估计的空间，以便采用文献上现有的需求收入弹性与价格弹性进行校准，较能符合实际状况。政府部门的总支出在各种商品之间的分配，采用CD效用函数来处理。这使得政府对各项商品支出占总支出的比例维持固定。在开放体系下，政府对各种产品的需求可以分为国产商品以及进口产品，而两者通过CES函数组成一个商品集。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">在消费模块（需求模块）里，私人家庭单位对产品的偏好使用的是CDE函数，具有非齐次性的特征。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-size:16px;"></span><br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">六、贸易和全球运输模块</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP 通过贸易建立起国家（地区）间的联系。本国产品和来自不同地区的进口产品是不完全替代品，即遵循Armington假设，通过设定的不变替代弹性来表征。当一国经济模型构建完成，在其中加入国际贸易的商品和资金流动（“全球银行”部门），从而形成多国经济模型。此时，进口品与国产品存在着替代关系，采用Armington假设进行产品复合，即把进口产品与国内产品看作不同产品，相互间具有不完全替代关系。存在国际贸易情形下复合后的国内产品表达式为：</span>
+        </div>
+        <div style="text-align:center;">
+            <img src="/uploads/image/20170914/1505359087.png" alt="" width="200" height="49" title="" align="" />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">其中，X 为市场上供应的某种产品，b 为国内产品与进口产品的替代弹性，Xm和Xd分别为进口产品和国内产品，aL和aK分别为进口产品和国内产品的市场份额。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">运输方面，在GTAP 模型中，有两个国际部门（国际银行和国际运输部门），各个国家的储蓄汇总到“国际银行”，并根据资本回报率在各个国家之间进行分配。“国际运输部门”主要负责地区之间产品的运输，平衡到岸价（CIF）和离岸价（FOB）之间的差异，并通过双边贸易将世界各国联系起来。GTAP 模型还体现了不同国家进出口存在的相应的关税或补贴（出口关税为负，即为补贴）和运费。GTAP 模型中进出口商品价格表达式如下：</span>
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">&nbsp; &nbsp;&nbsp;</span>
+</div>
+</span>
+        <div style="text-align:center;">
+            <img src="/uploads/image/20170914/1505357177.png" alt="" width="200" height="112" title="" align="" />
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">其中，PFOB表示出口港口价，PCIF表示进口港口价，PEx表示出口商品国内价格，PIM表示进口商品国内价格，TEx和TIM 分别表示出口和进口关税（或补贴），F为运费。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">GTAP 模型通过商品生产上的投入产出技术关系和消费上的替代关系，将国民经济中的各部门（商品）联系成一个整体，产品的生产采用嵌入的常系数替代弹性方程：&nbsp;</span>
+        </div>
+        <div style="text-align:center;">
+            <img src="/uploads/image/20170914/1505357425.png" alt="" width="200" height="49" title="" align="" />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">其中X为产出，L为投入要素劳动，K为投入要素资本，SL表示劳动投入在产出中所占的份额，Sk表示资本投入在产出中所占的份额。b为投入要素劳动与资本间的不变替代弹性。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">具体来说，GTAP模型以一个全球运输部门来处理国际间的运输活动。假定运输部门的生产采用CD生产函数。运输需求为每一个国家进出口商品到岸价（CIF）与离岸价（FOB）之间的差额。由于缺乏能够连接特定运输路径与运输服务的资料，因此将各区域的运输服务加总为一个综合商品来处理。政府干预主要表现在征税与补贴上。由于征税与补贴，经济体系中存在两类价格：市场价格（Market Prices）与消费者或生产者等行为主体面对的价格（Agent's Prices）。本国生产者的供给价格加上生产税（或减去补贴），等于产品在国内市场的市场价格。此时该商品存在三种去向：①国内使用，此时国内市场价格加上国内消费税为国内消费者面对的国内产品价格；②输出到虚拟的运输部门，此时这一运输的国内市场价格决定一国的国际运输成本；③出口，国内市场价格加上出口税或者减去出口补贴等于本国出口品的FOB价格，如果加上单位运输成本即为进口国的进口产品的CIF价格，再加上进口税，为进口国进口该商品的国内市场价格。进口国进口商品的市场价格加上消费税，为该进口商品的消费者价格。如果进口国进口存在不同的来源国，不同来源的进口可以组成总进口商品，该总进口商品的平均价格为平均进口价格。总进口品与进口国国内生产商品可以组成一个商品集，其平均价格即为消费者面对的综合价格。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<strong><span style="color:#000000;font-size:16px;">七、宏观经济闭合模块</span></strong>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <span style="font-family:SimSun;font-size:16px;color:#000000;">CGE模型需在所有相关参数、基础年均衡价格及数量都决定的情况下，才能进行政策模拟，因此多区域CGE模型的相关参数是由GTAP数据库求算基础年均值，经由GTAP数据库之系数与外在给定弹性反求算所有模型方程式的系数，这种模型之参数与系数的求解过程称之为模型的校准（Calibration）。</span>
+        </div>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">在模型校准外在弹性之给定有三种方法：计量方法推估、文献考察与专家判断法。文献考察与专家判断法较计量方法推估的准确度低，但所需成本耗费较低，资料也较容易取得。多区域GTAP模型采用新古典全球封闭法则，基本上由文献考察法设定弹性，数据库中的弹性区分如下：①CDE最小支出函数之替代与所得弹性；②各区域内产品与进口品之Armington弹性；③个别进口来源之间的Armington弹性；④原始投入之间的替代弹性；⑤不完全移动要素间的转换弹性；⑥资本存量的预期净报酬率弹性，其中Armington弹性设定来自SALTER贸易模型。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">在GTAP模型中对每一个区域都包括了三个总体余额：储蓄—投资、贸易余额、政府支出一收入（政府赤字）。这三个总体余额非各自独立的，而这些总体余额的决定是传统总体经济模型的课题，总体调节机制构成了这个模型的宏观经济闭合（Macroeconomic Closure ），假设初始状态总体余额均处于均衡。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">一个宏观经济闭合的设定是选择在一个外生冲击干扰均衡时，总体余额回到均衡的规则。因此一个总体情境加在 CGE模型上，模型找出对于假定的总体行为所生的部门别意涵。由于宏观经济闭合不是基于模型中理性行动者的最优行为，关于总体调整不同的假设可能会导致不同的结果。</span>
+</div>
+</span>
+        <div style="text-align:justify;">
+            <br />
+        </div>
+        <span style="font-size:16px;color:#000000;font-family:SimSun;">
+<div style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">由于这里的GTAP模型是静态模型，并无“跨期选择机制（Inter-temporal Mechanism）”来分析投资行为。只有由国民所得会计帐可知，国内投资等于国民储蓄加上外来储蓄（即贸易逆差与国际净移转收入）。因此，在一个开放经济，投资与国民储蓄以及国际收支间有密切的互动关系。文献上对此所谓宏观经济闭合有几种处理方式：有些是令投资水平固定不变，有些则不是，例如新古典封闭法则假设投资水平随储蓄水平变化。在开放经济模型里，有些假设国际收支固定不变，有些则不是。</span>
+</div>
+</span>
+        <p style="text-align:justify;">
+            <br />
+        </p>
+        <p style="text-align:justify;">
+            <br />
+        </p>
+        <span style="font-size:16px;color:#000000;font-family:;">
+<div style="text-align:justify;">
+	<span style="color: rgb(0, 0, 0); font-size: 16px;" font-size:16px;"="">Reference:</span>
+    </div>
+    </span>
+    <div style="text-align:justify;">
+        <span style="color: rgb(0, 0, 0); font-size: 16px;" times="" new="" roman";="" font-size:="" 16px;"="" font-size:16px;"="">Thomas W. Hertel and Marinos E. Tsigas. Structure of GTAP. draft of Chapter 2, Global Trade Analysis: Modeling and Applications, Cambridge University Press, 1997.</span>
+    </div>            </div>
+</div>
+{% endblock %}

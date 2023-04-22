@@ -1,0 +1,235 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="crumbs">
+        <div class="container">
+            <p class="title">数据软件</p>
+            <div class="childs">
+                <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;数据软件
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1 active" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+        <div class="container" style="overflow: hidden;padding-top: 0;">
+            <div class="mainContent">
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img1.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img1.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=179">
+                        <p class="childTitle">GTAP 10（第十版）全球经济数据库最新发布（从本公司订购数据库，可免费赠送CGE、GTAP培训视频以及学习资料）</p>
+                    </a>
+                    <p class="childTime">2019-08-02</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=179">
+                        <p class="childInfo">GTAP（第十版）全球经济数据库最新发布,
+                            最新特性介绍。若从本公司订购数据库，为方便用户更好地使用数据库，本公司可免费赠送CGE、GTAP培训视频，以...</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img2.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img2.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=159">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=159">
+                        <p class="childTitle">GEMPACK 12.0 版本发布（2018年8月）</p>
+                    </a>
+                    <p class="childTime">2018-10-06</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=159">
+                        <p class="childInfo">GEMPACK 12.0 版本发布（2018年8月）</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img3.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img3.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=153">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=153">
+                        <p class="childTitle">全球林业模型数据库</p>
+                    </a>
+                    <p class="childTime">2018-08-31</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=153">
+                        <p class="childInfo">
+                            虽然已经有一些全球、区域的局部均衡模型（PE）中包含了林业部门，但目前对于包括详细林业部门信息的全球一般均衡模型（GE）的开发还属空白。我们构建了包含...</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img4.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img4.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=132">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=132">
+                        <p class="childTitle">中国区域CGE模型数据库SinoTERM365</p>
+                    </a>
+                    <p class="childTime">2018-05-31</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=132">
+                        <p class="childInfo">
+                            SinoTERM365是一个包含中国365个区域162个行业的大型CGE模型数据库，数据细达县级层面。本文总结了创建此数据库的方法和每个省的数据质量。</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img5.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img5.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=108">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=108">
+                        <p class="childTitle">GAMS软件</p>
+                    </a>
+                    <p class="childTime">2018-03-04</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=108">
+                        <p class="childInfo">GAMS（The General Algebraic Modeling System
+                            ）是一款数学规划和优化的高级建模系统，是特别为建模线性，非线性和混合整数最优化问题而设计的。GA...</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img6.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img6.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=94">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=94">
+                        <p class="childTitle">GTAP（第九版）全球经济数据库</p>
+                    </a>
+                    <p class="childTime">2018-03-10</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=94">
+                        <p class="childInfo">GTAP V9
+                            数据库，包括了全球140个国家、57个行业的投入产出基础数据、各国之间完整的双边贸易、运输和贸易壁垒数据，以及碳排放和能源数据，数据规模达到百...</p>
+                    </a>
+                </div>
+                <div class="child">
+                    <div class="childImg">
+                        <img class="childImgimg" src="{{produce_img7.img}}">
+                        <div class="childHide">
+                            <a class="example-image-link" href="{{produce_img7.img}}" data-lightbox="child">
+
+                            </a>
+                            <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=68">
+                                <div class="childHideIcon">
+                                    <img src="{% static 'images/img-33.png' %}">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=68">
+                        <p class="childTitle">GEMPACK软件</p>
+                    </a>
+                    <p class="childTime">2016-11-18</p>
+                    <a href="{% url 'app:ruanjian' %}?cid=181&amp;id=68">
+                        <p class="childInfo">
+                            GEMPACK是一套可用于经济建模的软件，已经在90多个国家，400多个组织使用。软件特别适用于可计算一般均衡（CGE）模型，可以模拟各种经济行为。</p>
+                    </a>
+                </div>
+                <div style="clear:both"></div>
+                <div class="page_info">共<span>1</span>页<span>7</span>条记录</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container--.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;研究报告            </div>
+    </div>
+</div>
+<div class="main">
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1 active" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+
+        <div class="container" style="overflow: hidden">
+            <div class="mainHead" style="line-height:40px;color:#333333;font-size:28px;">
+                <p class="title">GEMPACK软件</p>
+            </div>
+            <!-- mainContent -->
+            <div class="mainContent">
+
+                <p class="MsoNormal">
+                    <span style="font-size:16px;"> </span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <b><span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <b><span style="font-size:16px;color:#666666;"><br />
+ </span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <b><span style="font-size:16px;color:#666666;"><span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#000000;font-size:16px;">GEMPACK</span></span></b><b><span style="color:#000000;font-size:16px;">（</span></b><b><span style="color:#000000;font-size:16px;">General Equilibrium Modeling PACKage</span></b><b><span style="color:#000000;font-size:16px;">）</span></b><span style="font-size:16px;color:#666666;"><span style="color:#000000;font-size:16px;">是当前全世界最主流的经济建模软件，软件由澳洲维多利亚大学政策研究中心（CoPS）开发，在过去50年里，该中心不断改进软件的功能以及可靠性，已经在90多个国家，600多个国际组织中得到使用。该软件的国际客户包括：世界银行、联合国、世界贸易组织、欧洲委员会、美国贸易部</span><span style="color:#000000;font-size:16px;">（USITC）和各国顶尖大学等，在中国也得到了包括中科院、社科院、国家信息中心、人民</span><span style="color:#000000;font-size:16px;">银行等国</span><span style="color:#000000;font-size:16px;">家级决策支持机</span><span style="color:#000000;font-size:16px;">构和清华大学、北京大学、人民大学等各大科研院校的认可和应用。GEMPACK软件具有运算快速、允许建模经济理论和闭合灵活变化、数据库构建高度透明以及接纳复杂的模拟设计等优点。</span></span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <br />
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 利用该软件，用户能够建立全球、国家以及省(市)级等各个尺度的经济分析模型，开展国际贸易、能源环境、财税金融、农业、贫困、人口、劳动力转移、以及基建投资和灾害治理等领域的综合经济影响评估。</span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <br />
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 利用该软件，结合大量的、实际的经济数据和先进的优化经济理论，该模型可广泛用于各种政策实施效果的仿真分析，支持各级政府部门决策。</span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <br />
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 利用该软件，可从复杂、嵌套、叠加的经济关联中，找出各部门与行业的连带和替代关系，因此十分有利于分析产业间的关联带动。比如：可利用该模型分析当前电商快速发展对物流行业的带动作用，和对百货行业的替代效应。 </span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <br />
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+	<span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;该软件为不同用户提供了多种选择。除了专业高级用户可以利用软件的高端源代码环境构建大型模型，同时，GEMPACK 也提供初学者的可视化窗口（GUI）环境，该功能特别适用于高校的教学和科普。</span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <br />
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <span style="font-size:16px;color:#666666;"><span style="color:#000000;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 作为软件的中国区官方代理，深圳英飞咨询有限公司 (中国国家信息中心合作伙伴，拥有在该领域从业多年研究的专家团队) 特别针对中国用户需要，提供定期</span><a href="http://www.infsum.com/news.php?cid=187" target="_blank"><span style="color:#000000;font-size:16px;"><strong>培训课程</strong></span></a><span style="color:#000000;font-size:16px;">，以及网上介绍课程</span></span><span style="color:#000000;font-size:16px;">。为了增强客户体验，我们提供完善的售后服务， 包括：实时给客户提供技术支持；提供完整的文档、资料库以及案例来帮助用户掌握软件的基本、和高级功能。公司同时联合国内和澳洲的研发团队，会根据用户的需求不断改进GEMPACK软件。</span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+	<span style="font-size:16px;line-height:1.5;"><br />
+            </span>
+                </p>
+                <p class="MsoNormal" style="text-align:justify;">
+                    <span style="color:#000000;line-height:1.5;font-size:16px;">购买或咨询其他细节</span><a href="{% url 'app:contactus' %}"><strong><span style="color:#4C33E5;font-size:16px;">请与我们联系</span></strong></a><span style="color:#000000;line-height:1.5;font-size:16px;">。</span>
+                </p>
+                <p class="MsoListParagraph">
+                    <br />
+                </p>
+            </div>
+        </div>
+</div>
+{% endblock %}

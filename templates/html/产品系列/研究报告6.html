@@ -1,0 +1,2156 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crumbs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/page-left-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-container--.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+
+{% endblock %}
+
+{% block content %}
+<div class="crumbs">
+    <div class="container">
+        <p class="title">仿真平台</p>
+        <div class="childs">
+            <a href="{% url 'app:index' %}">首页</a>&nbsp;&gt;&nbsp;<a href="{% url 'app:produce' %}">产品系列</a>&nbsp;&gt;&nbsp;研究报告            </div>
+    </div>
+</div>
+
+<div class="main">
+
+        <div class="page-left-menu" style="margin-top: 0px;">
+            <div class="page-left-title">
+                <h1>
+                    <span class="zh">产品系列</span>
+                    <small class="en"> / PRODUCTS</small>
+                </h1>
+            </div>
+            <div class="page-left-menu-box">
+                <div class="menu1">
+                    <div class="menu-item1" data-type="181">
+                        <a href="{% url 'app:produce' %}">
+                            数据软件 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="188">
+                        <a href="{% url 'app:simulation_platform' %}">
+                            仿真平台 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="187">
+                        <a href="{% url 'app:training_courses' %}">
+                            培训课程 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 " data-type="186">
+                        <a href="{% url 'app:database' %}">
+                            资料库 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+
+                    <div class="menu-item1 active" data-type="11">
+                        <a href="{% url 'app:research_report' %}">
+                            研究报告 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt; </a>
+                    </div>
+                </div>
+
+            </div>
+            <img class="wpica" style="width:180px;margin-left:30px;" alt="微信" src="{% static 'images/logo0.jpg' %}">
+        </div>
+
+    <div class="container" style="overflow: hidden;">
+        <!-- <div class="banner"></div>
+        <p class="title1">研究报告分类</p> -->
+    <div class="mainNav">
+            <div class="child">    <a href="{% url 'app:research_report' %}"  style="color: #666;">所有</a></div>
+            <div class="child"> <a href="{% url 'app:yanjiubaogao2' %}" style="color: #666;">贸易</a> </div>
+            <div class="child">    <a href="{% url 'app:yanjiubaogao3' %}" style="color: #666;">贫困</a></div>
+            <div class="child">    <a href="{% url 'app:yanjiubaogao4' %}" style="color: #666;">财政金融</a></div>
+            <div class="child">    <a href="{% url 'app:yanjiubaogao5' %}" style="color: #666;">能源和资源</a></div>
+            <div class="child on">    <a href="{% url 'app:yanjiubaogao6' %}" style="color: #0093c4;">劳动力</a></div>
+            <div class="child">    <a href="{% url 'app:yanjiubaogao7' %}" style="color: #666;">农业</a></div>
+            <div class="child">    <a href="{% url 'app:yanjiubaogao8' %}" style="color: #666;">其他</a></div>
+        </div>
+
+
+        <div class="content" >
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=177">美欧贸易矛盾升级  贸易战经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文将采用量化经济分析平台（www.econmod.cn）全球可计算一般均衡模型（CGE）对美欧新一轮贸易争端进行模拟预测，并从全球贸易格局出发研究美欧贸易关系变化对全球、区域经济的冲击，模拟结果也将对相关产业的变动做出预测，对资本市场的未来走向有一定参考意义。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=176">“一带一路”基础设施发展对贸易成本冲击影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=175">“一带一路”战略对沿线国家经济影响研究——基于CGE模型分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本次研究将通过量化经济分析平台（www.econmod.cn）利用全球CGE动态模型进行“一带一路”经贸政策模拟。本次模拟将根据“一带一路”长远目标，假设中国与“一带一路”沿线国家实现双边自由贸易协定，关税实现减免，在模型中进行短期闭合模拟。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=174">新一轮减税政策对供给侧结构性改革影响几何？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    根据政府报告中所提出的减税降费政策，本次研究利用国家CGE模型对宏观经济、产业经济的长期影响进行模拟分析，以期对我国积极财政政策议题实现量化分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=172">中美贸易战经济影响的定量分析：基于全球CGE模型应用</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本案例利用全球CGE模型对中美贸易战的经济影响进行量化分析。根据贸易战不同阶段的贸易政策，模型设置了四个模拟场景进行短期、长期闭合模拟实验。模拟结果较全面地反映了贸易战对国家、全球宏观经济以及我国行业部门影响。结果显示，中美两国在贸易战中两败俱伤，对我国大部分行业部门都产生了负面影响，但部分产品进口减少将会刺激本国相关行业国内生产总值增长。此外，中国与美国贸易紧张关系将会促使中国外贸转向其他国家地区，欧洲、一带一路国家将会替代美国市场成为中国主要贸易地区。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=171">英国脱欧困境：经济一体化断裂下的危机？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    自2016年英国全民公投通过脱欧决定以来，英国脱欧之路举步维艰。2018年11月25日欧盟各国领导人与英国政府达成一份英国脱欧协议草案，英国脱离欧盟的漫漫长路终于迈出实质性一步。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=169">政策红利还能走多远？数据看大湾区房地产市场影响机制 --粤港澳大湾区区域经济观察系列（五）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    目前媒体、研究机构主要关注宏观调控政策下房价走势，但随着湾区集群经济发展，围绕着核心城市构建的大都市生活圈将重构大湾区房地产产业布局。本文将基于大湾区内地9城房地产相关历史数据，通过计量方法对区域房地产价格影响机制进行定量分析，在考虑城市群产业集聚效应基础上对房地产市场走向做出较为客观清晰的分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=168">城市竞合与粤港澳大湾区创新协同发展 --粤港澳大湾区区域经济观察系列（四）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    大湾区城市群发展更高阶目标是对接世界三大湾区，把粤港澳大湾区城市群打造成全球创新高地。本文依据经济学中关于创新与经济增长的理论，对大湾区城市创新联系以及知识溢出效应进行定量分析，揭示大湾区区域内部创新网络的演变，为区域创新战略制定提供量化参考。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=167">打造“下一个硅谷”：粤港澳大湾区创新型经济发展前景与挑战 --粤港澳大湾区区域经济观察系列（三）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    伴随国家创新战略的推进，粤港澳大湾区核心城市深圳、广州纷纷提出打造世界级创新中心目标，湾区整体定位更是对标旧金山湾区，朝着“下一个硅谷”目标发力。那么大湾区离“下一个硅谷”还有多远？区域内各城市创新机制存在哪些不同？本文根据大湾区区域内部创新投入、产出数据，整理概括区域创新发展的总体格局与主要特征，在区域创新能力评价体系基础上探索区域创新形成机制，为大湾区创新型经济发展提供更为深入的数据分析与决策参考。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=166">粤港澳大湾区离“世界级城市群”还有多远？ --粤港澳大湾区区域经济观察系列（二）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    ​近日，由中国社会科学院与联合国人居署共同发布最新《全球城市竞争力报告》，报告中粤港澳大湾区三大核心城市深圳、香港、广州跻身全球城市竞争力指数二十强。另根据最新出炉的一二线城市前三季度经济数据统计，前三季度经济总量排名前10的城市中，深圳、广州分别达到了1.75万亿和1.67万亿，分列第三、四位。其中深圳市经济总量在2016年就已超过广州，今年前三季GDP增速高达8.1%，在全国所有一二线城市中表现亮眼。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=165">塔桑尼亚吸烟率下降的经济和环境影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    许多国家政府不愿意引入烟产品管制措施，因为它们担心随之而来的在烟产品生产、加工、制造、出口和税收环节所造成的经济损失。 烟产品促进了国家的企业利润、就业和家庭收入，这成为了烟产品管制的最大障碍。那么烟产品生产、贸易和消费所产生的收益和成本有多大呢？谁获得了这些收益？又由谁承担了这些成本？什么样的烟产品管制政策和干预会造成经济损失？本文对此研究了塔桑尼亚吸烟率下降的经济影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=164">从珠三角到粤港澳大湾区：区域经济转型路在何方？--粤港澳大湾区区域经济观察系列（一）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近日，随着港珠澳大桥开通，粤港澳大湾区规划再次成为我国区域经济改革焦点。2017年3月5日，构建粤港澳大湾区规划正式写入《政府工作报告》，这为大湾区的定位和发展指明了方向。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=163">增值税调整势在必行？政策信号释放经济利好</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    今年以来，降低企业税费负担成为国家财政政策重点。3月初《政府工作报告》明确指出要进一步减轻企业间接税负，尤其是改革完善增值税制度，按照三档并两档方向调整增值税税率水平，重点降低制造业、交通运输业等行业税率。本文将根据政府所强调的增值税三档并两档政策走向，利用可计算一般均衡模型（CGE）研究增值税下调对宏观经济以及产业经济的推动作用。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=162">能源改革背后的经济学思考（三）：国际油价强势上涨，国内经济如何应对？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年以来受中东紧张局势以及OPEC主要产油国石油产量下降影响，全球石油价格强势走高。在当前地缘经济局势紧张、全球石油供给并无增量的情况下，油价上涨对我国宏观经济、相关产业部门将会产生什么样的影响？我国行业政策又该如何调整？笔者将根据可计算一般均衡模型（CGE）对国际石油价格上涨的经济影响尤其是对中国产业经济影响进行分析，为经济政策提供量化数据支持。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=161">我国再次自主降关税，助推产业升级发展</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    国务院关税税则委员会近日发布公告，自2018年11月1日起，降低部分商品的最惠国税率。此次降税涉及1585个税目，是今年以来我国又一次大规模自主降税，平均税率由10.5%降至7.8%，平均降幅达26%。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=160">英国退欧后单边贸易自由化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文研究了英国退出欧盟后实行单边贸易自由化可获得的收益，假设英国脱离欧盟后与欧盟之间存在相应的关税壁垒。英国退欧后若实行单边贸易自由化则可抵消部分脱欧造成的经济损失。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=158">能源改革背后的经济学思考（二）：煤炭去产能对供给侧结构性改革影响几何？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    煤炭行业改革至今取得明显成效，煤炭产量持续回落，低效、落后产能逐渐退出市场。煤炭去产能的行业效应显而易见，那么作为能源供给侧结构性改革最重要一环，煤炭行业改革对宏观经济和产业经济的影响又有多大？如何量化分析这一政策的经济效用？<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=157">中美“独角兽企业”大比拼：创新企业的机遇与挑战</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近期，全球知名风投调研机构CBInsignts发布了一份截止至今年8月的全球260家独角兽企业榜单。该榜单详尽分析了这些创新企业所在地区、市值以及主要投资者，被看作是投资界的风向标。中美两国创新企业的机遇与挑战也可从这份榜单中窥知一二。上榜企业中，中美两国企业占据绝对优势。但是中国初创企业无论从规模还是市场创新来说都与美国独角兽企业存在一定差距。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=156">能源改革背后的经济学思考（一）：天然气改革的经济效应</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近年来，能源改革作为我国经济改革的重要战略日益成为公众关注焦点。能源结构升级不仅关系到我国经济转型，更是与大众生活息息相关的民生议题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=155">北美自贸协议谈判重启，美对外经贸关系或将重新洗牌</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年8月27日，美国与墨西哥贸易谈判取得重要进展，宣布两国达成“史上最大贸易协定之一”，并表示有可能将以两国双边贸易协议取代《北美自由贸易协定》。近日，加拿大再次开启与美国的双边谈判，但特朗普早前于9月2日在推特上发文指出与加拿大谈判没有达成任何协定，他甚至态度强硬表示要把加拿大从美墨加三国贸易集团中踢出局。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=154">租金暴涨触碰了谁的痛点？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近来房价高企、房租暴涨的新闻引发各方热议。尽管一线城市房价在经历了上一轮猛涨期后趋于稳定，但近期房租暴涨的新闻又再一次牵动大众的神经。不断攀升的房租与居民消费水平下降之间存在着显而易见的关系，但是租金暴涨对国民经济生产的总体影响以及对行业的冲击当前舆论却甚少考量。为了更为直观地分析这一经济现象与结果，本文将利用英飞咨询（ISM）一般均衡模型（CGE）模拟量化租金上涨对国民经济与各行业的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=152">中美贸易摩擦出现新转机？数据看中美经济未来走势</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    在贸易摩擦不断升级情况下，中美双方在8月22日重返谈判桌，这也是中美打响贸易战以来两国政府首次就中美经贸问题进行磋商。 但如果美国持续其单边贸易保护主义，对其他国家包括中国产品继续加征关税，这将进一步恶化全球大多数国家的经济增长，对相关行业尤其是以进出口为导向的行业造成更严重的冲击。为了更直观地呈现这一冲击结果，英飞咨询(ISM)基于全球一般均衡模型（CGE）对中美两国贸易战不同阶段所产生的宏观经济结果进行分析，并通过产生的模拟数据具体分析对行业的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=151">重振美国汽车业能否再现"美国制造"图景？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    美国总统特朗普在竞选时打出“重振美国制造业”口号，作为曾经塑造了“美国梦”核心的汽车工业更是特朗普竞选纲领的重中之重。其中特朗普最迫切想改变的是目前汽车贸易失衡对本土制造业所带来的冲击，而对国外相关产品加征关税则被视作最为直接有效的经济措施。但是，美国贸易政策是否能改变其贸易失衡状态？对上下游产业又会造成什么样的影响？从贸易政策着手是否能重塑美国制造业经济的往昔繁荣？<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=150">东亚老龄化国家护理服务政策方案以及对家庭和劳动力市场的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    性别问题是世界上许多国家政策讨论的核心，因此对性别维度的分析工具产生了巨大需求。根据大量可计算一般均衡模型（CGE）对性别问题分析的文献，本文分析了东亚一些高收入老龄化国家（如日本、韩国和台湾）所面临的性别相关的问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=149">人口统计变化对巴西消费和温室气体排放的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    人口统计变化不仅影响如经济增长和劳动力市场的变量，而且影响总消费，尤其是消费的结构。本文研究了预测的巴西2050年年龄结构金字塔对消费模式和二氧化碳排放量的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=148">巴西电力行业投资的经济和区域影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    为了实现气候协议的目标，巴西计划提高在电力供应中的除水能以外的可再生能源的份额。根据巴西十年能源计划（PDE2026），巴西将主要通过投资天然气、风能和太阳能来扩大目前的电力产能。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=145">农产品出口导向与食品供应是否存在正向协同作用？——基于非洲经济的分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    尽管2008年和2012年出现了食品高价格危机，大多数发展中国家的政府继续支持开放经济并促进对其他国家的农产品出口。有人担心支持农产品出口会将土地、劳动力以及其他生产要素转移至农产品出口活动，因而减少了国内食品供应。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=143">ASEAN国家在不同生产率假设下的经济增长预测</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2015年12月，十个ASEAN成员国正式成立了ASEAN经济共同体（AEC）。正如AEC 2025蓝图所预见，这个单一市场和生产基地将使得AEC成为一个高度集中和整合的群体，并通过加强往来和行业合作来促成竞争、创新和动态的ASEAN成员国环境。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=142">贸易逆差的五大误区</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    在对引导先前总统的贸易协定和政策的批评中，Trump Donald总统声称贸易平衡是衡量一个国家商业成功的指标，美国的贸易逆差说明了过去的贸易政策是有缺陷的。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=141">美国退出巴黎协议对中国煤炭产出以及周边国家的碳排放的间接影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2017年6月1日，Trump总统宣布退出巴黎气候协议。尽管此决定在国内外引起了重大反响，它并未影响主要温室气体（GHG）排放国家以及国内机构的减排承诺。之前使用静态GTAP-E模型的分析发现美国退出巴黎协议对自身碳排放量和主要排放国家的单位减排成本以及GDP不会产生显著影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=140">美国在中国和墨西哥的离岸活动的经济影响定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    美国在新兴经济体（如中国和墨西哥）的离岸活动受到越来越多的关注。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=139">美国退出跨太平洋伙伴关系协定（TPP）对加拿大的经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    最近加拿大结束了与11个环太平洋国家的跨太平洋伙伴关系协定（TPP）的谈判。在本研究中，我们建立了基于全球贸易分析项目（GTAP）模型和数据库的可计算一般均衡（CGE）模型，并且通过此模型分析美国退出TPP后对加拿大经济的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=138">CGE模型研究的国际前沿—GTAP年会主题及论文</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年GTAP会议于6月13日至15日在哥伦比亚卡塔赫纳举行。此次会议根据主题分为46个主题会议，涉及贸易、能源、资源、气候、土地使用、农业以及劳动市场等方面的问题。英飞咨询（ISM）成员积极参与了GTAP会议，本文按主题分类总结了英飞咨询本次会议的文章列表。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=136">美国钢铝关税影响的量化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    Trump政府通过单边措施来应对所谓“不平等”贸易，在贸易报复升级的风险下争取有利地位。尽管大众一般认为Trump不会对同盟国施加钢铝关税，2018年5月30日Trump政府宣布对加拿大、墨西哥和欧盟的钢和铝分别征收25%和10%的关税。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=135">全球贸易分析项目—GTAP</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文简要介绍了GTAP的发展以及应用。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=134">人工智能经济与公共政策</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    目前大多数关于人工智能（AI）的讨论都集中在机器人和未来的工作。Bill Gates等公众人物对这个问题的思考促使了大众对未来机器人替代人们工作的恐慌。然而，经济学家们在AI对工作的影响这个问题上看法没有那么悲观。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=131">CGE模型与发展中国家政策制定</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文展现了CGE模型如何被应用在发展中国家政策制定实践中。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=130">中国的经济和贸易增长对发达国家劳动力的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    中国30年来的经济和贸易增长对贸易伙伴的西方国家产生了巨大影响。随着中国对制造业的专业化生产（尤其中间品和半成品），许多国家用更低的成本进口中国的制造业产品。本文分析了中国的经济增长和贸易对发达国家劳动力的生产率的影响。我们将全球数据中的劳动力分为不同种类，以分析对不同技能劳动力的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=128">美国税改对中国及全球经济的影响与对策</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    税改是特朗普政府在“美国优先”理念指引下，巩固美国全球领导地位的核心举措。为了更全面科学评估美国税改的全球溢出效应。因此，基于税改综合影响效应机制，我们利用全球动态可计算一般均衡模型（GTAP），构建了三种不同政策模拟情景，对税改影响进行量化模拟与分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}218&amp;id=127">减缓气候变化政策与发展中国家贫困问题</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    减缓气候变化是21世纪最受关注的政策目标之一。但是，关于减少温室气体排放所需的政策内容和带来的影响仍未达成一致。一个主要的原因是没有足够的关于减排政策对发展中国家穷人的福利影响的实证分析。本文通过模拟两种不同的政策情景评估了减排政策对14个发展中国家的7个社会经济群体的贫困问题的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=126">东亚和东南亚地区的人口流动和经济增长</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    东亚-太平洋地区（EAP）在1965至1990期间人口统计特征发生了巨大的变化，其死亡率和生育率的下降极大地促进了这段期间经济的增长。本文在上述人口统计特征变化下，通过全球动态一般均衡模型研究了东亚和东南亚各国之间人口流动性增加所带来的影响。由于一个国家的人口统计特征和人口流动的变化会对其他国家造成影响，全球动态一般均衡模型能较好地反映劳动力结构的变化所造成的生产要素和价格的波动。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=125">北美蔬果消费变化的影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文利用了GTAP模型来分析由于蔬果（F&amp;V）需求和收入增加对蔬果市场的影响。如果只是美国的蔬果需求上升，这对墨西哥的影响最大。其次，本文发现不管是美国还是整个北美蔬果需求增加，都会使得墨西哥和赤道国家的收入上升。由于更高的收入减弱了其蔬果价格上升的影响，这些地区的蔬果消费变化较小。同样，美国或整个北美蔬果需求增加也会对北美之外的国家产生影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=124">巴黎气候协定和全球经济：谁输谁赢？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2015年的巴黎气候协定是首例各国联合抵抗全球变暖而制定的协议。超过190个国家在“国家自主贡献预案”（Intended Nationally Determined Contributions）中提交了关于温室气体减排的目标和方案。本文研究了巴黎气候协定对主要国家和地区在福利、GDP、投资和贸易方面带来的经济影响，并在可计算一般均衡（CGE）框架下模拟了全球、区域以及国家层面的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=123">提高水资源使用效率对南亚国家的经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    众所周知南亚国家在未来十年可能会面临水资源危机。随着经济迅速增长，人口增长将大大提高对水的需求，尤其是灌溉这种水资源利用率（WUE）很低的领域。但灌溉的效率还有很大的提高空间：研究发现，相比东南亚地区， WUE的提高将给南亚地区带来更大的利益。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=121">千禧年回合的农产品和非农产品贸易自由化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    为了使农产品在世界贸易舞台上达到和制造业产品一样的自由化程度，我们还有许多需要做。农产品贸易不仅仅被农业贸易政策所扭曲。尤其在发展中国家，农业种植不仅被发达国家的农产品贸易保护政策所打击，而且也被这些国家本身的制造业和服务业政策所影响。本文研究了农产品和非农产品多边贸易自由化程度对农产品市场的影响。研究预测了2005年乌拉圭回合（UR）完全执行后的世界经济情况，并且假设农业、矿业、制造业和服务业的贸易保护下降40%，通过修正版的全球贸易GTAP模型分析了乌拉圭回合谈判后进一步自由化带来的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=118">土地利用机会成本与全球农林业温室气体减排潜力</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了土地利用在全球农林业温室气体减排中的重要作用。陆地活动产生了约占全球温室气体（GHG）排放的三分之一，然而影响土地利用决策的因素却一直没有被引入经济模型中。本文开发了一个有效考虑农林业土地利用机会成本的一般均衡（CGE）模型，这样就能分析跨行业或行业内对不同土地利用的竞争，以及行业生产中土地和其他生产要素的替代作用。由于不同类型的土地、区域和行业的减排成本不一样，在对碳税影响的分析中，本文发现它将对全球各国的比较优势有显著影响，并发现使用森林固碳是全球GHG减排的最优策略。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=113">北美自由贸易协议(NAFTA)重新谈判：如果美国走了怎么办？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近日美国总统特朗普开启为期6个月的退出北美自由贸易协定（NAFTA）进程，可能很快让24年历史的北美自贸协定不复存在。NAFTA的重新谈判开启了北美地区贸易的多种不确定性。本研究采用了多部门，多区域的可计算一般均衡模型(GTAP)，并改进了原模型的投资机制，以及引入外国直接投资等新模型机制用于更好的评价包括关税，非关税以及FDI壁垒的影响。我们评估了如果加拿大，美国和墨西哥之间从原来的自由贸易恢复到世界贸易组织（WTO）下的最惠国待遇将会发生的政策后果。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=112">新“TPP全面与进展协定”的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2017年底，参加跨太平洋伙伴关系协定(TPP)的11个国家就缔结不包括美国的新协定达成一致。经过谈判，11国在美国退出前汇总的原版TPP规则中，冻结一部分条目，但保留废除关税的约定。美国退出后，TPP的经济规模较当初大幅缩小，不过亚太地区将诞生作为新交易轴心的首个大型贸易协定。本文评估了美国退出以后，剩余的11个成员国继续执行TPP协议的影响，并与2016年10月签订的12国协议的影响进行了对比。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}218&amp;id=110">自由贸易与发展中国家的贫困结构</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    自由贸易的批评者往往认为全球化会导致本国低工资以及食品价格上涨，于是加剧国家贫困化。然而，自由贸易的支持者则认为“水涨船高”，整个经济体从自由贸易得到的利益会使得每个人的生活水平更好。这些支持者们强调，随着自由贸易使得OECD发达国家对农产品取消贸易保护，世界农产品的价格上升，这样有利于发展中国家的农业的发展并且相应增加了其收入。两种说法到底哪一种正确呢？本文通过分析14个来自亚洲，非洲和拉丁美洲的发展中国家，利用GTAP模型探讨贸易自由化对这些国家贫困率的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=109">全球贸易战继续升级：特朗普钢铝关税新政解读</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    当地时间3月8日下午，美国特朗普总统在白宫签署了增税命令，向除加拿大和墨西哥以外的所有进口钢和铝分别征收25%及10%的关税，命令将于15天之内开始生效。此举引发了国际社会的强烈反响，多国表示反对并开始制定反制措施，美国白宫首席经济顾问、国家经济委员会主席Cohn因此辞职。美国此举会使得哪些国家受益，哪些国家受损？哪些行业受益，哪些行业受损？又能否达到特朗普声称的“保护美国钢铁行业”的目的？新增关税与美国已有的产业保护措施将产生怎样的协同效应？本文利用最新的动态GTAPism模型分析了这些问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=96">加入还是不加入？加拿大与跨太平洋伙伴关系协定（TPP）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    跨太平洋伙伴关系协议（TPP）的新一轮协商与2015年十月举行，如今协议正在等待各国相关部门的批准。本轮协议充满了争议，对于一些国家来说，这是最好的协议；然而对其他一些国家来说，这却是最差的协议。本文通过较精确的测量方法量化TPP协议的影响，为目前TPP协议的争论做出贡献。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=95">加拿大-韩国自由贸易协定（CKFTA）：这对加拿大意味着什么？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    历经九年的谈判后，加拿大-韩国自由贸易协定（CKFTA）于2015年1月1日生效。这​是加拿大与亚洲经济体签署的第一个成熟的贸易协议。这对加拿大意味着什么？本文通过贸易模型分析CKFTA对经济部门结构和贸易指标的影响回答了这个问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=93">保护主义与报复主义</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    Donald J. Trump当选美国总统提出了一系列关于美国未来贸易政策问题。由于加拿大严重依赖与美国的贸易，如果美国单方面实施保贸易护主义政策，或者对现有的贸易协定进行重新谈判最终遣返在美国工作的工人，加拿大对此将会有怎样的反应值得期待。面对如此高的不确定性，本文模拟了美国单方面对其贸易伙伴征收百分之十的关税附加费的贸易保护政策，其次，本文模拟了加拿大对美国执行了百分之十的报复性关税后的经济情况，并由此分析加拿大是否通过贸易报复会变得更好。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=92">美国边境调整税（BAT）经济影响的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    由于不可调和的国内政治原因，美国在经济发达的国家中唯一没有增值税（VAT）的国家，有人认为增值税的缺乏使美国的贸易公司在国际贸易中处于不利地位。这种看法导致美国试图构建一种增值税的替代税：边境调整税（BAT）。本文量化分析了BAT将产生的影响，发现它将扭曲贸易并且对美国及其贸易伙伴的经济造成损害。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=91">在CGE贸易政策模拟中校准工资 - 生产率的变化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    理论上认为，贸易自由化通过将市场份额重新分配到效率较高企业而影响市场效率。由于生产效率高的企业往往支付更高的工资，因此市场再分配效应也增加了市场平均工资。除了这些行业内部的影响，在经济范围内行业结构的变化导致生产要素重新分配到生产率较高的部门。同时，贸易自由化引起的积极需求冲击通常增加了要素回报率，从而导致更高的实际工资。本文通过在CGE模型中内生化生产率来校准贸易自由化对生产率影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=90">跨太平洋伙伴关系协定（TPP）：对加拿大卑诗省的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了跨太平洋伙伴关系协定（TPP）对加拿大卑诗省经济将产生的影响。本文的研究方法基于以下两个步骤。 首先，本文通过动态GTAP模型模拟了TPP对整个加拿大经济将产生的影响。其中，模拟考虑了减少关税，区域化原产地规则（ROOs）的区域化以及减少商品，服务和投资的非关税壁垒等可能的协议措施。第二，假设加拿大各省均可以进行国际和跨省贸易，本文利用全球模拟模型（GSIM）分析了TPP对卑诗省和加拿大其他地区的直接贸易影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=89">谈判中的TPP协议影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文根据协议实际文案和自由化时间表，以及各国政府对谈判结果的技术摘要，运用动态GTAP模型分析了正在谈判中的跨太平洋伙伴关系（TPP）将产生的影响。除了关税减免和针对农产品的税率配额优惠，本文考虑到了减少货物、服务贸易以及投资的非关税壁垒将产生的影响。除此之外，本文还考虑到服务贸易的市场准入限制，以及更高的劳动、环境标准和协调准则对第三方国家产生的潜在溢出效应。本文对来自最惠贸易将产生的行政成本和补偿农产品补贴将造成的福利负担进行了讨论，并且探讨了TPP知识产权制度的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=88">TPP对加拿大菜籽油行业的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文使用GTAP模型对以下三种情形下的跨太平洋伙伴关系（TPP）协议的对加拿大菜籽油部门将产生的市场准入影响进行分析：
+                    1.加拿大加入TPP，并且日本立即取消对加拿大菜籽油产品的关税。
+                    2.加拿大加入TPP，并且日本在十年内逐步取消对加拿大菜籽油产品的关税。
+                    3.加拿大不加入TPP。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=87">自由贸易协定对加拿大金融服务部门影响的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文在考虑了自由贸易协定（FTA）金融服务章节下最有可能的自由化程度下，利用世界银行贸易数据库模拟了金融服务跨境和商业存在贸易自由化对加拿大金融服务行业的影响，以及FTA对现有市场准入承诺的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=86">加拿大 - 中国自由贸易协定量化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    加拿大 - 中国自由贸易协定已经讨论了一段时间。 虽然加拿大政府还没有正式确认，​据报道，中国已经与加拿大提出谈判自由贸易协定。 2012年加拿大 - 中国互补性研究中两国政府谈判采取了试探性的一步。 本文试图对此协议对加拿大和中国的影响进行量化分析。 我们采用了动态可计算的一般均衡模型，这个模型结合了外国的直接投资，并根据最近签署的中澳自由贸易协定制定了一个现实的情景。 我们发现加拿大 - 中国自由贸易协定带来的主要收益来源于关税减免和服务业承诺的约束。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=85">大区域贸易协定对被排除国家的溢出效应的定量分析：对东非的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    国际贸易规则的制定主要活跃于大区域贸易谈判，如跨太平洋伙伴关系协定，跨大西洋贸易和投资伙伴关系协定，区域全面经济伙伴关系协定和服务贸易协定。这些协议对包含东非经济体在内的等各个被排除在外的国家有重要影响。本研究针对东非国家在定性和定量两个方面分析了这些溢出效应。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=84">英国退出欧盟的相关贸易影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文对英国退出欧盟的相关贸易成本进行了估计，并将其与独立的英国可能获得的其他贸易政策的潜在收益进行比较。 据预测，英国退出欧盟后从其他贸易政策得到的收益不足以弥补Brexit成本，但是有潜在的可能弥补Brefta成本。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=83">地方层面的贸易政策分析：在GTAP模型中用省代替加拿大</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文开发了一个新版本的GTAP数据库，其中加拿大被其各省代替，以便能够分析国际贸易协定对地方层面的经济体的影响。这种方法将各省作为单独的贸易实体，就像欧盟内的各个成员国一样，它们具有共同的外部贸易壁垒和最小的内部贸易壁垒。我们记录了开发此数据库的过程，并将其应用于加拿大 - 欧盟全面经济和贸易协定（CETA）影响的示范模拟中。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=82">跨太平洋伙伴关系协定（TPP）：谈判的“着陆区”</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    跨太平洋伙伴关系（TPP）的谈判正在寻找一个“着陆区”，即一套能使得协议达成的妥协方案。基于对“着陆区”最可能的猜测，本文分析了TPP将造成的影响。该分析同时考虑了澳大利亚 - 日本自由贸易协定的影响，此协定将减少TPP的定量影响。本文基于修改后的动态GTAP模型进行模拟，模型考虑了关税减免，原产地规则（ROOs）区域化以及减少对商品，服务和投资的非关税壁垒等贸易冲击，并且报道了协定对加拿大经济的影响和相关评论。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=81">台湾加入TPP对美国的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了台湾加入跨太平洋伙伴协定（TPP）对美国经济的影响。基于对台湾加入TPP协议可能条款的猜测，本文研究的方法包括对台湾和美国之间商业关系的描述性分析，以及使用可计算的一般均衡模型（CGE）模拟分析台湾加入的影响，模型考虑到关税自由化，原产地规则（ROOs)自由化，减少货物和跨境服务方面的非关税壁垒（NTBs），放宽对服务业的外国直接投资以及由此产生的对外国附属公司服务贸易的影响。
+                    <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=80">谈判中的加拿大 - 韩国自由贸易协定（CKFTA）的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文基于已经公开的细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）带来的影响。本文发现，CKFTA将会更加巩固反映两国现有比较优势的贸易模式：加拿大的农产品行业受益，而韩国的工业部门受益。同时两国的敏感部门（进口到加拿大的汽车和进口到韩国的牛肉）将会得到最大的贸易收益。除此之外，由于协议带来的收入效应的驱动，两国的非贸易服务部门将得到较大收益。​​<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=79">加拿大贸易协定的省级影响：安大略省和加拿大 - 韩国自由贸易协定（CKFTA）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    加拿大最近与两个主要经济体签订了自由贸易协定（FTAs），一个跨大西洋（欧盟），一个跨太平洋（韩国）; 并且，它正在与环太平洋国家谈判一个更大的跨太平洋伙伴关系协议（TPP）。从经济地理的角度来看，这些协议对加拿大各省的影响非常不同。在本研究中，我们介绍一种混合估计方法来分析FTA对加拿大各省的影响。首先通过使用动态GTAP模型模拟FTA对加拿大整体经济的影响，然后根据可计算的部分均衡（CPE）模型的结果将整体影响分解成省级影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=78">加拿大 - 韩国自由贸易协定(CKFTA)中服务贸易自由化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文根据发表的协定细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）的经济影响。 本文根据服务贸易限制指数（STRI）被改变的程度引入了衡量服务贸易影响的新的估计方法，从而更加精确地测度服务贸易自由化影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=77">台湾加入TPP对加拿大的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了台湾加入跨太平洋伙伴协定（TPP）对加拿大经济的影响。基于对台湾加入TPP协议可能条款的猜测，本文研究的方法包括对台湾和加拿大之间商业关系的描述性分析，以及使用可计算的一般均衡模型（CGE）模拟分析台湾加入的影响，模型考虑到关税自由化，原产地规则（ROOs)自由化，减少货物和跨境服务方面的非关税壁垒（NTBs），放宽对服务业的外国直接投资以及由此产生的对外国附属公司服务贸易的影响。 <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=76">加拿大 - 韩国自由贸易协定（CKFTA）初探</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文基于已经公开的细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）带来的影响。本文发现，CKFTA将会更加巩固反映两国现有比较优势的贸易模式：加拿大的农产品行业受益，而韩国的工业部门受益。同时两国的敏感部门（进口到加拿大的汽车和进口到韩国的牛肉）将会得到最大的贸易收益。​除此之外，由于协议带来的收入效应的驱动，两国的非贸易服务部门将得到较大收益。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=75">加拿大是否应该单方面采取全球自由贸易？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近年来，贸易谈判行动已转向各种双边和区域自由贸易协定(FTAs) 的形式。但是，双边和区域自由贸易协定的利用率往往很低，而且这些协定产生的贸易量的增长量可能大大低于预期水平。FTA不是在世界经济中提高国家竞争力的唯一办法，单边贸易自由化也是一种选择。为了分析单边贸易自由化对加拿大的影响，本文通过GTAP模型模拟加拿大单方面去除所有贸易壁垒后其各种宏观经济指标的变化。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=71">特朗普经济政策的初步解析及对我国经济潜在影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    特朗普经济政策每一项对中国都呈负面影响。尽管部分政策利好出口，但是资本外流对中国经济的冲击不容忽视。而且随着国际环境的恶化，中国的投资信心也将受损，国内实体经济投资低迷的局势可能会加剧。<p></p>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <!-- <div class="page_info">共<span>1</span>页<span>72</span>条记录</div> -->
+        </div>
+
+        <div class="content" >
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=177">美欧贸易矛盾升级  贸易战经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文将采用量化经济分析平台（www.econmod.cn）全球可计算一般均衡模型（CGE）对美欧新一轮贸易争端进行模拟预测，并从全球贸易格局出发研究美欧贸易关系变化对全球、区域经济的冲击，模拟结果也将对相关产业的变动做出预测，对资本市场的未来走向有一定参考意义。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=172">中美贸易战经济影响的定量分析：基于全球CGE模型应用</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本案例利用全球CGE模型对中美贸易战的经济影响进行量化分析。根据贸易战不同阶段的贸易政策，模型设置了四个模拟场景进行短期、长期闭合模拟实验。模拟结果较全面地反映了贸易战对国家、全球宏观经济以及我国行业部门影响。结果显示，中美两国在贸易战中两败俱伤，对我国大部分行业部门都产生了负面影响，但部分产品进口减少将会刺激本国相关行业国内生产总值增长。此外，中国与美国贸易紧张关系将会促使中国外贸转向其他国家地区，欧洲、一带一路国家将会替代美国市场成为中国主要贸易地区。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=171">英国脱欧困境：经济一体化断裂下的危机？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    自2016年英国全民公投通过脱欧决定以来，英国脱欧之路举步维艰。2018年11月25日欧盟各国领导人与英国政府达成一份英国脱欧协议草案，英国脱离欧盟的漫漫长路终于迈出实质性一步。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=161">我国再次自主降关税，助推产业升级发展</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    国务院关税税则委员会近日发布公告，自2018年11月1日起，降低部分商品的最惠国税率。此次降税涉及1585个税目，是今年以来我国又一次大规模自主降税，平均税率由10.5%降至7.8%，平均降幅达26%。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=160">英国退欧后单边贸易自由化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文研究了英国退出欧盟后实行单边贸易自由化可获得的收益，假设英国脱离欧盟后与欧盟之间存在相应的关税壁垒。英国退欧后若实行单边贸易自由化则可抵消部分脱欧造成的经济损失。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=155">北美自贸协议谈判重启，美对外经贸关系或将重新洗牌</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年8月27日，美国与墨西哥贸易谈判取得重要进展，宣布两国达成“史上最大贸易协定之一”，并表示有可能将以两国双边贸易协议取代《北美自由贸易协定》。近日，加拿大再次开启与美国的双边谈判，但特朗普早前于9月2日在推特上发文指出与加拿大谈判没有达成任何协定，他甚至态度强硬表示要把加拿大从美墨加三国贸易集团中踢出局。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=152">中美贸易摩擦出现新转机？数据看中美经济未来走势</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    在贸易摩擦不断升级情况下，中美双方在8月22日重返谈判桌，这也是中美打响贸易战以来两国政府首次就中美经贸问题进行磋商。 但如果美国持续其单边贸易保护主义，对其他国家包括中国产品继续加征关税，这将进一步恶化全球大多数国家的经济增长，对相关行业尤其是以进出口为导向的行业造成更严重的冲击。为了更直观地呈现这一冲击结果，英飞咨询(ISM)基于全球一般均衡模型（CGE）对中美两国贸易战不同阶段所产生的宏观经济结果进行分析，并通过产生的模拟数据具体分析对行业的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=151">重振美国汽车业能否再现"美国制造"图景？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    美国总统特朗普在竞选时打出“重振美国制造业”口号，作为曾经塑造了“美国梦”核心的汽车工业更是特朗普竞选纲领的重中之重。其中特朗普最迫切想改变的是目前汽车贸易失衡对本土制造业所带来的冲击，而对国外相关产品加征关税则被视作最为直接有效的经济措施。但是，美国贸易政策是否能改变其贸易失衡状态？对上下游产业又会造成什么样的影响？从贸易政策着手是否能重塑美国制造业经济的往昔繁荣？<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=142">贸易逆差的五大误区</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    在对引导先前总统的贸易协定和政策的批评中，Trump Donald总统声称贸易平衡是衡量一个国家商业成功的指标，美国的贸易逆差说明了过去的贸易政策是有缺陷的。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=139">美国退出跨太平洋伙伴关系协定（TPP）对加拿大的经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    最近加拿大结束了与11个环太平洋国家的跨太平洋伙伴关系协定（TPP）的谈判。在本研究中，我们建立了基于全球贸易分析项目（GTAP）模型和数据库的可计算一般均衡（CGE）模型，并且通过此模型分析美国退出TPP后对加拿大经济的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=136">美国钢铝关税影响的量化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    Trump政府通过单边措施来应对所谓“不平等”贸易，在贸易报复升级的风险下争取有利地位。尽管大众一般认为Trump不会对同盟国施加钢铝关税，2018年5月30日Trump政府宣布对加拿大、墨西哥和欧盟的钢和铝分别征收25%和10%的关税。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=113">北美自由贸易协议(NAFTA)重新谈判：如果美国走了怎么办？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近日美国总统特朗普开启为期6个月的退出北美自由贸易协定（NAFTA）进程，可能很快让24年历史的北美自贸协定不复存在。NAFTA的重新谈判开启了北美地区贸易的多种不确定性。本研究采用了多部门，多区域的可计算一般均衡模型(GTAP)，并改进了原模型的投资机制，以及引入外国直接投资等新模型机制用于更好的评价包括关税，非关税以及FDI壁垒的影响。我们评估了如果加拿大，美国和墨西哥之间从原来的自由贸易恢复到世界贸易组织（WTO）下的最惠国待遇将会发生的政策后果。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=112">新“TPP全面与进展协定”的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2017年底，参加跨太平洋伙伴关系协定(TPP)的11个国家就缔结不包括美国的新协定达成一致。经过谈判，11国在美国退出前汇总的原版TPP规则中，冻结一部分条目，但保留废除关税的约定。美国退出后，TPP的经济规模较当初大幅缩小，不过亚太地区将诞生作为新交易轴心的首个大型贸易协定。本文评估了美国退出以后，剩余的11个成员国继续执行TPP协议的影响，并与2016年10月签订的12国协议的影响进行了对比。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=109">全球贸易战继续升级：特朗普钢铝关税新政解读</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    当地时间3月8日下午，美国特朗普总统在白宫签署了增税命令，向除加拿大和墨西哥以外的所有进口钢和铝分别征收25%及10%的关税，命令将于15天之内开始生效。此举引发了国际社会的强烈反响，多国表示反对并开始制定反制措施，美国白宫首席经济顾问、国家经济委员会主席Cohn因此辞职。美国此举会使得哪些国家受益，哪些国家受损？哪些行业受益，哪些行业受损？又能否达到特朗普声称的“保护美国钢铁行业”的目的？新增关税与美国已有的产业保护措施将产生怎样的协同效应？本文利用最新的动态GTAPism模型分析了这些问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=97">自由贸易：为什么单边自由贸易对加拿大有利？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    在过去十年中，加拿大一直稳步巩固其国际贸易政策。加拿大积极寻求与世界各国的贸易协定，一旦与欧盟和跨太平洋伙伴关系（TPP）成员国的协定生效，加拿大的自由贸易协定网络将是世界上最全面的。如果联邦政府推进与中国的谈判，加拿大将与其前13个双边商品贸易伙伴进行自由贸易，这是一个重大的成就。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=96">加入还是不加入？加拿大与跨太平洋伙伴关系协定（TPP）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    跨太平洋伙伴关系协议（TPP）的新一轮协商与2015年十月举行，如今协议正在等待各国相关部门的批准。本轮协议充满了争议，对于一些国家来说，这是最好的协议；然而对其他一些国家来说，这却是最差的协议。本文通过较精确的测量方法量化TPP协议的影响，为目前TPP协议的争论做出贡献。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=95">加拿大-韩国自由贸易协定（CKFTA）：这对加拿大意味着什么？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    历经九年的谈判后，加拿大-韩国自由贸易协定（CKFTA）于2015年1月1日生效。这​是加拿大与亚洲经济体签署的第一个成熟的贸易协议。这对加拿大意味着什么？本文通过贸易模型分析CKFTA对经济部门结构和贸易指标的影响回答了这个问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=93">保护主义与报复主义</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    Donald J. Trump当选美国总统提出了一系列关于美国未来贸易政策问题。由于加拿大严重依赖与美国的贸易，如果美国单方面实施保贸易护主义政策，或者对现有的贸易协定进行重新谈判最终遣返在美国工作的工人，加拿大对此将会有怎样的反应值得期待。面对如此高的不确定性，本文模拟了美国单方面对其贸易伙伴征收百分之十的关税附加费的贸易保护政策，其次，本文模拟了加拿大对美国执行了百分之十的报复性关税后的经济情况，并由此分析加拿大是否通过贸易报复会变得更好。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=92">美国边境调整税（BAT）经济影响的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    由于不可调和的国内政治原因，美国在经济发达的国家中唯一没有增值税（VAT）的国家，有人认为增值税的缺乏使美国的贸易公司在国际贸易中处于不利地位。这种看法导致美国试图构建一种增值税的替代税：边境调整税（BAT）。本文量化分析了BAT将产生的影响，发现它将扭曲贸易并且对美国及其贸易伙伴的经济造成损害。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=90">跨太平洋伙伴关系协定（TPP）：对加拿大卑诗省的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了跨太平洋伙伴关系协定（TPP）对加拿大卑诗省经济将产生的影响。本文的研究方法基于以下两个步骤。 首先，本文通过动态GTAP模型模拟了TPP对整个加拿大经济将产生的影响。其中，模拟考虑了减少关税，区域化原产地规则（ROOs）的区域化以及减少商品，服务和投资的非关税壁垒等可能的协议措施。第二，假设加拿大各省均可以进行国际和跨省贸易，本文利用全球模拟模型（GSIM）分析了TPP对卑诗省和加拿大其他地区的直接贸易影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=89">谈判中的TPP协议影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文根据协议实际文案和自由化时间表，以及各国政府对谈判结果的技术摘要，运用动态GTAP模型分析了正在谈判中的跨太平洋伙伴关系（TPP）将产生的影响。除了关税减免和针对农产品的税率配额优惠，本文考虑到了减少货物、服务贸易以及投资的非关税壁垒将产生的影响。除此之外，本文还考虑到服务贸易的市场准入限制，以及更高的劳动、环境标准和协调准则对第三方国家产生的潜在溢出效应。本文对来自最惠贸易将产生的行政成本和补偿农产品补贴将造成的福利负担进行了讨论，并且探讨了TPP知识产权制度的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=88">TPP对加拿大菜籽油行业的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文使用GTAP模型对以下三种情形下的跨太平洋伙伴关系（TPP）协议的对加拿大菜籽油部门将产生的市场准入影响进行分析：
+                    1.加拿大加入TPP，并且日本立即取消对加拿大菜籽油产品的关税。
+                    2.加拿大加入TPP，并且日本在十年内逐步取消对加拿大菜籽油产品的关税。
+                    3.加拿大不加入TPP。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=86">加拿大 - 中国自由贸易协定量化分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    加拿大 - 中国自由贸易协定已经讨论了一段时间。 虽然加拿大政府还没有正式确认，​据报道，中国已经与加拿大提出谈判自由贸易协定。 2012年加拿大 - 中国互补性研究中两国政府谈判采取了试探性的一步。 本文试图对此协议对加拿大和中国的影响进行量化分析。 我们采用了动态可计算的一般均衡模型，这个模型结合了外国的直接投资，并根据最近签署的中澳自由贸易协定制定了一个现实的情景。 我们发现加拿大 - 中国自由贸易协定带来的主要收益来源于关税减免和服务业承诺的约束。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=85">大区域贸易协定对被排除国家的溢出效应的定量分析：对东非的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    国际贸易规则的制定主要活跃于大区域贸易谈判，如跨太平洋伙伴关系协定，跨大西洋贸易和投资伙伴关系协定，区域全面经济伙伴关系协定和服务贸易协定。这些协议对包含东非经济体在内的等各个被排除在外的国家有重要影响。本研究针对东非国家在定性和定量两个方面分析了这些溢出效应。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=84">英国退出欧盟的相关贸易影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文对英国退出欧盟的相关贸易成本进行了估计，并将其与独立的英国可能获得的其他贸易政策的潜在收益进行比较。 据预测，英国退出欧盟后从其他贸易政策得到的收益不足以弥补Brexit成本，但是有潜在的可能弥补Brefta成本。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=83">地方层面的贸易政策分析：在GTAP模型中用省代替加拿大</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文开发了一个新版本的GTAP数据库，其中加拿大被其各省代替，以便能够分析国际贸易协定对地方层面的经济体的影响。这种方法将各省作为单独的贸易实体，就像欧盟内的各个成员国一样，它们具有共同的外部贸易壁垒和最小的内部贸易壁垒。我们记录了开发此数据库的过程，并将其应用于加拿大 - 欧盟全面经济和贸易协定（CETA）影响的示范模拟中。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=82">跨太平洋伙伴关系协定（TPP）：谈判的“着陆区”</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    跨太平洋伙伴关系（TPP）的谈判正在寻找一个“着陆区”，即一套能使得协议达成的妥协方案。基于对“着陆区”最可能的猜测，本文分析了TPP将造成的影响。该分析同时考虑了澳大利亚 - 日本自由贸易协定的影响，此协定将减少TPP的定量影响。本文基于修改后的动态GTAP模型进行模拟，模型考虑了关税减免，原产地规则（ROOs）区域化以及减少对商品，服务和投资的非关税壁垒等贸易冲击，并且报道了协定对加拿大经济的影响和相关评论。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=81">台湾加入TPP对美国的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了台湾加入跨太平洋伙伴协定（TPP）对美国经济的影响。基于对台湾加入TPP协议可能条款的猜测，本文研究的方法包括对台湾和美国之间商业关系的描述性分析，以及使用可计算的一般均衡模型（CGE）模拟分析台湾加入的影响，模型考虑到关税自由化，原产地规则（ROOs)自由化，减少货物和跨境服务方面的非关税壁垒（NTBs），放宽对服务业的外国直接投资以及由此产生的对外国附属公司服务贸易的影响。
+                    <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=80">谈判中的加拿大 - 韩国自由贸易协定（CKFTA）的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文基于已经公开的细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）带来的影响。本文发现，CKFTA将会更加巩固反映两国现有比较优势的贸易模式：加拿大的农产品行业受益，而韩国的工业部门受益。同时两国的敏感部门（进口到加拿大的汽车和进口到韩国的牛肉）将会得到最大的贸易收益。除此之外，由于协议带来的收入效应的驱动，两国的非贸易服务部门将得到较大收益。​​<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=79">加拿大贸易协定的省级影响：安大略省和加拿大 - 韩国自由贸易协定（CKFTA）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    加拿大最近与两个主要经济体签订了自由贸易协定（FTAs），一个跨大西洋（欧盟），一个跨太平洋（韩国）; 并且，它正在与环太平洋国家谈判一个更大的跨太平洋伙伴关系协议（TPP）。从经济地理的角度来看，这些协议对加拿大各省的影响非常不同。在本研究中，我们介绍一种混合估计方法来分析FTA对加拿大各省的影响。首先通过使用动态GTAP模型模拟FTA对加拿大整体经济的影响，然后根据可计算的部分均衡（CPE）模型的结果将整体影响分解成省级影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=78">加拿大 - 韩国自由贸易协定(CKFTA)中服务贸易自由化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文根据发表的协定细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）的经济影响。 本文根据服务贸易限制指数（STRI）被改变的程度引入了衡量服务贸易影响的新的估计方法，从而更加精确地测度服务贸易自由化影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=77">台湾加入TPP对加拿大的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了台湾加入跨太平洋伙伴协定（TPP）对加拿大经济的影响。基于对台湾加入TPP协议可能条款的猜测，本文研究的方法包括对台湾和加拿大之间商业关系的描述性分析，以及使用可计算的一般均衡模型（CGE）模拟分析台湾加入的影响，模型考虑到关税自由化，原产地规则（ROOs)自由化，减少货物和跨境服务方面的非关税壁垒（NTBs），放宽对服务业的外国直接投资以及由此产生的对外国附属公司服务贸易的影响。 <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=76">加拿大 - 韩国自由贸易协定（CKFTA）初探</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文基于已经公开的细则和承诺时间表分析了加拿大 - 韩国自由贸易协定（CKFTA）带来的影响。本文发现，CKFTA将会更加巩固反映两国现有比较优势的贸易模式：加拿大的农产品行业受益，而韩国的工业部门受益。同时两国的敏感部门（进口到加拿大的汽车和进口到韩国的牛肉）将会得到最大的贸易收益。​除此之外，由于协议带来的收入效应的驱动，两国的非贸易服务部门将得到较大收益。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=75">加拿大是否应该单方面采取全球自由贸易？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近年来，贸易谈判行动已转向各种双边和区域自由贸易协定(FTAs) 的形式。但是，双边和区域自由贸易协定的利用率往往很低，而且这些协定产生的贸易量的增长量可能大大低于预期水平。FTA不是在世界经济中提高国家竞争力的唯一办法，单边贸易自由化也是一种选择。为了分析单边贸易自由化对加拿大的影响，本文通过GTAP模型模拟加拿大单方面去除所有贸易壁垒后其各种宏观经济指标的变化。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}217&amp;id=71">特朗普经济政策的初步解析及对我国经济潜在影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    特朗普经济政策每一项对中国都呈负面影响。尽管部分政策利好出口，但是资本外流对中国经济的冲击不容忽视。而且随着国际环境的恶化，中国的投资信心也将受损，国内实体经济投资低迷的局势可能会加剧。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}218&amp;id=127">减缓气候变化政策与发展中国家贫困问题</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    减缓气候变化是21世纪最受关注的政策目标之一。但是，关于减少温室气体排放所需的政策内容和带来的影响仍未达成一致。一个主要的原因是没有足够的关于减排政策对发展中国家穷人的福利影响的实证分析。本文通过模拟两种不同的政策情景评估了减排政策对14个发展中国家的7个社会经济群体的贫困问题的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}218&amp;id=110">自由贸易与发展中国家的贫困结构</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    自由贸易的批评者往往认为全球化会导致本国低工资以及食品价格上涨，于是加剧国家贫困化。然而，自由贸易的支持者则认为“水涨船高”，整个经济体从自由贸易得到的利益会使得每个人的生活水平更好。这些支持者们强调，随着自由贸易使得OECD发达国家对农产品取消贸易保护，世界农产品的价格上升，这样有利于发展中国家的农业的发展并且相应增加了其收入。两种说法到底哪一种正确呢？本文通过分析14个来自亚洲，非洲和拉丁美洲的发展中国家，利用GTAP模型探讨贸易自由化对这些国家贫困率的影响。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=174">新一轮减税政策对供给侧结构性改革影响几何？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    根据政府报告中所提出的减税降费政策，本次研究利用国家CGE模型对宏观经济、产业经济的长期影响进行模拟分析，以期对我国积极财政政策议题实现量化分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=128">美国税改对中国及全球经济的影响与对策</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    税改是特朗普政府在“美国优先”理念指引下，巩固美国全球领导地位的核心举措。为了更全面科学评估美国税改的全球溢出效应。因此，基于税改综合影响效应机制，我们利用全球动态可计算一般均衡模型（GTAP），构建了三种不同政策模拟情景，对税改影响进行量化模拟与分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}219&amp;id=87">自由贸易协定对加拿大金融服务部门影响的定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文在考虑了自由贸易协定（FTA）金融服务章节下最有可能的自由化程度下，利用世界银行贸易数据库模拟了金融服务跨境和商业存在贸易自由化对加拿大金融服务行业的影响，以及FTA对现有市场准入承诺的影响。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=162">能源改革背后的经济学思考（三）：国际油价强势上涨，国内经济如何应对？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年以来受中东紧张局势以及OPEC主要产油国石油产量下降影响，全球石油价格强势走高。在当前地缘经济局势紧张、全球石油供给并无增量的情况下，油价上涨对我国宏观经济、相关产业部门将会产生什么样的影响？我国行业政策又该如何调整？笔者将根据可计算一般均衡模型（CGE）对国际石油价格上涨的经济影响尤其是对中国产业经济影响进行分析，为经济政策提供量化数据支持。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=158">能源改革背后的经济学思考（二）：煤炭去产能对供给侧结构性改革影响几何？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    煤炭行业改革至今取得明显成效，煤炭产量持续回落，低效、落后产能逐渐退出市场。煤炭去产能的行业效应显而易见，那么作为能源供给侧结构性改革最重要一环，煤炭行业改革对宏观经济和产业经济的影响又有多大？如何量化分析这一政策的经济效用？<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=156">能源改革背后的经济学思考（一）：天然气改革的经济效应</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近年来，能源改革作为我国经济改革的重要战略日益成为公众关注焦点。能源结构升级不仅关系到我国经济转型，更是与大众生活息息相关的民生议题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=149">人口统计变化对巴西消费和温室气体排放的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    人口统计变化不仅影响如经济增长和劳动力市场的变量，而且影响总消费，尤其是消费的结构。本文研究了预测的巴西2050年年龄结构金字塔对消费模式和二氧化碳排放量的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=148">巴西电力行业投资的经济和区域影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    为了实现气候协议的目标，巴西计划提高在电力供应中的除水能以外的可再生能源的份额。根据巴西十年能源计划（PDE2026），巴西将主要通过投资天然气、风能和太阳能来扩大目前的电力产能。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=141">美国退出巴黎协议对中国煤炭产出以及周边国家的碳排放的间接影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2017年6月1日，Trump总统宣布退出巴黎气候协议。尽管此决定在国内外引起了重大反响，它并未影响主要温室气体（GHG）排放国家以及国内机构的减排承诺。之前使用静态GTAP-E模型的分析发现美国退出巴黎协议对自身碳排放量和主要排放国家的单位减排成本以及GDP不会产生显著影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=124">巴黎气候协定和全球经济：谁输谁赢？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2015年的巴黎气候协定是首例各国联合抵抗全球变暖而制定的协议。超过190个国家在“国家自主贡献预案”（Intended Nationally Determined Contributions）中提交了关于温室气体减排的目标和方案。本文研究了巴黎气候协定对主要国家和地区在福利、GDP、投资和贸易方面带来的经济影响，并在可计算一般均衡（CGE）框架下模拟了全球、区域以及国家层面的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=123">提高水资源使用效率对南亚国家的经济影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    众所周知南亚国家在未来十年可能会面临水资源危机。随着经济迅速增长，人口增长将大大提高对水的需求，尤其是灌溉这种水资源利用率（WUE）很低的领域。但灌溉的效率还有很大的提高空间：研究发现，相比东南亚地区， WUE的提高将给南亚地区带来更大的利益。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}220&amp;id=118">土地利用机会成本与全球农林业温室气体减排潜力</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文分析了土地利用在全球农林业温室气体减排中的重要作用。陆地活动产生了约占全球温室气体（GHG）排放的三分之一，然而影响土地利用决策的因素却一直没有被引入经济模型中。本文开发了一个有效考虑农林业土地利用机会成本的一般均衡（CGE）模型，这样就能分析跨行业或行业内对不同土地利用的竞争，以及行业生产中土地和其他生产要素的替代作用。由于不同类型的土地、区域和行业的减排成本不一样，在对碳税影响的分析中，本文发现它将对全球各国的比较优势有显著影响，并发现使用森林固碳是全球GHG减排的最优策略。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content"style="display:block;">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=143">ASEAN国家在不同生产率假设下的经济增长预测</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2015年12月，十个ASEAN成员国正式成立了ASEAN经济共同体（AEC）。正如AEC 2025蓝图所预见，这个单一市场和生产基地将使得AEC成为一个高度集中和整合的群体，并通过加强往来和行业合作来促成竞争、创新和动态的ASEAN成员国环境。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=130">中国的经济和贸易增长对发达国家劳动力的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    中国30年来的经济和贸易增长对贸易伙伴的西方国家产生了巨大影响。随着中国对制造业的专业化生产（尤其中间品和半成品），许多国家用更低的成本进口中国的制造业产品。本文分析了中国的经济增长和贸易对发达国家劳动力的生产率的影响。我们将全球数据中的劳动力分为不同种类，以分析对不同技能劳动力的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=126">东亚和东南亚地区的人口流动和经济增长</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    东亚-太平洋地区（EAP）在1965至1990期间人口统计特征发生了巨大的变化，其死亡率和生育率的下降极大地促进了这段期间经济的增长。本文在上述人口统计特征变化下，通过全球动态一般均衡模型研究了东亚和东南亚各国之间人口流动性增加所带来的影响。由于一个国家的人口统计特征和人口流动的变化会对其他国家造成影响，全球动态一般均衡模型能较好地反映劳动力结构的变化所造成的生产要素和价格的波动。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}221&amp;id=91">在CGE贸易政策模拟中校准工资 - 生产率的变化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    理论上认为，贸易自由化通过将市场份额重新分配到效率较高企业而影响市场效率。由于生产效率高的企业往往支付更高的工资，因此市场再分配效应也增加了市场平均工资。除了这些行业内部的影响，在经济范围内行业结构的变化导致生产要素重新分配到生产率较高的部门。同时，贸易自由化引起的积极需求冲击通常增加了要素回报率，从而导致更高的实际工资。本文通过在CGE模型中内生化生产率来校准贸易自由化对生产率影响。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=165">塔桑尼亚吸烟率下降的经济和环境影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    许多国家政府不愿意引入烟产品管制措施，因为它们担心随之而来的在烟产品生产、加工、制造、出口和税收环节所造成的经济损失。 烟产品促进了国家的企业利润、就业和家庭收入，这成为了烟产品管制的最大障碍。那么烟产品生产、贸易和消费所产生的收益和成本有多大呢？谁获得了这些收益？又由谁承担了这些成本？什么样的烟产品管制政策和干预会造成经济损失？本文对此研究了塔桑尼亚吸烟率下降的经济影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=145">农产品出口导向与食品供应是否存在正向协同作用？——基于非洲经济的分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    尽管2008年和2012年出现了食品高价格危机，大多数发展中国家的政府继续支持开放经济并促进对其他国家的农产品出口。有人担心支持农产品出口会将土地、劳动力以及其他生产要素转移至农产品出口活动，因而减少了国内食品供应。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=125">北美蔬果消费变化的影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文利用了GTAP模型来分析由于蔬果（F&amp;V）需求和收入增加对蔬果市场的影响。如果只是美国的蔬果需求上升，这对墨西哥的影响最大。其次，本文发现不管是美国还是整个北美蔬果需求增加，都会使得墨西哥和赤道国家的收入上升。由于更高的收入减弱了其蔬果价格上升的影响，这些地区的蔬果消费变化较小。同样，美国或整个北美蔬果需求增加也会对北美之外的国家产生影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}222&amp;id=121">千禧年回合的农产品和非农产品贸易自由化</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    为了使农产品在世界贸易舞台上达到和制造业产品一样的自由化程度，我们还有许多需要做。农产品贸易不仅仅被农业贸易政策所扭曲。尤其在发展中国家，农业种植不仅被发达国家的农产品贸易保护政策所打击，而且也被这些国家本身的制造业和服务业政策所影响。本文研究了农产品和非农产品多边贸易自由化程度对农产品市场的影响。研究预测了2005年乌拉圭回合（UR）完全执行后的世界经济情况，并且假设农业、矿业、制造业和服务业的贸易保护下降40%，通过修正版的全球贸易GTAP模型分析了乌拉圭回合谈判后进一步自由化带来的影响。<p></p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=176">“一带一路”基础设施发展对贸易成本冲击影响分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    <p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=175">“一带一路”战略对沿线国家经济影响研究——基于CGE模型分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本次研究将通过量化经济分析平台（www.econmod.cn）利用全球CGE动态模型进行“一带一路”经贸政策模拟。本次模拟将根据“一带一路”长远目标，假设中国与“一带一路”沿线国家实现双边自由贸易协定，关税实现减免，在模型中进行短期闭合模拟。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=173">粤港澳大湾区发展现状与未来展望</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2019 年 2 月《粤港澳大湾区发展规划纲要 》 正式发布。本报告从经济潜力、产业特征及分布等深入分 析粤港澳大湾区发展现状，探讨大湾区建设创新产业集群 面临的机遇与挑战，并利用定量模型对粤港澳大湾区的创 新联系和集群影响机制进行了分析，最后给出粤港澳大湾 区未来发展的五大方向：坚持开放与融合的区域制度创新 之路；发挥产业协同优势，构建现代产业体系；优化创新 生态环境，加强创新网络建设；打造大湾区“优质生活圈”； 持续推进对外开放，将大湾区建设成为世界级经济平台。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=169">政策红利还能走多远？数据看大湾区房地产市场影响机制 --粤港澳大湾区区域经济观察系列（五）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    目前媒体、研究机构主要关注宏观调控政策下房价走势，但随着湾区集群经济发展，围绕着核心城市构建的大都市生活圈将重构大湾区房地产产业布局。本文将基于大湾区内地9城房地产相关历史数据，通过计量方法对区域房地产价格影响机制进行定量分析，在考虑城市群产业集聚效应基础上对房地产市场走向做出较为客观清晰的分析。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=168">城市竞合与粤港澳大湾区创新协同发展 --粤港澳大湾区区域经济观察系列（四）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    大湾区城市群发展更高阶目标是对接世界三大湾区，把粤港澳大湾区城市群打造成全球创新高地。本文依据经济学中关于创新与经济增长的理论，对大湾区城市创新联系以及知识溢出效应进行定量分析，揭示大湾区区域内部创新网络的演变，为区域创新战略制定提供量化参考。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=167">打造“下一个硅谷”：粤港澳大湾区创新型经济发展前景与挑战 --粤港澳大湾区区域经济观察系列（三）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    伴随国家创新战略的推进，粤港澳大湾区核心城市深圳、广州纷纷提出打造世界级创新中心目标，湾区整体定位更是对标旧金山湾区，朝着“下一个硅谷”目标发力。那么大湾区离“下一个硅谷”还有多远？区域内各城市创新机制存在哪些不同？本文根据大湾区区域内部创新投入、产出数据，整理概括区域创新发展的总体格局与主要特征，在区域创新能力评价体系基础上探索区域创新形成机制，为大湾区创新型经济发展提供更为深入的数据分析与决策参考。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=166">粤港澳大湾区离“世界级城市群”还有多远？ --粤港澳大湾区区域经济观察系列（二）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    ​近日，由中国社会科学院与联合国人居署共同发布最新《全球城市竞争力报告》，报告中粤港澳大湾区三大核心城市深圳、香港、广州跻身全球城市竞争力指数二十强。另根据最新出炉的一二线城市前三季度经济数据统计，前三季度经济总量排名前10的城市中，深圳、广州分别达到了1.75万亿和1.67万亿，分列第三、四位。其中深圳市经济总量在2016年就已超过广州，今年前三季GDP增速高达8.1%，在全国所有一二线城市中表现亮眼。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=164">从珠三角到粤港澳大湾区：区域经济转型路在何方？--粤港澳大湾区区域经济观察系列（一）</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近日，随着港珠澳大桥开通，粤港澳大湾区规划再次成为我国区域经济改革焦点。2017年3月5日，构建粤港澳大湾区规划正式写入《政府工作报告》，这为大湾区的定位和发展指明了方向。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=163">增值税调整势在必行？政策信号释放经济利好</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    今年以来，降低企业税费负担成为国家财政政策重点。3月初《政府工作报告》明确指出要进一步减轻企业间接税负，尤其是改革完善增值税制度，按照三档并两档方向调整增值税税率水平，重点降低制造业、交通运输业等行业税率。本文将根据政府所强调的增值税三档并两档政策走向，利用可计算一般均衡模型（CGE）研究增值税下调对宏观经济以及产业经济的推动作用。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=157">中美“独角兽企业”大比拼：创新企业的机遇与挑战</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近期，全球知名风投调研机构CBInsignts发布了一份截止至今年8月的全球260家独角兽企业榜单。该榜单详尽分析了这些创新企业所在地区、市值以及主要投资者，被看作是投资界的风向标。中美两国创新企业的机遇与挑战也可从这份榜单中窥知一二。上榜企业中，中美两国企业占据绝对优势。但是中国初创企业无论从规模还是市场创新来说都与美国独角兽企业存在一定差距。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=154">租金暴涨触碰了谁的痛点？</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    近来房价高企、房租暴涨的新闻引发各方热议。尽管一线城市房价在经历了上一轮猛涨期后趋于稳定，但近期房租暴涨的新闻又再一次牵动大众的神经。不断攀升的房租与居民消费水平下降之间存在着显而易见的关系，但是租金暴涨对国民经济生产的总体影响以及对行业的冲击当前舆论却甚少考量。为了更为直观地分析这一经济现象与结果，本文将利用英飞咨询（ISM）一般均衡模型（CGE）模拟量化租金上涨对国民经济与各行业的影响。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=150">东亚老龄化国家护理服务政策方案以及对家庭和劳动力市场的影响</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    性别问题是世界上许多国家政策讨论的核心，因此对性别维度的分析工具产生了巨大需求。根据大量可计算一般均衡模型（CGE）对性别问题分析的文献，本文分析了东亚一些高收入老龄化国家（如日本、韩国和台湾）所面临的性别相关的问题。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=140">美国在中国和墨西哥的离岸活动的经济影响定量分析</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    美国在新兴经济体（如中国和墨西哥）的离岸活动受到越来越多的关注。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=138">CGE模型研究的国际前沿—GTAP年会主题及论文</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    2018年GTAP会议于6月13日至15日在哥伦比亚卡塔赫纳举行。此次会议根据主题分为46个主题会议，涉及贸易、能源、资源、气候、土地使用、农业以及劳动市场等方面的问题。英飞咨询（ISM）成员积极参与了GTAP会议，本文按主题分类总结了英飞咨询本次会议的文章列表。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=135">全球贸易分析项目—GTAP</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文简要介绍了GTAP的发展以及应用。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=134">人工智能经济与公共政策</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    目前大多数关于人工智能（AI）的讨论都集中在机器人和未来的工作。Bill Gates等公众人物对这个问题的思考促使了大众对未来机器人替代人们工作的恐慌。然而，经济学家们在AI对工作的影响这个问题上看法没有那么悲观。<p></p>
+                </div>
+            </div>
+            <div class="child">
+                <div class="childTitle">
+                    <div class="childIcon">
+                        <div class="sub sub1"></div>
+                        <div class="sub sub2"></div>
+                    </div>
+                    <div class="title">
+                        <p><a href="{% url 'app:xinwen' %}228&amp;id=131">CGE模型与发展中国家政策制定</a></p>
+                    </div>
+                </div>
+                <div class="childContent">
+                    本文展现了CGE模型如何被应用在发展中国家政策制定实践中。<p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

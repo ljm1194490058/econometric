@@ -1,0 +1,26 @@
+.head{
+	width:100%;height:53px;background:url(../../templates/管理端/images/header_bei.gif);
+}
+.head01{
+	float:left;
+	height:53px;
+	width:45px;
+	margin-left:15px;
+	background:url(../../templates/管理端/images/header01.gif);
+}
+.head02{
+	float:left;
+	height:28px;
+	width:auto;
+	margin-left:10px;
+	padding-top:12px;
+	font-size:25px;
+	font-family:"����";
+}
+.head03{
+	float:right;
+	height:53px;
+	width:67px;
+	margin-right:15px;
+	background:url(../../templates/管理端/images/logo.gif);
+}
